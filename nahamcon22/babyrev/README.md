@@ -141,7 +141,7 @@ This looks not too bad, but it can be cleaned up a bit:
 ```
 for (int i = 0; i < strlen(password); ++i)
 {
-  buffer[i] = i * i + (password[i] << ((char)i % 7));
+  buffer[i] = i * i + (password[i] << (i % 7));
 }
 ```
 
