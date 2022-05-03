@@ -21,7 +21,8 @@ So the application asks for an username and a password. Since we don't know neit
 # Inspection
 To inspect further we use whatever tool fits our needs. I use Ghidra in this case. 
 
-Since the executable is stripped we don't see much information and functions are displayed with generic names.  (IAMGE 1) 
+Since the executable is stripped we don't see much information and functions are displayed with generic names. 
+![ELF header](images/002.png)
 In this case we just start from the entry point following the call-chain. The entry point can be found in the ELF header and is called after the file and dependencies are loaded and everything is setup to run the program (read more [here](https://lwn.net/Articles/631631/)). Ghidra is kindly showing it to us in the function list.
 ![Ghidra function list](images/001.png)
 
