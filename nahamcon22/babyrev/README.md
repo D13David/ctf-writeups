@@ -1,4 +1,16 @@
-# Preparation
+# NahamCon CTF 2022
+
+## babyrev
+
+> Aw look! Baby is using a disassembler!
+>
+> Author: @birch#9901
+>
+> [`babyrev`](babyrev)
+
+Tags: _rev_
+
+## Preparation
 First of, we download the file and check what content this file has. We can do this easily by using the 'file' command
 ```
 > file babyrev
@@ -18,7 +30,7 @@ hello? I don't know you... stranger danger...
 ```
 So the application asks for an username and a password. Since we don't know neither username nor password we need to inspect the executable further.
 
-# Inspection
+## Inspection
 To inspect further we use whatever tool fits our needs. I use Ghidra in this case. 
 
 Since the executable is stripped we don't see much information and functions are displayed with generic names. 
@@ -28,7 +40,7 @@ In this case we just start from the entry point following the call-chain. The en
 
 ![ELF header](images/002.png)
 
-## Inspecting 'entry'
+### Inspecting 'entry'
 
 ![entry function](images/003.png)
 
@@ -41,7 +53,7 @@ With this we can reason about some of the functions of the application. The firs
 
 Now we can rename the known functions in Ghidra. What is interessting to us is the main function, so leaving the rest behind we move on to main.
 
-## Inspecting 'main'
+### Inspecting 'main'
 ![main function](images/004.png)
 
 This one is straight forward. We can recognize some of it from our first try when running the application. We are promped to enter username and password. It's not necessary here but we could rename some of the variables so the code is more readable. 
@@ -59,7 +71,7 @@ You're almost there!
 ```
 Looking further we can see that the password is passed into another function and the result is compared and assumed to be equal to '38'. This could be some kind of password validation functionality. So we can rename this function to 'validatePassword' (or something like this).
 
-## Inspecting 'validatePassword'
+### Inspecting 'validatePassword'
 ![validatePassword function](images/006.png)
 
 This function looks creepy. To make sense of some of it we should rename variables we already know and break things into parts. At the bottom there is a loop that does compare two arrays and keeping track of the number of equal entries. This is returned as a result. 
@@ -130,7 +142,7 @@ This part does something usefull, it allocates a buffer on the stack which will 
 ```
 We can rename this function to 'processPassword' or something likewise since the password is somehow processed before the verification takes place. With this we have a good understanding of what validatePassword does, so we are moving on to processPassword.
 
-## Investigating 'processPassword'
+### Investigating 'processPassword'
 
 After renaming a couple of variables (for all we already know) we end up with:
 
