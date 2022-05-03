@@ -31,22 +31,23 @@ In this case we just start from the entry point following the call-chain. The en
 ## Inspecting 'entry'
 
 ![entry function](images/003.png)
+
 The function is not doing too much but just calling __libc_start_main. We can lookup the function signature to get an understanding what's passed into the function.
 ```
 int __libc_start_main(int *(main) (int, char * *, char * *), int argc, char * * ubp_av, void (*init) (void), void (*fini) (void), void (*rtld_fini) (void), void (* stack_end));
 ```
 
-With this we can reason about some of the functions if the application. The first parameter is a pointer to the program's 'main' function. The other functions are there to setup the execution environment for our executable. You can readup more in this  [here](https://refspecs.linuxbase.org/LSB_3.1.0/LSB-generic/LSB-generic/baselib---libc-start-main-.html).
+With this we can reason about some of the functions of the application. The first parameter is a pointer to the program's 'main' function. The other functions are there to setup the execution environment for our executable. You can readup more in this  [here](https://refspecs.linuxbase.org/LSB_3.1.0/LSB-generic/LSB-generic/baselib---libc-start-main-.html).
 
 Now we can rename the known functions in Ghidra. What is interessting to us is the main function, so leaving the rest behind we move on to main.
 
-![ELF header](images/002.png)
-
 ## Inspecting 'main'
 ![main function](images/004.png)
+
 This one is straight forward. We can recognize some of it from our first try when running the application. We are promped to enter username and password. It's not necessary here but we could rename some of the variables so the code is more readable. 
 
 ![username check](images/005.png)
+
 So, the username needs to be 'bossbaby' in order to proceed. And indeed, when we run the program we are getting another result
 
 ```
@@ -64,6 +65,7 @@ Looking further we can see that the password is passed into another function and
 This function looks creepy. To make sense of some of it we should rename variables we already know and break things into parts. At the bottom there is a loop that does compare two arrays and keeping track of the number of equal entries. This is returned as a result. 
 
 ![validation loop](images/007.png)
+
 Looks like this can be simplified a bit. Essentially the code is doing the following
 
 ```
@@ -83,7 +85,7 @@ The part at the top looks even worse. In this case looking at the dissassembly c
 
 ![strange code](images/009.png)
 
-First the password length is multiplied with 4 and aligned to a multiple of 16. Then the value is masked so that the low 12 bits are zeroed out leaving only values greater 4095. Thus RDX is zero if the length of the password is larger than 1020 (align(1021*4, 16) == 4096). If larger the code will allocate blocks of 4k bytes until we overflow the stack. Otherwise the code will just do nothing.
+First the password length is multiplied with 4 and aligned to a multiple of 16. Then the value is masked so that the low 12 bits are zeroed out leaving only values greater 4095. Thus RDX is zero if the length of the password is smaller than 1021 (align(1021*4, 16) == 4096). If larger the code will allocate blocks of 4k bytes until we overflow the stack. Otherwise the code will just do nothing.
 
 ```
         00101339 48 89 e6        MOV        RSI,RSP	; RSI = current stack pointer
@@ -145,72 +147,6 @@ for (int i = 0; i < strlen(password); ++i)
 
 This is how our password is processed (or encoded if you will) before verification. So stiching this all together the reversed code looks something like [this](babyrev_reversed.cpp).
 
-```
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <malloc.h>
-#include <assert.h>
-
-const int data[] = 
-{
-	0x66, 0xD9, 0x188, 0x341, 0x7C0, 0x6F9, 0x18A4, 0x95, 0x10A, 0x1D5, 
-	0x37C, 0x3A9, 0x7B0, 0x1969, 0x127, 0x1A3, 0x1C4, 0x2B9, 0x754, 0x889, 
-	0xF50, 0x1F0, 0x254, 0x2D9, 0x558, 0x571, 0x924, 0x1019, 0x342, 0x3AD, 
-	0x508, 0x6E9, 0xA30, 0x10E1, 0x1284, 0x500, 0x5D2, 0x74D 
-};
-
-void processPassword(const char* password, int* buffer)
-{
-	for (size_t i = 0; i < strlen(password); ++i)
-	{
-		buffer[i] = i * i + (password[i] << ((char)i % 7));
-	}
-}
-
-int validatePassword(const char* password)
-{
-	int length = strlen(password);
-	int bufferSize = (((length * 4) + 15) / 16) * 16;
-	int* buffer = (int*)_malloca(bufferSize);
-	assert(buffer);
-	processPassword(password, buffer);
-
-	int result = 0;
-	for (int i = 0; i < length; ++i)
-	{
-		if (data[i] == buffer[i])
-			++result;
-	}
-
-	return result;
-}
-
-int main()
-{
-	char name[512]{};
-	char password[512]{};
-
-	printf("Welcome to baby's first rev! :>\n");
-	printf("Please enter your name: ");
-	scanf_s("%s", name, _countof(name));
-	printf("Please enter your password: ");
-	scanf_s("%s", password, _countof(password));
-
-	if (strcmp(name, "bossbaby"))
-	{
-		printf("%s? I don't know you... stranger danger...\n", name);
-		exit(0);
-	}
-
-	printf("You're almost there!\n");
-
-	if (validatePassword(password) == 38)
-	{
-		printf("You're boss baby!\n");
-	}
-}
-```
 We already know the final result and therefore can write the inverse version to 'processPassword' for decoding.
 
 ```
