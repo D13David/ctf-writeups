@@ -6,7 +6,7 @@
 >
 > Author: Jopraveen
 >
-> [`pwn101`](pwn101)
+> [`pwn101`](https://tryhackme.com/room/pwn101)
 
 Tags: _pwn_, _binary exploitation_
 
