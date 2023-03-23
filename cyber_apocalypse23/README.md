@@ -5,6 +5,12 @@ Credits [HTB](http://ctf.hackthebox.com)
 
 ## Pwn
 
+[Initialise Connection](pwn/initialise_connection/README.md)\
+[Questionnair](pwn/questionnaire/README.md)\
+[Getting Started](pwn/getting_started/README.md)\
+[Labyrinth](pwn/labyrinth/README.md)\
+[Void](pwn/void/README.md)
+
 ## Web
 
 [Trapped Source](web/trapped_source/README.md)\
@@ -18,6 +24,11 @@ Credits [HTB](http://ctf.hackthebox.com)
 [Navigating the Unknown](blockchain/navigation_the_unknown/README.md)
 
 ## Hardware
+
+[Timed Transmission](hardware/timed_transmission/README.md)\
+[Critical Flight](hardware/critical_flight/README.md)\
+[Debug](hardware/debug/README.md)\
+[Secret Code](hardware/secret_code/README.md)
 
 ## Reversing
 
