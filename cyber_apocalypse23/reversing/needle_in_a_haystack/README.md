@@ -13,7 +13,7 @@ Tags: _rev_
 ## Solution
 For this solution one file is delivered. Opening the file in Ghidra and inspecting the `main` function.
 
-```
+```c++
 undefined8 main(void)
 
 {

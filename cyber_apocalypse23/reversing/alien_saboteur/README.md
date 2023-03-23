@@ -13,7 +13,7 @@ Tags: _rev_
 ## Solution
 This challenge provides us with two files. One executable `vm` and on file called `bin`. First we check the executable with Ghidra.
 
-```
+```c++
 undefined8 main(int param_1,long param_2)
 
 {
@@ -42,7 +42,7 @@ undefined8 main(int param_1,long param_2)
 
 The `main` is fairly small. It reads the content of a file and passes that to `vm_create`.
 
-```
+```c++
 undefined4 * vm_create(long param_1,long param_2)
 
 {
@@ -76,7 +76,7 @@ void vm_run(long param_1)
 
 `vm_run` is only a loop that calls frequently into `vm_step`. But we can reason about one part of the `vm` structure, since there is a flag that causes the loop to exit.
 
-```
+```c++
 void vm_step(uint *param_1)
 
 {
@@ -95,7 +95,8 @@ void vm_step(uint *param_1)
 `vm_step` seems to index into a list of function pointers and calls the specified function. Also there is a range check at the top to avoid indexing out of the function table range.
 
 Hex-Rays was nice enough to provide the function table in a clean way
-```
+
+```c++
 __int64 (__fastcall *original_ops[25])() =
 {
   &vm_add,
@@ -127,7 +128,8 @@ __int64 (__fastcall *original_ops[25])() =
 ```
 
 And sure enough, it's a table for some op-codes that are supported by the vm. Next we can investigate a few of the op-functions, e.g. `nop`:
-```
+
+```c++
 int vm_nop(unsigned int *a0)
 {
     unsigned int *v0;  // [bp-0x10]
@@ -144,7 +146,8 @@ int vm_nop(unsigned int *a0)
 This does nothing except incrementing the instruction pointer. By reading a few more of the functions we can come up with a good set of assumptions:
 
 The vm structure looks something like this:
-```
+
+```c++
 typedef struct vm 
 {
 	uint32_t eip;       // instruction pointer
@@ -158,7 +161,7 @@ typedef struct vm
 
 Also we know that the image has a header of 3 bytes (we skip this) and then it's a list of operations where each operation is 6 bytes wide. With this we can write our own disassembler.
 
-```
+```c++
 void (*ops[25])(vm_t*) =
 {
     &vm_add,
@@ -240,14 +243,16 @@ int main()
 ```
 
 To thats a bit more readable. Also if we implement all the ops we can even run the image by ourselve and investigate memory snapshots and all the other nice parts. To do this we can provide empty mock implementations for each op code that are just telling us that the functionality is not existing yet:
-```
+
+```c++
 void vm_div(vm_t* vm) { printf("not implemented div"); exit(0); }
 void vm_cmp(vm_t* vm) { printf("not implemented cmp"); exit(0); }
 void vm_jmp(vm_t* vm) { printf("not implemented jmp"); exit(0); }
 ```
 
 Afterwards we run the image and implement one op-code after another. The first one that comes up is vm_putc:
-```
+
+```c++
 void vm_putc(vm_t* vm) 
 { 
 #if TRACE
@@ -262,7 +267,8 @@ void vm_putc(vm_t* vm)
 We also can put in some tracing code to dump the assembly while it's exxecuted. Therefore we can get the whole program flow with all the informations we need for debugging (addresses, values in memory, ...).
 
 After providing all the ops used by the image we get this result:
-```
+
+```bash
 [Main Vessel Terminal]
 < Enter keycode
 > aaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -363,14 +369,14 @@ By looking at this we can see how the keycode is decrypted and where it is locat
 
 ![keycode](image001.png)
 
-```
+```python
 >>> keycode = [0xCA, 0x99, 0xCD, 0x9A, 0xF6, 0xDB, 0x9A, 0xCD, 0xF6, 0x9C, 0xC1, 0xDC, 0xDD, 0xCD, 0x99, 0xDE, 0xC7]
 >>> "".join([chr(c^169) for c in keycode])
 'c0d3_r3d_5hutd0wn'
 ```
 
 Ok, moving forward. If we enter the keycode we get:
-```
+```bash
 [Main Vessel Terminal]
 < Enter keycode
 > c0d3_r3d_5hutd0wn
@@ -386,6 +392,7 @@ So the keycode was correct, but now we need a passphrase.
 One interessting side note: Parts of the image are encrypted and are only decrypted when the correct keycode is entered. Therefore it's not immediately possible to dump the whole dissassembly although we don't really need the keycode but can also patch JLE on offset 126h to a JUMP or JNE.
 
 Side note two: after checking the keycode a operation called 'inv' is called. This is by far the most complex operation popping some values from the stack and issuing a syscall (101).
+
 ```
 01ec    MOV [15], 0
 01f2    PUSH [15]       args: 0
@@ -394,7 +401,8 @@ Side note two: after checking the keycode a operation called 'inv' is called. Th
 ```
 
 The result is assumed to be 4011. The code can easily be manipulated to also run in windows (or just to avoid the syscall alltogether).
-```
+
+```c++
 void vm_inv(vm_t* vm) 
 { 
 
@@ -467,7 +475,8 @@ The next part is again, outputting text and reading user input. Afterwards the i
 ```
 
 This looks like something. But it's essencially only a outer loop and two inner loops. The first one scrambles the user input and the second one applies an xor. This is done 35 times and then the user input is surely unrecoginzable. Here's some pseudocode:
-```
+
+```python
     for i in range(0,36):
         for j in range(0,36):
             swap(user_input[j], user_input[scramble_offset[j]])
@@ -476,6 +485,7 @@ This looks like something. But it's essencially only a outer loop and two inner 
 ```
 
 In the last step the program checks if the encoded user input equals the encoded flag:
+
 ```
 045c    MOV [30], 4400
 0462    MOV [31], 4700
@@ -492,7 +502,8 @@ Now we have all the offsets:
 * encrypted flag at 4700
 
 Grabbing the values from the image the flag can easily be decoded:
-```
+
+```python
 flag = [0x65, 0x5D, 0x77, 0x4A, 0x33, 0x40, 0x56, 0x6C, 0x75, 0x37, 0x5D, 0x35, 0x6E, 0x6E, 0x66, 0x36, 0x6C, 0x36, 0x70, 0x65, 0x77, 0x6A, 0x31, 0x79, 0x5D, 0x31, 0x70, 0x7F, 0x6C, 0x6E, 0x33, 0x32, 0x36, 0x36, 0x31, 0x5D]
 
 xor = [0x16, 0xB0, 0x47, 0xB2, 0x01, 0xFB, 0xDE, 0xEB, 0x82, 0x5D, 0x5B, 0x5D, 0x10, 0x7C, 0x6E, 0x21, 0x5F, 0xE7, 0x45, 0x2A, 0x36, 0x23, 0xD4, 0xD7, 0x26, 0xD5, 0xA3, 0x11, 0xED, 0xE7, 0x5E, 0xCB, 0xDB, 0x9F, 0xDD, 0xE2]
@@ -511,7 +522,7 @@ for i in range(35,-1,-1):
 print("".join([chr(x) for x in flag]))
 ```
 
-```
+```bash
 [Main Vessel Terminal]
 < Enter keycode
 > c0d3_r3d_5hutd0wn

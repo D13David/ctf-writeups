@@ -33,7 +33,7 @@ When started two docker images are spawned. One with deployed contracts that, th
 
 First up fetching the connectivity information
 
-```
+```bash
 $ nc 159.65.94.38 30761
 1 - Connection information
 2 - Restart Instance
@@ -48,13 +48,13 @@ Setup contract  :  0x61ad3DDcb62c96B20c06eD5ccd574a92C5248b35
 
 Setting up a quick [`script`](solution.py) using web3py to call the method and set version to 10.
 
-```
+```python
 contract = w3.eth.contract(address=address, abi=unknown_abi)
 print(contract.functions.updateSensors(10).transact())
 ```
 
 After the contract is in correct state the flag can be retrieved
-```
+```bash
 $ python solution.py
 $ nc 159.65.94.38 30761
 1 - Connection information
@@ -64,4 +64,6 @@ action? 2
 
 HTB{9P5_50FtW4R3_UPd4t3D}
 ```
+
+Flag `HTB{9P5_50FtW4R3_UPd4t3D}`
 

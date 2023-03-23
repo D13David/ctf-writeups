@@ -13,7 +13,7 @@ Tags: _forensics_
 ## Solution
 A obfuscated PowerShell script is provided. When inspecting the script the flag is be visible already:
 
-```
+```PowerShell
 ;$s = New-Object IO.MemoryStream(,[Convert]::FromBase64String($d));$f = 'H' + 'T' + 'B' + '{p0w3rs' + 'h3ll' + '_Cr4d' + 'l3s_c4n_g3t' + '_th' + '3_j0b_d' + '0n3}'
 ```
 

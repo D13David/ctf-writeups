@@ -11,7 +11,7 @@ Tags: _misc__
 
 ## Solution
 When connecting to the container we get a small UI. Apparently we have to solve some simple equations with some rules for error handling.
-```
+```bash
 $ nc 188.166.152.84 30834
 [-MENU-]
 [1] Start
@@ -51,7 +51,7 @@ Expected response: MEM_ERR
 ```
 
 Manual imput surely is too slow:
-```
+```bash
 > 1
 
 [*] Receiving Requests...
@@ -63,7 +63,7 @@ Manual imput surely is too slow:
 ```
 
 So we need a quick [`script for this`](solution.py).
-```
+```python
 #!/usr/bin/env python3
 
 from pwn import *

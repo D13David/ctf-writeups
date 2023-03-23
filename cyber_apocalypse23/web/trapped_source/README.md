@@ -11,7 +11,8 @@ Tags: _web_
 
 ## Solution
 When opening the hosted site, we see a keypad where we can enter values. By looking at the source code we also see the pin.
-```
+
+```js
 <script>
         window.CONFIG = window.CONFIG || {
                 buildNumber: "v20190816",
@@ -23,3 +24,5 @@ When opening the hosted site, we see a keypad where we can enter values. By look
 ```
 
 ![pin](image001.png)
+
+Flag `HTB{V13w_50urc3_c4n_b3_u53ful!!!}`

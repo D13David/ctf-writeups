@@ -13,7 +13,7 @@ Tags: _rev_
 ## Solution
 This challenge is a questionair we need to pass. Most information can be retrieved by decompiling the code in Ghidra and using `file` and `ldd`.
 
-```
+```bash
 $ file license
 license: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=5be88c3ed329c1570ab807b55c1875d429a581a7, for GNU/Linux 3.2.0, not stripped
 
@@ -26,7 +26,7 @@ What is the CPU architecture of the executable?
 [+] Correct!
 ```
 
-```
+```bash
 $ ldd license
         linux-vdso.so.1 (0x00007ffebe1f4000)
         libreadline.so.8 => /lib/x86_64-linux-gnu/libreadline.so.8 (0x00007fed3dd07000)
@@ -39,7 +39,7 @@ What library is used to read lines for user answers? (`ldd` may help)
 [+] Correct!
 ```
 
-```
+```bash
 $ gdb licence
 ...
 pwndbg> info address main
@@ -50,7 +50,7 @@ What is the address of the `main` function?
 [+] Correct!
 ```
 
-```
+```bash
 pwndbg> disassemble main
 Dump of assembler code for function main:
    0x0000000000401172 <+0>:     push   rbp
@@ -88,7 +88,7 @@ How many calls to `puts` are there in `main`? (using a decompiler may help)
 [+] Correct!
 ```
 
-```
+```bash
 (Ghidra)
 iVar1 = strcmp(local_10,"PasswordNumeroUno");
 if (iVar1 != 0) {
@@ -102,7 +102,7 @@ What is the first password?
 [+] Correct!
 ```
 
-```
+```c++
 reverse(&var_1c, "0wTdr0wss4P", 0xb);
 char* rax_4 = readline("Getting harder - what's the seco…");
 if (strcmp(rax_4, &var_1c) != 0)
@@ -117,7 +117,7 @@ What is the real second password?
 [+] Correct!
 ```
 
-```
+```c++
 xor(&var_38, &t2, 0x11, 0x13);
 char* rax_8 = readline("Your final test - give me the th…");
 if (strcmp(rax_8, &var_38) == 0)
@@ -128,7 +128,7 @@ What is the XOR key used to encode the third password?
 [+] Correct!
 ```
 
-```  
+```c++
 00404070 47              char       'G'
 00404071 7b              char       '{'
 00404072 7a              char       'z'

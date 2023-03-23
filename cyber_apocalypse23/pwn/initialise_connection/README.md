@@ -12,7 +12,7 @@ Tags: _pwn_
 ## Solution
 For this challenge to solve, all information are in the description.
 
-```
+```bash
 $ nc 165.232.98.69 32028
 
 ▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣
@@ -24,3 +24,5 @@ $ nc 165.232.98.69 32028
 >> 1
 HTB{g3t_r34dy_f0r_s0m3_pwn}
 ```
+
+Flag `HTB{g3t_r34dy_f0r_s0m3_pwn}`

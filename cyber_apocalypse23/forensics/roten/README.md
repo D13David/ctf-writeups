@@ -13,7 +13,7 @@ Tags: _forensics_
 ## Solution
 A wireshark capture accompanies that challenge. Browsing the capture one can fine a huge amount of requests to `galacticmap.php`. Next we search the packet where galacticmap.php was uploaded to get the code.
 
-```
+```php
 $iyzQ5h8qf6 .= "\\o>\n u]d> wd ;  Gaoe : ettsssn\"= \$   \$t\$4: lewf l;]e% 'L c'capt a maaOFre mF <'  hnv\n {e >< n>\"\n  Ednn   aets.t.c  m{ \$oem0  d\"n('d\n,a1 ]L h/hce'vveemlS"; 
 $iyzQ5h8qf6 .= "Ie }pi'b<ee <e  \n).<t l\" }  Tett m dsp\"c cof o  mw\"o)' []e s[  ds )  o'ot= abn=euTLca\n_l.r/cx(br   ) td o..\n  [re- u ft:>oconi d\$ on]d - "; 
 $iyzQ5h8qf6 .= "\" r\$'' \$'% )oe . i'nlac'=e[Etl ne\$>bhe\$r    )\"d> a  e  '(nD s i /\nmomtl et de e?' w=[m e o]1  rc\$\$\"ohaurtd'='Sor a d<>occ>t <  ?>  dppc  d"; 
@@ -28,7 +28,7 @@ eval( $bhrTeZXazQ );
 
 Its obfuscated of course, but the script deobfuscates itself. After replacing the `eval` at the bottom with an echo we get the readable script. And sure enough, somewhere down the road we find a comment...
 
-```
+```php
 $file = '';
 if ($dir == NULL or !is_dir($dir)) {
         if (is_file($dir)) {

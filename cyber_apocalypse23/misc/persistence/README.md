@@ -11,7 +11,7 @@ Tags: _misc_
 
 ## Solution
 For this challenge it's all in the description. We need to frequently request the `/flag` endpoint until we are presented with the flag. For this we need a [`script`](solution.py).
-```
+```python
 import requests
 
 for i in range(0,20000):

@@ -13,7 +13,7 @@ Tags: _rev_
 ## Solution
 For this challenge there are three files. Two wav files and a python script. Looking at the script it can be seen that the input file `flag.wav` was overlayd with random amplitudes. We basically also get the amplited in form of a second wav `impulse_response.wav`.
 
-```
+```python
 import numpy as np
 import soundfile as sf
 
@@ -43,7 +43,7 @@ sf.write('shuffled_flag.wav', shuffled_flag, rate)
 
 Reversing this is actually very easy. The random amplitudes can be recreated from `impulse_response.wav` and with that we can reverse the overlay in `shuffled_flag.wav` signal by [`dividing it by the amplitudes`](solution.py).
 
-```
+```python
 import numpy as np
 import soundfile as sf
 

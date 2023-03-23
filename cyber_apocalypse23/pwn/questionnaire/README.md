@@ -71,7 +71,7 @@ NX                            : ✓
 PIE                           : ✘
 Fortify                       : ✘
 RelRO                         : Partial
-```
+
 [*] Question number 0x1:
 
 Is this a '32-bit' or '64-bit' ELF? (e.g. 1337-bit)
@@ -283,3 +283,5 @@ Great job! It's high time you solved your first challenge! Here is the flag!
 
 HTB{th30ry_bef0r3_4cti0n}
 ```
+
+Flag `HTB{th30ry_bef0r3_4cti0n}`

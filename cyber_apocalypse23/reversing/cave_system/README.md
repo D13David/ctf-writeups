@@ -13,7 +13,7 @@ Tags: _rev_
 ## Solution
 After opening the executable `cave` in Ghidra we are presented with an huge if expression. After some cleaning one can see that the expression is pretty much a bunch of equations. Also we have the first three values given since they are hard tested against `HTB{`.
 
-```
+```c++
 printf("What route will you take out of the cave? ");
   fgets((char *)&local_88,0x80,stdin);
   iVar1 = memcmp(&local_88,&DAT_00102033,4);
@@ -140,7 +140,8 @@ printf("What route will you take out of the cave? ");
   }
 ```
 The whole thing can then be solved be replacing known values and calculating other unknowns until we have all values solved. Taking into account byte range and byte overflow of course. After doing this we have the full list of values:
-```
+
+```c++
 s[0] = 72           H
 s[1] = 84           T 
 s[2] = 66           B
@@ -211,4 +212,4 @@ BYTE3(v11) = 33     !
 BYTE4(v11) = 125    }
 ```
 
-And also the flag `Flag HTB{H0p3_u_d1dn't_g3t_th15_by_h4nd,1t5_4_pr3tty_l0ng_fl4g!!!}`.
+And also the flag `HTB{H0p3_u_d1dn't_g3t_th15_by_h4nd,1t5_4_pr3tty_l0ng_fl4g!!!}`.

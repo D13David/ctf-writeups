@@ -12,7 +12,7 @@ Tags: _misc_
 
 ## Solution
 We are provided with some files. The interesting part is an executable that lets you play a game of rock-paper-scissors. Opening `janken` in Ghidra gives us the following code:
-```
+```c++
 void game(void)
 
 {
@@ -83,7 +83,7 @@ The problem is that our input is the string that is scanned, so we can easily ju
 
 Writing a short [`script`](solution.py) that will play against the computer until the flag is reveiled.
 
-```
+```python
 #!/usr/bin/env python3
 
 from pwn import *

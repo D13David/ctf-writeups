@@ -13,7 +13,7 @@ Tags: _crypto_
 ## Solution
 Inspecting the provided python code we can see text is encrypted with RSA. The weak point is that `e` is choosen to be very small. Therefore a valid approach is to just inverse the encryption by [`taking the eth-root`](solution.py).
 
-```
+```python
 from gmpy2 import iroot
 from Crypto.Util.number import long_to_bytes
 

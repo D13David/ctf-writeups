@@ -17,3 +17,5 @@ Delivered is a network packet capture we can look at. The title of the challenge
 $ strings capture.pcap | grep HTB
 HTB{th3s3_4l13ns_st1ll_us3_HTTP}
 ```
+
+Flag `HTB{th3s3_4l13ns_st1ll_us3_HTTP}`
