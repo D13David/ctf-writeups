@@ -63,4 +63,4 @@ undefined8 main(void)
 
 We can see that fgets reads to `&local_48` and data is written down to through local_40, local_38, ... to local_10. To get the flag the pieces of the expression in the if statement need to be sorted accourding to their memory layout.
 
-After doing this one can easily read the flag `HTB{br0k3n_4p4rt_n3ver_t0_b3_r3p41r3d}`.
+After doing this one can easily read the flag `HTB{br0k3n_4p4rt,n3ver_t0_b3_r3p41r3d}`.
