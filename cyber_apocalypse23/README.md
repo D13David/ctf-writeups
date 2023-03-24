@@ -1,7 +1,7 @@
 # Hack The Boo 2022
 
 ![sdfsdf](banner-821.jpg)
-Credits [HTB](http://ctf.hackthebox.com)
+Credits [HTB](http://ctf.hackthebox.com), [`Writeups`](list_of_writeups.md)
 
 ## Pwn
 
