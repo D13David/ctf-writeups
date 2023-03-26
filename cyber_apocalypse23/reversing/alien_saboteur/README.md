@@ -391,7 +391,7 @@ So the keycode was correct, but now we need a passphrase.
 
 One interessting side note: Parts of the image are encrypted and are only decrypted when the correct keycode is entered. Therefore it's not immediately possible to dump the whole dissassembly although we don't really need the keycode but can also patch JLE on offset 126h to a JUMP or JNE.
 
-Side note two: after checking the keycode a operation called 'inv' is called. This is by far the most complex operation popping some values from the stack and issuing a syscall (101).
+Side note two: after checking the keycode a operation called 'inv' is called. This is by far the most complex operation popping some values from the stack and issuing a syscall (101) to ptrace. While this isn't a real blocker with this approach of analysing the challenge, the call is intended as anti-debugging technique as the call will fail to attach a debugger when the binary is already inspected with gdb or likewise. To get around this with an dynamic analysis approach (e.g. stepping the flow with gdb) the bin can be patched by replacing INV with a JMP for exmaple.
 
 ```
 01ec    MOV [15], 0
@@ -400,7 +400,7 @@ Side note two: after checking the keycode a operation called 'inv' is called. Th
 0204    INV
 ```
 
-The result is assumed to be 4011. The code can easily be manipulated to also run in windows (or just to avoid the syscall alltogether).
+For us, we can directly manipulate the behaviour of the VM allowing us to sidestep the issue and also adding support to run the program on windows. The result is assumed to be 4011, so we write that directly to memory.
 
 ```c++
 void vm_inv(vm_t* vm) 
@@ -474,7 +474,7 @@ The next part is again, outputting text and reading user input. Afterwards the i
 0456    JLE 0396, [28], [29]    args: 36, 35            # outer loop
 ```
 
-This looks like something. But it's essencially only a outer loop and two inner loops. The first one scrambles the user input and the second one applies an xor. This is done 35 times and then the user input is surely unrecoginzable. Here's some pseudocode:
+This looks like something. But it's essencially only a outer loop and two inner loops. The first one scrambles the user input and the second one applies an xor. This is done 36 times and then the user input is surely unrecoginzable. Here's some pseudocode:
 
 ```python
     for i in range(0,36):
