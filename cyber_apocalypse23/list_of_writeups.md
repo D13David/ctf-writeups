@@ -12,6 +12,7 @@
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://fazect.github.io/htb2023/
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Questionnair
 - https://medium.com/@damaidec/cyber-apocalypse-2023-writeup-308ef9a94828
 - https://4trxia.github.io/posts/Hackthebox-ctf-2023/
@@ -24,6 +25,7 @@
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://fazect.github.io/htb2023/
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/7
 ## Getting Started
 - https://github.com/An00bRektn/CTF/tree/main/live_events/htb_cyber_apocalypse_23/
 - https://medium.com/@damaidec/cyber-apocalypse-2023-writeup-308ef9a94828
@@ -37,6 +39,7 @@
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://fazect.github.io/htb2023/
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Labyrinth
 - https://medium.com/@damaidec/cyber-apocalypse-2023-writeup-308ef9a94828
 - https://www.youtube.com/watch?v=WqVg5dNgO9Q
@@ -98,6 +101,7 @@
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://fazect.github.io/htb2023/
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Gunhead
 - https://github.com/asempire/CTFs/blob/main/ca23/ca23.md
 - https://github.com/f0rk3b0mb/htb-cyberapocalypse-2023-writeup
@@ -116,6 +120,7 @@
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://github.com/SwordBreak3r/CyberApocalypse2023
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Drobots
 - https://github.com/asempire/CTFs/blob/main/ca23/ca23.md
 - https://github.com/f0rk3b0mb/htb-cyberapocalypse-2023-writeup
@@ -133,6 +138,7 @@
 - https://github.com/SwordBreak3r/CyberApocalypse2023
 - https://fazect.github.io/htb2023/
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Passman
 - https://github.com/asempire/CTFs/blob/main/ca23/ca23.md
 - https://github.com/f0rk3b0mb/htb-cyberapocalypse-2023-writeup
@@ -148,6 +154,7 @@
 - https://www.youtube.com/watch?v=qpeJrt_ITfo&feature=youtu.be
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Orbital
 - https://github.com/asempire/CTFs/blob/main/ca23/ca23.md
 - https://github.com/f0rk3b0mb/htb-cyberapocalypse-2023-writeup
@@ -163,6 +170,7 @@
 - https://zer0dac.medium.com/cyber-apocalypse-2023-the-cursed-mission-f4f52a97e485
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Didactic Octo Paddles
 - https://github.com/asempire/CTFs/blob/main/ca23/ca23.md
 - https://github.com/f0rk3b0mb/htb-cyberapocalypse-2023-writeup
@@ -216,6 +224,7 @@
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://www.youtube.com/watch?v=0sLT2JHr7Ps
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Shooting 101
 - https://www.youtube.com/watch?v=WqVg5dNgO9Q
 - https://medium.com/@gecr07/htb-cyber-apocalypse-ctf-2023-blockchain-shooting-101-4e03c1f3710c
@@ -229,6 +238,7 @@
 - https://www.youtube.com/watch?v=E9t-HH9DY2A&feature=youtu.be
 - https://kypanz.github.io/jekyll/update/2023/03/24/Shooting-101.html
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## The Art of Deception
 - https://github.com/rafiina/CTF-Write-Ups/tree/main/Cyber-Apocalypse-2023
 - https://github.com/NickBot09/HTB_Cyber_Apocalypse_Blockchain/blob/main/README.md
@@ -248,6 +258,7 @@
 - https://github.com/LazyTitan33/CTF-Writeups/tree/main/HTB%20-%20CyberApocalypse_2023
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Critical Flight
 - https://medium.com/@damaidec/cyber-apocalypse-2023-writeup-308ef9a94828
 - https://cristi075.github.io/HTB-Cyber-Apocalypse-2023-Critical-Flight
@@ -257,6 +268,7 @@
 - https://github.com/LazyTitan33/CTF-Writeups/tree/main/HTB%20-%20CyberApocalypse_2023
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Debug
 - https://medium.com/@damaidec/cyber-apocalypse-2023-writeup-308ef9a94828
 - https://cristi075.github.io/HTB-Cyber-Apocalypse-2023-Debug
@@ -283,6 +295,7 @@
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://fazect.github.io/htb2023/
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Needle in a Haystack
 - https://github.com/An00bRektn/CTF/tree/main/live_events/htb_cyber_apocalypse_23/
 - https://medium.com/@damaidec/cyber-apocalypse-2023-writeup-308ef9a94828
@@ -293,6 +306,7 @@
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://fazect.github.io/htb2023/
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## She Shells C Shells
 - https://github.com/An00bRektn/CTF/tree/main/live_events/htb_cyber_apocalypse_23/
 - https://medium.com/@damaidec/cyber-apocalypse-2023-writeup-308ef9a94828
@@ -300,6 +314,7 @@
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://fazect.github.io/htb2023/
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Hunting License
 - https://github.com/An00bRektn/CTF/tree/main/live_events/htb_cyber_apocalypse_23/
 - https://medium.com/@damaidec/cyber-apocalypse-2023-writeup-308ef9a94828
@@ -309,6 +324,7 @@
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://fazect.github.io/htb2023/
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Cave System
 - https://github.com/An00bRektn/CTF/tree/main/live_events/htb_cyber_apocalypse_23/
 - https://github.com/p4yl0ad/hackthebox_rev_cavesystem_angr
@@ -338,6 +354,7 @@
 - https://github.com/LazyTitan33/CTF-Writeups/tree/main/HTB%20-%20CyberApocalypse_2023
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Mysterious Learnings
 - https://github.com/An00bRektn/CTF/tree/main/live_events/htb_cyber_apocalypse_23/
 - https://github.com/amygutierrez/CTFCyberApocalypse2023
@@ -376,6 +393,7 @@
 - https://github.com/SwordBreak3r/CyberApocalypse2023
 - https://fazect.github.io/htb2023/
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Hijack
 - https://github.com/f0rk3b0mb/htb-cyberapocalypse-2023-writeup
 - https://github.com/An00bRektn/CTF/tree/main/live_events/htb_cyber_apocalypse_23/
@@ -387,6 +405,7 @@
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://github.com/SwordBreak3r/CyberApocalypse2023
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Restricted
 - https://docs404.com/hack-the-box-ca-2023/
 - https://github.com/Fra-SM/CyberApocalypse2023_CTF_Writeups
@@ -396,6 +415,7 @@
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://fazect.github.io/htb2023/
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Remote computation
 - https://github.com/An00bRektn/CTF/tree/main/live_events/htb_cyber_apocalypse_23/
 - https://docs404.com/hack-the-box-ca-2023/
@@ -406,6 +426,7 @@
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://github.com/SwordBreak3r/CyberApocalypse2023
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Janken
 - https://github.com/An00bRektn/CTF/tree/main/live_events/htb_cyber_apocalypse_23/
 - https://www.youtube.com/watch?v=rCzmJchv8RI
@@ -425,6 +446,7 @@
 - https://github.com/sbencoding/htb_ca2023_writeups
 ## Calibrator
 - https://discord.com/channels/473760315293696010/1088465611065151548/1088465611065151548
+- https://github.com/dbissell6/MISC/blob/main/Calibration.md
 
 ## Forensics
 ## Plaintext Tleasure
@@ -438,6 +460,7 @@
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://fazect.github.io/htb2023/
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Alien Cradle
 - https://github.com/asempire/CTFs/blob/main/ca23/ca23.md
 - https://medium.com/@damaidec/cyber-apocalypse-2023-writeup-308ef9a94828
@@ -449,6 +472,7 @@
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://fazect.github.io/htb2023/
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Extraterrestrial Persistence
 - https://github.com/An00bRektn/CTF/tree/main/live_events/htb_cyber_apocalypse_23/
 - https://medium.com/@damaidec/cyber-apocalypse-2023-writeup-308ef9a94828
@@ -460,6 +484,7 @@
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://fazect.github.io/htb2023/
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Roten
 - https://github.com/An00bRektn/CTF/tree/main/live_events/htb_cyber_apocalypse_23/
 - https://medium.com/@damaidec/cyber-apocalypse-2023-writeup-308ef9a94828
@@ -470,6 +495,7 @@
 - https://github.com/LazyTitan33/CTF-Writeups/tree/main/HTB%20-%20CyberApocalypse_2023
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Packet Cyclone
 - https://medium.com/@damaidec/cyber-apocalypse-2023-writeup-308ef9a94828
 - https://docs404.com/hack-the-box-ca-2023/
@@ -480,11 +506,13 @@
 - https://github.com/LazyTitan33/CTF-Writeups/tree/main/HTB%20-%20CyberApocalypse_2023
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Artifacts of Dangerous Sightings
 - https://s1n1st3r.gitbook.io/ctf-writeups/htb-cyber-apocalypse-2023/2023-htb-cyber-apocalypse-challenges/forensics-artifacts-of-dangerous-sightings
 - https://nitrolabs.xyz/posts/HTB-CA2023-Forensics/
 - https://pjg1.netlify.app/htbca23-artifacts
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Relic Maps
 - https://s1n1st3r.gitbook.io/ctf-writeups/htb-cyber-apocalypse-2023/2023-htb-cyber-apocalypse-challenges/forensics-relic-maps
 - https://github.com/An00bRektn/CTF/tree/main/live_events/htb_cyber_apocalypse_23/
@@ -496,6 +524,7 @@
 - https://github.com/LazyTitan33/CTF-Writeups/tree/main/HTB%20-%20CyberApocalypse_2023
 - https://fazect.github.io/htb2023/
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Bashic ransomware
 - https://github.com/An00bRektn/CTF/tree/main/live_events/htb_cyber_apocalypse_23/
 - https://starrylord.ch/blog/htb-cyberapocalypse-2023-bashic-ransomware
@@ -506,6 +535,7 @@
 - https://qn0x.xyz/blog/infosec/hack-the-box/ctf/writeup/2023/03/23/writeup-interstellar-c2.html
 - https://notateamserver.xyz/ca23-interstellar-c2/
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Pandora's Bane
 - https://github.com/imflikk/ctf-writeups/blob/main/Cyber-Apocalypse/Forensics/Pandoras%20Bane.md
 - https://qn0x.xyz/blog/infosec/hack-the-box/ctf/writeup/2023/03/24/writeup-pandoras-bane.html
@@ -527,6 +557,7 @@
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://fazect.github.io/htb2023/
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Small StEps
 - https://github.com/An00bRektn/CTF/tree/main/live_events/htb_cyber_apocalypse_23/
 - https://medium.com/@damaidec/cyber-apocalypse-2023-writeup-308ef9a94828
@@ -538,6 +569,7 @@
 - https://gitlab.com/Cryptopone/cyberapocalypse2023-writeups
 - https://fazect.github.io/htb2023/
 - https://github.com/sbencoding/htb_ca2023_writeups
+- https://twc1rcle.com/ctf/team/ctf_writeups/cyber_apocalypse_2023/
 ## Perfect Synchronization
 - https://github.com/An00bRektn/CTF/tree/main/live_events/htb_cyber_apocalypse_23/
 - https://www.youtube.com/watch?v=tnG35ycXPL0
