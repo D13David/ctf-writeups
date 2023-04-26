@@ -376,6 +376,7 @@
 - https://github.com/4za4s/HTB-CyberApocalypse-2023-CTF
 - https://colab.research.google.com/drive/1oHAVTbe1fVNjogWuhdOI2Wa6X1n3XLa6?usp=sharing
 - https://github.com/Taoudi/Cyber_Apocalypse/blob/main/HTB.ipynb
+- https://colab.research.google.com/drive/1oHAVTbe1fVNjogWuhdOI2Wa6X1n3XLa6?usp=sharing
 ## The Trial of the Sky
 - 
 
