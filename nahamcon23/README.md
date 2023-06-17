@@ -23,6 +23,10 @@
 
 [Open Sesame](pwn/open_sesame/README.md)
 
+## Reverse Engineering 
+
+[writeright](rev/writeright/README.md)
+
 ## Forensics
 
 [Fetch](forensics/fetch/README.md)\
