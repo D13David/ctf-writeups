@@ -1,0 +1,1920 @@
+0001: OBJ       [0], G['string']
+0002: LOAD      [0], char               (table): ???
+0003: OBJ       [1], G['string']
+0004: LOAD      [1], byte               (table): ???
+0005: OBJ       [2], G['string']
+0006: LOAD      [2], sub                (table): ???
+0007: OBJ       [3], G['bit32']
+0008: JE        000a, [3]               (table): ???
+000b: LOAD      [4], bxor               (table): ???
+000c: OBJ       [5], G['table']
+000d: LOAD      [5], concat             (table): ???
+000e: OBJ       [6], G['table']
+000f: LOAD      [6], insert             (table): ???
+0010: LOAD      [7], 0                           0 mem[6] (f): table.insert 1 mem[0] (f): string.char 2 mem[4] (f): bit32.bxor 3 mem[1] (f): string.byte 4 mem[2] (f): string.sub 5 mem[5] (f): table.concat
+0017: OBJ       [8], G['io']
+0018: LOAD      [8], write              (table): ???
+0019: MOV       [9], (s): 205f5f5f5f5f202020202020202020202020205f20202020205f5f5f205f5f5f5f5f205f5f5f5f200a
+001a: CALL      8               (s):  _____             _     ___ _____ ____ 0a  _____             _     ___ _____ ____
+
+001b: OBJ       [8], G['io']
+001c: LOAD      [8], write              (table): ???
+001d: MOV       [9], (s): 7c2020205f5f7c5f5f5f205f5f5f205f5f5f7c207c5f5f5f7c2020207c5f2020205f7c20205f5f7c0a
+001e: CALL      8               (s): |   __|___ ___ ___| |___|   |_   _|  __|0a |   __|___ ___ ___| |___|   |_   _|  __|
+001f: OBJ       [8], G['io']
+0020: LOAD      [8], write              (table): ???
+0021: MOV       [9], (s): 7c20207c20207c202e207c202e207c202e207c207c202d5f7c202d3c20207c207c207c20205f5f7c0a
+0022: CALL      8               (s): |  |  | . | . | . | | -_| -<  | | |  __|0a |  |  | . | . | . | | -_| -<  | | |  __|
+0023: OBJ       [8], G['io']
+0024: LOAD      [8], write              (table): ???
+0025: MOV       [9], (s): 7c5f5f5f5f5f7c5f5f5f7c5f5f5f7c5f20207c5f7c5f5f5f7c5f5f5f7c207c5f7c207c5f7c2020200a
+0026: CALL      8               (s): |_____|___|___|_  |_|___|___| |_| |_|   0a |_____|___|___|_  |_|___|___| |_| |_|
+
+0027: OBJ       [8], G['io']
+0028: LOAD      [8], write              (table): ???
+0029: MOV       [9], (s): 20202020202020202020202020207c5f5f5f7c202020202020205a65724d617474202d206d697363200a
+002a: CALL      8               (s):               |___|       ZerMatt - misc 0a               |___|       ZerMatt - misc
+
+002b: OBJ       [8], G['io']
+002c: LOAD      [8], write              (table): ???
+002d: MOV       [9], [7]                (f): unknown
+002e: MOV       [10], (s): 4091
+002f: MOV       [11], (s): 7eb1a3bb4586dba7
+0030: LDTBL1    [9], 10 11              (s): 4091 (s): 7eb1a3bb4586dba7
+0001: TABLE     [2]
+0002: MOV       [3], (n): 1
+0003: LDCNT     [4] #[0]                (n): 2
+0004: MOV       [5], (n): 1
+0005: JRE(W)    0023, [3]               (n): 1 (n): 1 (n): 2
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): 4091
+000d: MOV       [14], [6]               (n): 1
+000e: ADD       [15], [6] 1             (n): 1
+000f: LDTBL1    [12], 13 15             (s): 4091 (n): 1 (n): 2 (s): @91
+0010: CALL      [11], 11                (n): 64
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 7eb1a3bb4586dba7
+0014: SUB       [15], [6] 1             (n): 1
+0015: LDCNT     [16] #[1]               (n): 8
+0016: MOD       [15], [15] [16]         (n): 0 (n): 8
+0017: ADD       [15], 1                 (n): 0
+0018: SUB       [16], [6] 1             (n): 1
+0019: LDCNT     [17] #[1]               (n): 8
+001a: MOD       [16], [16] [17]         (n): 0 (n): 8
+001b: ADD       [16], 1                 (n): 0
+001c: ADD       [16], [16] 1            (n): 1
+001d: LDTBL1    [13], 14 16             (s): 7eb1a3bb4586dba7 (n): 1 (n): 2 (s): ~b1
+001e: LDTBL3    [12], 13 #tblcnt                (n): 126
+001f: CALL      [10], 10                (n): 62
+0020: MOD       [10], [10] 256          (n): 62
+0021: LDTBL2    [9], 10 10              (n): 62 (s): >
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 2 (n): 2
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): 4091
+000d: MOV       [14], [6]               (n): 2
+000e: ADD       [15], [6] 1             (n): 2
+000f: LDTBL1    [12], 13 15             (s): 4091 (n): 2 (n): 3 (s): 91
+0010: CALL      [11], 11                (n): 145
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 7eb1a3bb4586dba7
+0014: SUB       [15], [6] 1             (n): 2
+0015: LDCNT     [16] #[1]               (n): 8
+0016: MOD       [15], [15] [16]         (n): 1 (n): 8
+0017: ADD       [15], 1                 (n): 1
+0018: SUB       [16], [6] 1             (n): 2
+0019: LDCNT     [17] #[1]               (n): 8
+001a: MOD       [16], [16] [17]         (n): 1 (n): 8
+001b: ADD       [16], 1                 (n): 1
+001c: ADD       [16], [16] 1            (n): 2
+001d: LDTBL1    [13], 14 16             (s): 7eb1a3bb4586dba7 (n): 2 (n): 3 (s): b1a3
+001e: LDTBL3    [12], 13 #tblcnt                (n): 177
+001f: CALL      [10], 10                (n): 32
+0020: MOD       [10], [10] 256          (n): 32
+0021: LDTBL2    [9], 10 10              (n): 32 (s):
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 3 (n): 2
+0024: MOV       [3], stack[5]           (f): table.concat
+0025: MOV       [4], [2]                (table): ???
+0026: CALL      [3], 3, 4>
+(s): >
+0031: CALL      [8], 8 #tblcnt          (n): 9 >
+0032: OBJ       [8], G['io']
+0033: LOAD      [8], read               (table): ???
+0034: CALL      [8], 8 #tblcnt
+
+0035: MOV       G['s'],                 (s):
+0036: OBJ       [8], G['s']
+0037: MOV       [9], [7]                (f): unknown
+0038: MOV       [10], (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+0039: MOV       [11], (s): 9c43ad4aa5
+003a: CALL      [9], 9, 11
+0001: TABLE     [2]
+0002: MOV       [3], (n): 1
+0003: LDCNT     [4] #[0]                (n): 55
+0004: MOV       [5], (n): 1
+0005: JRE(W)    0023, [3]               (n): 1 (n): 1 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 1
+000e: ADD       [15], [6] 1             (n): 1
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 1 (n): 2 (s): df17
+0010: CALL      [11], 11                (n): 223
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 1
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 0 (n): 5
+0017: ADD       [15], 1                 (n): 0
+0018: SUB       [16], [6] 1             (n): 1
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 0 (n): 5
+001b: ADD       [16], 1                 (n): 0
+001c: ADD       [16], [16] 1            (n): 1
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 1 (n): 2 (s): 9cC
+001e: LDTBL3    [12], 13 #tblcnt                (n): 156
+001f: CALL      [10], 10                (n): 67
+0020: MOD       [10], [10] 256          (n): 67
+0021: LDTBL2    [9], 10 10              (n): 67 (s): C
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 2 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 2
+000e: ADD       [15], [6] 1             (n): 2
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 2 (n): 3 (s): 17eb
+0010: CALL      [11], 11                (n): 23
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 2
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 1 (n): 5
+0017: ADD       [15], 1                 (n): 1
+0018: SUB       [16], [6] 1             (n): 2
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 1 (n): 5
+001b: ADD       [16], 1                 (n): 1
+001c: ADD       [16], [16] 1            (n): 2
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 2 (n): 3 (s): Cad
+001e: LDTBL3    [12], 13 #tblcnt                (n): 67
+001f: CALL      [10], 10                (n): 84
+0020: MOD       [10], [10] 256          (n): 84
+0021: LDTBL2    [9], 10 10              (n): 84 (s): T
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 3 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 3
+000e: ADD       [15], [6] 1             (n): 3
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 3 (n): 4 (s): eb1
+0010: CALL      [11], 11                (n): 235
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 3
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 2 (n): 5
+0017: ADD       [15], 1                 (n): 2
+0018: SUB       [16], [6] 1             (n): 3
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 2 (n): 5
+001b: ADD       [16], 1                 (n): 2
+001c: ADD       [16], [16] 1            (n): 3
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 3 (n): 4 (s): adJ
+001e: LDTBL3    [12], 13 #tblcnt                (n): 173
+001f: CALL      [10], 10                (n): 70
+0020: MOD       [10], [10] 256          (n): 70
+0021: LDTBL2    [9], 10 10              (n): 70 (s): F
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 4 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 4
+000e: ADD       [15], [6] 1             (n): 4
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 4 (n): 5 (s): 1e4
+0010: CALL      [11], 11                (n): 49
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 4
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 3 (n): 5
+0017: ADD       [15], 1                 (n): 3
+0018: SUB       [16], [6] 1             (n): 4
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 3 (n): 5
+001b: ADD       [16], 1                 (n): 3
+001c: ADD       [16], [16] 1            (n): 4
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 4 (n): 5 (s): Ja5
+001e: LDTBL3    [12], 13 #tblcnt                (n): 74
+001f: CALL      [10], 10                (n): 123
+0020: MOD       [10], [10] 256          (n): 123
+0021: LDTBL2    [9], 10 10              (n): 123 (s): {
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 5 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 5
+000e: ADD       [15], [6] 1             (n): 5
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 5 (n): 6 (s): e4e8
+0010: CALL      [11], 11                (n): 228
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 5
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 4 (n): 5
+0017: ADD       [15], 1                 (n): 4
+0018: SUB       [16], [6] 1             (n): 5
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 4 (n): 5
+001b: ADD       [16], 1                 (n): 4
+001c: ADD       [16], [16] 1            (n): 5
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 5 (n): 6 (s): a5
+001e: LDTBL3    [12], 13 #tblcnt                (n): 165
+001f: CALL      [10], 10                (n): 65
+0020: MOD       [10], [10] 256          (n): 65
+0021: LDTBL2    [9], 10 10              (n): 65 (s): A
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 6 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 6
+000e: ADD       [15], [6] 1             (n): 6
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 6 (n): 7 (s): e81c
+0010: CALL      [11], 11                (n): 232
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 6
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 5 (n): 5
+0017: ADD       [15], 1                 (n): 0
+0018: SUB       [16], [6] 1             (n): 6
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 5 (n): 5
+001b: ADD       [16], 1                 (n): 0
+001c: ADD       [16], [16] 1            (n): 1
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 1 (n): 2 (s): 9cC
+001e: LDTBL3    [12], 13 #tblcnt                (n): 156
+001f: CALL      [10], 10                (n): 116
+0020: MOD       [10], [10] 256          (n): 116
+0021: LDTBL2    [9], 10 10              (n): 116 (s): t
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 7 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 7
+000e: ADD       [15], [6] 1             (n): 7
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 7 (n): 8 (s): 1cc1
+0010: CALL      [11], 11                (n): 28
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 7
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 6 (n): 5
+0017: ADD       [15], 1                 (n): 1
+0018: SUB       [16], [6] 1             (n): 7
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 6 (n): 5
+001b: ADD       [16], 1                 (n): 1
+001c: ADD       [16], [16] 1            (n): 2
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 2 (n): 3 (s): Cad
+001e: LDTBL3    [12], 13 #tblcnt                (n): 67
+001f: CALL      [10], 10                (n): 95
+0020: MOD       [10], [10] 256          (n): 95
+0021: LDTBL2    [9], 10 10              (n): 95 (s): _
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 8 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 8
+000e: ADD       [15], [6] 1             (n): 8
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 8 (n): 9 (s): c1/
+0010: CALL      [11], 11                (n): 193
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 8
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 7 (n): 5
+0017: ADD       [15], 1                 (n): 2
+0018: SUB       [16], [6] 1             (n): 8
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 7 (n): 5
+001b: ADD       [16], 1                 (n): 2
+001c: ADD       [16], [16] 1            (n): 3
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 3 (n): 4 (s): adJ
+001e: LDTBL3    [12], 13 #tblcnt                (n): 173
+001f: CALL      [10], 10                (n): 108
+0020: MOD       [10], [10] 256          (n): 108
+0021: LDTBL2    [9], 10 10              (n): 108 (s): l
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 9 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 9
+000e: ADD       [15], [6] 1             (n): 9
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 9 (n): 10 (s): /c4
+0010: CALL      [11], 11                (n): 47
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 9
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 8 (n): 5
+0017: ADD       [15], 1                 (n): 3
+0018: SUB       [16], [6] 1             (n): 9
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 8 (n): 5
+001b: ADD       [16], 1                 (n): 3
+001c: ADD       [16], [16] 1            (n): 4
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 4 (n): 5 (s): Ja5
+001e: LDTBL3    [12], 13 #tblcnt                (n): 74
+001f: CALL      [10], 10                (n): 101
+0020: MOD       [10], [10] 256          (n): 101
+0021: LDTBL2    [9], 10 10              (n): 101 (s): e
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 10 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 10
+000e: ADD       [15], [6] 1             (n): 10
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 10 (n): 11 (s): c4ef
+0010: CALL      [11], 11                (n): 196
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 10
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 9 (n): 5
+0017: ADD       [15], 1                 (n): 4
+0018: SUB       [16], [6] 1             (n): 10
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 9 (n): 5
+001b: ADD       [16], 1                 (n): 4
+001c: ADD       [16], [16] 1            (n): 5
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 5 (n): 6 (s): a5
+001e: LDTBL3    [12], 13 #tblcnt                (n): 165
+001f: CALL      [10], 10                (n): 97
+0020: MOD       [10], [10] 256          (n): 97
+0021: LDTBL2    [9], 10 10              (n): 97 (s): a
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 11 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 11
+000e: ADD       [15], [6] 1             (n): 11
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 11 (n): 12 (s): ef7
+0010: CALL      [11], 11                (n): 239
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 11
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 10 (n): 5
+0017: ADD       [15], 1                 (n): 0
+0018: SUB       [16], [6] 1             (n): 11
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 10 (n): 5
+001b: ADD       [16], 1                 (n): 0
+001c: ADD       [16], [16] 1            (n): 1
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 1 (n): 2 (s): 9cC
+001e: LDTBL3    [12], 13 #tblcnt                (n): 156
+001f: CALL      [10], 10                (n): 115
+0020: MOD       [10], [10] 256          (n): 115
+0021: LDTBL2    [9], 10 10              (n): 115 (s): s
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 12 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 12
+000e: ADD       [15], [6] 1             (n): 12
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 12 (n): 13 (s): 7f2
+0010: CALL      [11], 11                (n): 55
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 12
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 11 (n): 5
+0017: ADD       [15], 1                 (n): 1
+0018: SUB       [16], [6] 1             (n): 12
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 11 (n): 5
+001b: ADD       [16], 1                 (n): 1
+001c: ADD       [16], [16] 1            (n): 2
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 2 (n): 3 (s): Cad
+001e: LDTBL3    [12], 13 #tblcnt                (n): 67
+001f: CALL      [10], 10                (n): 116
+0020: MOD       [10], [10] 256          (n): 116
+0021: LDTBL2    [9], 10 10              (n): 116 (s): t
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 13 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 13
+000e: ADD       [15], [6] 1             (n): 13
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 13 (n): 14 (s): f2#
+0010: CALL      [11], 11                (n): 242
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 13
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 12 (n): 5
+0017: ADD       [15], 1                 (n): 2
+0018: SUB       [16], [6] 1             (n): 13
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 12 (n): 5
+001b: ADD       [16], 1                 (n): 2
+001c: ADD       [16], [16] 1            (n): 3
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 3 (n): 4 (s): adJ
+001e: LDTBL3    [12], 13 #tblcnt                (n): 173
+001f: CALL      [10], 10                (n): 95
+0020: MOD       [10], [10] 256          (n): 95
+0021: LDTBL2    [9], 10 10              (n): 95 (s): _
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 14 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 14
+000e: ADD       [15], [6] 1             (n): 14
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 14 (n): 15 (s): #d1
+0010: CALL      [11], 11                (n): 35
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 14
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 13 (n): 5
+0017: ADD       [15], 1                 (n): 3
+0018: SUB       [16], [6] 1             (n): 14
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 13 (n): 5
+001b: ADD       [16], 1                 (n): 3
+001c: ADD       [16], [16] 1            (n): 4
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 4 (n): 5 (s): Ja5
+001e: LDTBL3    [12], 13 #tblcnt                (n): 74
+001f: CALL      [10], 10                (n): 105
+0020: MOD       [10], [10] 256          (n): 105
+0021: LDTBL2    [9], 10 10              (n): 105 (s): i
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 15 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 15
+000e: ADD       [15], [6] 1             (n): 15
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 15 (n): 16 (s): d1c3
+0010: CALL      [11], 11                (n): 209
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 15
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 14 (n): 5
+0017: ADD       [15], 1                 (n): 4
+0018: SUB       [16], [6] 1             (n): 15
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 14 (n): 5
+001b: ADD       [16], 1                 (n): 4
+001c: ADD       [16], [16] 1            (n): 5
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 5 (n): 6 (s): a5
+001e: LDTBL3    [12], 13 #tblcnt                (n): 165
+001f: CALL      [10], 10                (n): 116
+0020: MOD       [10], [10] 256          (n): 116
+0021: LDTBL2    [9], 10 10              (n): 116 (s): t
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 16 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 16
+000e: ADD       [15], [6] 1             (n): 16
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 16 (n): 17 (s): c34
+0010: CALL      [11], 11                (n): 195
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 16
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 15 (n): 5
+0017: ADD       [15], 1                 (n): 0
+0018: SUB       [16], [6] 1             (n): 16
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 15 (n): 5
+001b: ADD       [16], 1                 (n): 0
+001c: ADD       [16], [16] 1            (n): 1
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 1 (n): 2 (s): 9cC
+001e: LDTBL3    [12], 13 #tblcnt                (n): 156
+001f: CALL      [10], 10                (n): 95
+0020: MOD       [10], [10] 256          (n): 95
+0021: LDTBL2    [9], 10 10              (n): 95 (s): _
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 17 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 17
+000e: ADD       [15], [6] 1             (n): 17
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 17 (n): 18 (s): 4cc
+0010: CALL      [11], 11                (n): 52
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 17
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 16 (n): 5
+0017: ADD       [15], 1                 (n): 1
+0018: SUB       [16], [6] 1             (n): 17
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 16 (n): 5
+001b: ADD       [16], 1                 (n): 1
+001c: ADD       [16], [16] 1            (n): 2
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 2 (n): 3 (s): Cad
+001e: LDTBL3    [12], 13 #tblcnt                (n): 67
+001f: CALL      [10], 10                (n): 119
+0020: MOD       [10], [10] 256          (n): 119
+0021: LDTBL2    [9], 10 10              (n): 119 (s): w
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 18 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 18
+000e: ADD       [15], [6] 1             (n): 18
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 18 (n): 19 (s): cc9
+0010: CALL      [11], 11                (n): 204
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 18
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 17 (n): 5
+0017: ADD       [15], 1                 (n): 2
+0018: SUB       [16], [6] 1             (n): 18
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 17 (n): 5
+001b: ADD       [16], 1                 (n): 2
+001c: ADD       [16], [16] 1            (n): 3
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 3 (n): 4 (s): adJ
+001e: LDTBL3    [12], 13 #tblcnt                (n): 173
+001f: CALL      [10], 10                (n): 97
+0020: MOD       [10], [10] 256          (n): 97
+0021: LDTBL2    [9], 10 10              (n): 97 (s): a
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 19 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 19
+000e: ADD       [15], [6] 1             (n): 19
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 19 (n): 20 (s): 9fa
+0010: CALL      [11], 11                (n): 57
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 19
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 18 (n): 5
+0017: ADD       [15], 1                 (n): 3
+0018: SUB       [16], [6] 1             (n): 19
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 18 (n): 5
+001b: ADD       [16], 1                 (n): 3
+001c: ADD       [16], [16] 1            (n): 4
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 4 (n): 5 (s): Ja5
+001e: LDTBL3    [12], 13 #tblcnt                (n): 74
+001f: CALL      [10], 10                (n): 115
+0020: MOD       [10], [10] 256          (n): 115
+0021: LDTBL2    [9], 10 10              (n): 115 (s): s
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 20 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 20
+000e: ADD       [15], [6] 1             (n): 20
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 20 (n): 21 (s): faf2
+0010: CALL      [11], 11                (n): 250
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 20
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 19 (n): 5
+0017: ADD       [15], 1                 (n): 4
+0018: SUB       [16], [6] 1             (n): 20
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 19 (n): 5
+001b: ADD       [16], 1                 (n): 4
+001c: ADD       [16], [16] 1            (n): 5
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 5 (n): 6 (s): a5
+001e: LDTBL3    [12], 13 #tblcnt                (n): 165
+001f: CALL      [10], 10                (n): 95
+0020: MOD       [10], [10] 256          (n): 95
+0021: LDTBL2    [9], 10 10              (n): 95 (s): _
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 21 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 21
+000e: ADD       [15], [6] 1             (n): 21
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 21 (n): 22 (s): f2,
+0010: CALL      [11], 11                (n): 242
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 21
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 20 (n): 5
+0017: ADD       [15], 1                 (n): 0
+0018: SUB       [16], [6] 1             (n): 21
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 20 (n): 5
+001b: ADD       [16], 1                 (n): 0
+001c: ADD       [16], [16] 1            (n): 1
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 1 (n): 2 (s): 9cC
+001e: LDTBL3    [12], 13 #tblcnt                (n): 156
+001f: CALL      [10], 10                (n): 110
+0020: MOD       [10], [10] 256          (n): 110
+0021: LDTBL2    [9], 10 10              (n): 110 (s): n
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 22 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 22
+000e: ADD       [15], [6] 1             (n): 22
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 22 (n): 23 (s): ,d9
+0010: CALL      [11], 11                (n): 44
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 22
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 21 (n): 5
+0017: ADD       [15], 1                 (n): 1
+0018: SUB       [16], [6] 1             (n): 22
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 21 (n): 5
+001b: ADD       [16], 1                 (n): 1
+001c: ADD       [16], [16] 1            (n): 2
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 2 (n): 3 (s): Cad
+001e: LDTBL3    [12], 13 #tblcnt                (n): 67
+001f: CALL      [10], 10                (n): 111
+0020: MOD       [10], [10] 256          (n): 111
+0021: LDTBL2    [9], 10 10              (n): 111 (s): o
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 23 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 23
+000e: ADD       [15], [6] 1             (n): 23
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 23 (n): 24 (s): d915
+0010: CALL      [11], 11                (n): 217
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 23
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 22 (n): 5
+0017: ADD       [15], 1                 (n): 2
+0018: SUB       [16], [6] 1             (n): 23
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 22 (n): 5
+001b: ADD       [16], 1                 (n): 2
+001c: ADD       [16], [16] 1            (n): 3
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 3 (n): 4 (s): adJ
+001e: LDTBL3    [12], 13 #tblcnt                (n): 173
+001f: CALL      [10], 10                (n): 116
+0020: MOD       [10], [10] 256          (n): 116
+0021: LDTBL2    [9], 10 10              (n): 116 (s): t
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 24 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 24
+000e: ADD       [15], [6] 1             (n): 24
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 24 (n): 25 (s): 15c4
+0010: CALL      [11], 11                (n): 21
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 24
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 23 (n): 5
+0017: ADD       [15], 1                 (n): 3
+0018: SUB       [16], [6] 1             (n): 24
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 23 (n): 5
+001b: ADD       [16], 1                 (n): 3
+001c: ADD       [16], [16] 1            (n): 4
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 4 (n): 5 (s): Ja5
+001e: LDTBL3    [12], 13 #tblcnt                (n): 74
+001f: CALL      [10], 10                (n): 95
+0020: MOD       [10], [10] 256          (n): 95
+0021: LDTBL2    [9], 10 10              (n): 95 (s): _
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 25 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 25
+000e: ADD       [15], [6] 1             (n): 25
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 25 (n): 26 (s): c4c3
+0010: CALL      [11], 11                (n): 196
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 25
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 24 (n): 5
+0017: ADD       [15], 1                 (n): 4
+0018: SUB       [16], [6] 1             (n): 25
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 24 (n): 5
+001b: ADD       [16], 1                 (n): 4
+001c: ADD       [16], [16] 1            (n): 5
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 5 (n): 6 (s): a5
+001e: LDTBL3    [12], 13 #tblcnt                (n): 165
+001f: CALL      [10], 10                (n): 97
+0020: MOD       [10], [10] 256          (n): 97
+0021: LDTBL2    [9], 10 10              (n): 97 (s): a
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 26 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 26
+000e: ADD       [15], [6] 1             (n): 26
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 26 (n): 27 (s): c3!
+0010: CALL      [11], 11                (n): 195
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 26
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 25 (n): 5
+0017: ADD       [15], 1                 (n): 0
+0018: SUB       [16], [6] 1             (n): 26
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 25 (n): 5
+001b: ADD       [16], 1                 (n): 0
+001c: ADD       [16], [16] 1            (n): 1
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 1 (n): 2 (s): 9cC
+001e: LDTBL3    [12], 13 #tblcnt                (n): 156
+001f: CALL      [10], 10                (n): 95
+0020: MOD       [10], [10] 256          (n): 95
+0021: LDTBL2    [9], 10 10              (n): 95 (s): _
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 27 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 27
+000e: ADD       [15], [6] 1             (n): 27
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 27 (n): 28 (s): !d4
+0010: CALL      [11], 11                (n): 33
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 27
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 26 (n): 5
+0017: ADD       [15], 1                 (n): 1
+0018: SUB       [16], [6] 1             (n): 27
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 26 (n): 5
+001b: ADD       [16], 1                 (n): 1
+001c: ADD       [16], [16] 1            (n): 2
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 2 (n): 3 (s): Cad
+001e: LDTBL3    [12], 13 #tblcnt                (n): 67
+001f: CALL      [10], 10                (n): 98
+0020: MOD       [10], [10] 256          (n): 98
+0021: LDTBL2    [9], 10 10              (n): 98 (s): b
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 28 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 28
+000e: ADD       [15], [6] 1             (n): 28
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 28 (n): 29 (s): d4>
+0010: CALL      [11], 11                (n): 212
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 28
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 27 (n): 5
+0017: ADD       [15], 1                 (n): 2
+0018: SUB       [16], [6] 1             (n): 28
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 27 (n): 5
+001b: ADD       [16], 1                 (n): 2
+001c: ADD       [16], [16] 1            (n): 3
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 3 (n): 4 (s): adJ
+001e: LDTBL3    [12], 13 #tblcnt                (n): 173
+001f: CALL      [10], 10                (n): 121
+0020: MOD       [10], [10] 256          (n): 121
+0021: LDTBL2    [9], 10 10              (n): 121 (s): y
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 29 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 29
+000e: ADD       [15], [6] 1             (n): 29
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 29 (n): 30 (s): >c0
+0010: CALL      [11], 11                (n): 62
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 29
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 28 (n): 5
+0017: ADD       [15], 1                 (n): 3
+0018: SUB       [16], [6] 1             (n): 29
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 28 (n): 5
+001b: ADD       [16], 1                 (n): 3
+001c: ADD       [16], [16] 1            (n): 4
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 4 (n): 5 (s): Ja5
+001e: LDTBL3    [12], 13 #tblcnt                (n): 74
+001f: CALL      [10], 10                (n): 116
+0020: MOD       [10], [10] 256          (n): 116
+0021: LDTBL2    [9], 10 10              (n): 116 (s): t
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 30 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 30
+000e: ADD       [15], [6] 1             (n): 30
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 30 (n): 31 (s): c0ff
+0010: CALL      [11], 11                (n): 192
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 30
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 29 (n): 5
+0017: ADD       [15], 1                 (n): 4
+0018: SUB       [16], [6] 1             (n): 30
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 29 (n): 5
+001b: ADD       [16], 1                 (n): 4
+001c: ADD       [16], [16] 1            (n): 5
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 5 (n): 6 (s): a5
+001e: LDTBL3    [12], 13 #tblcnt                (n): 165
+001f: CALL      [10], 10                (n): 101
+0020: MOD       [10], [10] 256          (n): 101
+0021: LDTBL2    [9], 10 10              (n): 101 (s): e
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 31 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 31
+000e: ADD       [15], [6] 1             (n): 31
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 31 (n): 32 (s): ff,
+0010: CALL      [11], 11                (n): 255
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 31
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 30 (n): 5
+0017: ADD       [15], 1                 (n): 0
+0018: SUB       [16], [6] 1             (n): 31
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 30 (n): 5
+001b: ADD       [16], 1                 (n): 0
+001c: ADD       [16], [16] 1            (n): 1
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 1 (n): 2 (s): 9cC
+001e: LDTBL3    [12], 13 #tblcnt                (n): 156
+001f: CALL      [10], 10                (n): 99
+0020: MOD       [10], [10] 256          (n): 99
+0021: LDTBL2    [9], 10 10              (n): 99 (s): c
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 32 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 32
+000e: ADD       [15], [6] 1             (n): 32
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 32 (n): 33 (s): ,c9
+0010: CALL      [11], 11                (n): 44
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 32
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 31 (n): 5
+0017: ADD       [15], 1                 (n): 1
+0018: SUB       [16], [6] 1             (n): 32
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 31 (n): 5
+001b: ADD       [16], 1                 (n): 1
+001c: ADD       [16], [16] 1            (n): 2
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 2 (n): 3 (s): Cad
+001e: LDTBL3    [12], 13 #tblcnt                (n): 67
+001f: CALL      [10], 10                (n): 111
+0020: MOD       [10], [10] 256          (n): 111
+0021: LDTBL2    [9], 10 10              (n): 111 (s): o
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 33 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 33
+000e: ADD       [15], [6] 1             (n): 33
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 33 (n): 34 (s): c9/
+0010: CALL      [11], 11                (n): 201
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 33
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 32 (n): 5
+0017: ADD       [15], 1                 (n): 2
+0018: SUB       [16], [6] 1             (n): 33
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 32 (n): 5
+001b: ADD       [16], 1                 (n): 2
+001c: ADD       [16], [16] 1            (n): 3
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 3 (n): 4 (s): adJ
+001e: LDTBL3    [12], 13 #tblcnt                (n): 173
+001f: CALL      [10], 10                (n): 100
+0020: MOD       [10], [10] 256          (n): 100
+0021: LDTBL2    [9], 10 10              (n): 100 (s): d
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 34 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 34
+000e: ADD       [15], [6] 1             (n): 34
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 34 (n): 35 (s): /fa
+0010: CALL      [11], 11                (n): 47
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 34
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 33 (n): 5
+0017: ADD       [15], 1                 (n): 3
+0018: SUB       [16], [6] 1             (n): 34
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 33 (n): 5
+001b: ADD       [16], 1                 (n): 3
+001c: ADD       [16], [16] 1            (n): 4
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 4 (n): 5 (s): Ja5
+001e: LDTBL3    [12], 13 #tblcnt                (n): 74
+001f: CALL      [10], 10                (n): 101
+0020: MOD       [10], [10] 256          (n): 101
+0021: LDTBL2    [9], 10 10              (n): 101 (s): e
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 35 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 35
+000e: ADD       [15], [6] 1             (n): 35
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 35 (n): 36 (s): fafe
+0010: CALL      [11], 11                (n): 250
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 35
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 34 (n): 5
+0017: ADD       [15], 1                 (n): 4
+0018: SUB       [16], [6] 1             (n): 35
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 34 (n): 5
+001b: ADD       [16], 1                 (n): 4
+001c: ADD       [16], [16] 1            (n): 5
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 5 (n): 6 (s): a5
+001e: LDTBL3    [12], 13 #tblcnt                (n): 165
+001f: CALL      [10], 10                (n): 95
+0020: MOD       [10], [10] 256          (n): 95
+0021: LDTBL2    [9], 10 10              (n): 95 (s): _
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 36 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 36
+000e: ADD       [15], [6] 1             (n): 36
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 36 (n): 37 (s): fe"
+0010: CALL      [11], 11                (n): 254
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 36
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 35 (n): 5
+0017: ADD       [15], 1                 (n): 0
+0018: SUB       [16], [6] 1             (n): 36
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 35 (n): 5
+001b: ADD       [16], 1                 (n): 0
+001c: ADD       [16], [16] 1            (n): 1
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 1 (n): 2 (s): 9cC
+001e: LDTBL3    [12], 13 #tblcnt                (n): 156
+001f: CALL      [10], 10                (n): 98
+0020: MOD       [10], [10] 256          (n): 98
+0021: LDTBL2    [9], 10 10              (n): 98 (s): b
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 37 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 37
+000e: ADD       [15], [6] 1             (n): 37
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 37 (n): 38 (s): "de
+0010: CALL      [11], 11                (n): 34
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 37
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 36 (n): 5
+0017: ADD       [15], 1                 (n): 1
+0018: SUB       [16], [6] 1             (n): 37
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 36 (n): 5
+001b: ADD       [16], 1                 (n): 1
+001c: ADD       [16], [16] 1            (n): 2
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 2 (n): 3 (s): Cad
+001e: LDTBL3    [12], 13 #tblcnt                (n): 67
+001f: CALL      [10], 10                (n): 97
+0020: MOD       [10], [10] 256          (n): 97
+0021: LDTBL2    [9], 10 10              (n): 97 (s): a
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 38 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 38
+000e: ADD       [15], [6] 1             (n): 38
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 38 (n): 39 (s): de/
+0010: CALL      [11], 11                (n): 222
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 38
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 37 (n): 5
+0017: ADD       [15], 1                 (n): 2
+0018: SUB       [16], [6] 1             (n): 38
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 37 (n): 5
+001b: ADD       [16], 1                 (n): 2
+001c: ADD       [16], [16] 1            (n): 3
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 3 (n): 4 (s): adJ
+001e: LDTBL3    [12], 13 #tblcnt                (n): 173
+001f: CALL      [10], 10                (n): 115
+0020: MOD       [10], [10] 256          (n): 115
+0021: LDTBL2    [9], 10 10              (n): 115 (s): s
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 39 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 39
+000e: ADD       [15], [6] 1             (n): 39
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 39 (n): 40 (s): /fa
+0010: CALL      [11], 11                (n): 47
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 39
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 38 (n): 5
+0017: ADD       [15], 1                 (n): 3
+0018: SUB       [16], [6] 1             (n): 39
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 38 (n): 5
+001b: ADD       [16], 1                 (n): 3
+001c: ADD       [16], [16] 1            (n): 4
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 4 (n): 5 (s): Ja5
+001e: LDTBL3    [12], 13 #tblcnt                (n): 74
+001f: CALL      [10], 10                (n): 101
+0020: MOD       [10], [10] 256          (n): 101
+0021: LDTBL2    [9], 10 10              (n): 101 (s): e
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 40 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 40
+000e: ADD       [15], [6] 1             (n): 40
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 40 (n): 41 (s): faef
+0010: CALL      [11], 11                (n): 250
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 40
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 39 (n): 5
+0017: ADD       [15], 1                 (n): 4
+0018: SUB       [16], [6] 1             (n): 40
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 39 (n): 5
+001b: ADD       [16], 1                 (n): 4
+001c: ADD       [16], [16] 1            (n): 5
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 5 (n): 6 (s): a5
+001e: LDTBL3    [12], 13 #tblcnt                (n): 165
+001f: CALL      [10], 10                (n): 95
+0020: MOD       [10], [10] 256          (n): 95
+0021: LDTBL2    [9], 10 10              (n): 95 (s): _
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 41 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 41
+000e: ADD       [15], [6] 1             (n): 41
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 41 (n): 42 (s): ef"
+0010: CALL      [11], 11                (n): 239
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 41
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 40 (n): 5
+0017: ADD       [15], 1                 (n): 0
+0018: SUB       [16], [6] 1             (n): 41
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 40 (n): 5
+001b: ADD       [16], 1                 (n): 0
+001c: ADD       [16], [16] 1            (n): 1
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 1 (n): 2 (s): 9cC
+001e: LDTBL3    [12], 13 #tblcnt                (n): 156
+001f: CALL      [10], 10                (n): 115
+0020: MOD       [10], [10] 256          (n): 115
+0021: LDTBL2    [9], 10 10              (n): 115 (s): s
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 42 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 42
+000e: ADD       [15], [6] 1             (n): 42
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 42 (n): 43 (s): "c3
+0010: CALL      [11], 11                (n): 34
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 42
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 41 (n): 5
+0017: ADD       [15], 1                 (n): 1
+0018: SUB       [16], [6] 1             (n): 42
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 41 (n): 5
+001b: ADD       [16], 1                 (n): 1
+001c: ADD       [16], [16] 1            (n): 2
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 2 (n): 3 (s): Cad
+001e: LDTBL3    [12], 13 #tblcnt                (n): 67
+001f: CALL      [10], 10                (n): 97
+0020: MOD       [10], [10] 256          (n): 97
+0021: LDTBL2    [9], 10 10              (n): 97 (s): a
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 43 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 43
+000e: ADD       [15], [6] 1             (n): 43
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 43 (n): 44 (s): c3.
+0010: CALL      [11], 11                (n): 195
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 43
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 42 (n): 5
+0017: ADD       [15], 1                 (n): 2
+0018: SUB       [16], [6] 1             (n): 43
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 42 (n): 5
+001b: ADD       [16], 1                 (n): 2
+001c: ADD       [16], [16] 1            (n): 3
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 3 (n): 4 (s): adJ
+001e: LDTBL3    [12], 13 #tblcnt                (n): 173
+001f: CALL      [10], 10                (n): 110
+0020: MOD       [10], [10] 256          (n): 110
+0021: LDTBL2    [9], 10 10              (n): 110 (s): n
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 44 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 44
+000e: ADD       [15], [6] 1             (n): 44
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 44 (n): 45 (s): .c7
+0010: CALL      [11], 11                (n): 46
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 44
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 43 (n): 5
+0017: ADD       [15], 1                 (n): 3
+0018: SUB       [16], [6] 1             (n): 44
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 43 (n): 5
+001b: ADD       [16], 1                 (n): 3
+001c: ADD       [16], [16] 1            (n): 4
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 4 (n): 5 (s): Ja5
+001e: LDTBL3    [12], 13 #tblcnt                (n): 74
+001f: CALL      [10], 10                (n): 100
+0020: MOD       [10], [10] 256          (n): 100
+0021: LDTBL2    [9], 10 10              (n): 100 (s): d
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 45 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 45
+000e: ADD       [15], [6] 1             (n): 45
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 45 (n): 46 (s): c7f3
+0010: CALL      [11], 11                (n): 199
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 45
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 44 (n): 5
+0017: ADD       [15], 1                 (n): 4
+0018: SUB       [16], [6] 1             (n): 45
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 44 (n): 5
+001b: ADD       [16], 1                 (n): 4
+001c: ADD       [16], [16] 1            (n): 5
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 5 (n): 6 (s): a5
+001e: LDTBL3    [12], 13 #tblcnt                (n): 165
+001f: CALL      [10], 10                (n): 98
+0020: MOD       [10], [10] 256          (n): 98
+0021: LDTBL2    [9], 10 10              (n): 98 (s): b
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 46 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 46
+000e: ADD       [15], [6] 1             (n): 46
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 46 (n): 47 (s): f3;
+0010: CALL      [11], 11                (n): 243
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 46
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 45 (n): 5
+0017: ADD       [15], 1                 (n): 0
+0018: SUB       [16], [6] 1             (n): 46
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 45 (n): 5
+001b: ADD       [16], 1                 (n): 0
+001c: ADD       [16], [16] 1            (n): 1
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 1 (n): 2 (s): 9cC
+001e: LDTBL3    [12], 13 #tblcnt                (n): 156
+001f: CALL      [10], 10                (n): 111
+0020: MOD       [10], [10] 256          (n): 111
+0021: LDTBL2    [9], 10 10              (n): 111 (s): o
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 47 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 47
+000e: ADD       [15], [6] 1             (n): 47
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 47 (n): 48 (s): ;f2
+0010: CALL      [11], 11                (n): 59
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 47
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 46 (n): 5
+0017: ADD       [15], 1                 (n): 1
+0018: SUB       [16], [6] 1             (n): 47
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 46 (n): 5
+001b: ADD       [16], 1                 (n): 1
+001c: ADD       [16], [16] 1            (n): 2
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 2 (n): 3 (s): Cad
+001e: LDTBL3    [12], 13 #tblcnt                (n): 67
+001f: CALL      [10], 10                (n): 120
+0020: MOD       [10], [10] 256          (n): 120
+0021: LDTBL2    [9], 10 10              (n): 120 (s): x
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 48 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 48
+000e: ADD       [15], [6] 1             (n): 48
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 48 (n): 49 (s): f2/
+0010: CALL      [11], 11                (n): 242
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 48
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 47 (n): 5
+0017: ADD       [15], 1                 (n): 2
+0018: SUB       [16], [6] 1             (n): 48
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 47 (n): 5
+001b: ADD       [16], 1                 (n): 2
+001c: ADD       [16], [16] 1            (n): 3
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 3 (n): 4 (s): adJ
+001e: LDTBL3    [12], 13 #tblcnt                (n): 173
+001f: CALL      [10], 10                (n): 95
+0020: MOD       [10], [10] 256          (n): 95
+0021: LDTBL2    [9], 10 10              (n): 95 (s): _
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 49 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 49
+000e: ADD       [15], [6] 1             (n): 49
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 49 (n): 50 (s): /d6
+0010: CALL      [11], 11                (n): 47
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 49
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 48 (n): 5
+0017: ADD       [15], 1                 (n): 3
+0018: SUB       [16], [6] 1             (n): 49
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 48 (n): 5
+001b: ADD       [16], 1                 (n): 3
+001c: ADD       [16], [16] 1            (n): 4
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 4 (n): 5 (s): Ja5
+001e: LDTBL3    [12], 13 #tblcnt                (n): 74
+001f: CALL      [10], 10                (n): 101
+0020: MOD       [10], [10] 256          (n): 101
+0021: LDTBL2    [9], 10 10              (n): 101 (s): e
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 50 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 50
+000e: ADD       [15], [6] 1             (n): 50
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 50 (n): 51 (s): d6ff
+0010: CALL      [11], 11                (n): 214
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 50
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 49 (n): 5
+0017: ADD       [15], 1                 (n): 4
+0018: SUB       [16], [6] 1             (n): 50
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 49 (n): 5
+001b: ADD       [16], 1                 (n): 4
+001c: ADD       [16], [16] 1            (n): 5
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 5 (n): 6 (s): a5
+001e: LDTBL3    [12], 13 #tblcnt                (n): 165
+001f: CALL      [10], 10                (n): 115
+0020: MOD       [10], [10] 256          (n): 115
+0021: LDTBL2    [9], 10 10              (n): 115 (s): s
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 51 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 51
+000e: ADD       [15], [6] 1             (n): 51
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 51 (n): 52 (s): ff"
+0010: CALL      [11], 11                (n): 255
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 51
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 50 (n): 5
+0017: ADD       [15], 1                 (n): 0
+0018: SUB       [16], [6] 1             (n): 51
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 50 (n): 5
+001b: ADD       [16], 1                 (n): 0
+001c: ADD       [16], [16] 1            (n): 1
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 1 (n): 2 (s): 9cC
+001e: LDTBL3    [12], 13 #tblcnt                (n): 156
+001f: CALL      [10], 10                (n): 99
+0020: MOD       [10], [10] 256          (n): 99
+0021: LDTBL2    [9], 10 10              (n): 99 (s): c
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 52 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 52
+000e: ADD       [15], [6] 1             (n): 52
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 52 (n): 53 (s): "dd
+0010: CALL      [11], 11                (n): 34
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 52
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 51 (n): 5
+0017: ADD       [15], 1                 (n): 1
+0018: SUB       [16], [6] 1             (n): 52
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 51 (n): 5
+001b: ADD       [16], 1                 (n): 1
+001c: ADD       [16], [16] 1            (n): 2
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 2 (n): 3 (s): Cad
+001e: LDTBL3    [12], 13 #tblcnt                (n): 67
+001f: CALL      [10], 10                (n): 97
+0020: MOD       [10], [10] 256          (n): 97
+0021: LDTBL2    [9], 10 10              (n): 97 (s): a
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 53 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 53
+000e: ADD       [15], [6] 1             (n): 53
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 53 (n): 54 (s): dd/
+0010: CALL      [11], 11                (n): 221
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 53
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 52 (n): 5
+0017: ADD       [15], 1                 (n): 2
+0018: SUB       [16], [6] 1             (n): 53
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 52 (n): 5
+001b: ADD       [16], 1                 (n): 2
+001c: ADD       [16], [16] 1            (n): 3
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 3 (n): 4 (s): adJ
+001e: LDTBL3    [12], 13 #tblcnt                (n): 173
+001f: CALL      [10], 10                (n): 112
+0020: MOD       [10], [10] 256          (n): 112
+0021: LDTBL2    [9], 10 10              (n): 112 (s): p
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 54 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 54
+000e: ADD       [15], [6] 1             (n): 54
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 54 (n): 55 (s): /d8
+0010: CALL      [11], 11                (n): 47
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 54
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 53 (n): 5
+0017: ADD       [15], 1                 (n): 3
+0018: SUB       [16], [6] 1             (n): 54
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 53 (n): 5
+001b: ADD       [16], 1                 (n): 3
+001c: ADD       [16], [16] 1            (n): 4
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 4 (n): 5 (s): Ja5
+001e: LDTBL3    [12], 13 #tblcnt                (n): 74
+001f: CALL      [10], 10                (n): 101
+0020: MOD       [10], [10] 256          (n): 101
+0021: LDTBL2    [9], 10 10              (n): 101 (s): e
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 55 (n): 55
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8
+000d: MOV       [14], [6]               (n): 55
+000e: ADD       [15], [6] 1             (n): 55
+000f: LDTBL1    [12], 13 15             (s): df17eb31e4e81cc12fc4ef37f223d1c334cc39faf22cd915c4c321d43ec0ff2cc92ffafe22de2ffaef22c32ec7f33bf22fd6ff22dd2fd8 (n): 55 (n): 56 (s): d8
+0010: CALL      [11], 11                (n): 216
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9c43ad4aa5
+0014: SUB       [15], [6] 1             (n): 55
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 54 (n): 5
+0017: ADD       [15], 1                 (n): 4
+0018: SUB       [16], [6] 1             (n): 55
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 54 (n): 5
+001b: ADD       [16], 1                 (n): 4
+001c: ADD       [16], [16] 1            (n): 5
+001d: LDTBL1    [13], 14 16             (s): 9c43ad4aa5 (n): 5 (n): 6 (s): a5
+001e: LDTBL3    [12], 13 #tblcnt                (n): 165
+001f: CALL      [10], 10                (n): 125
+0020: MOD       [10], [10] 256          (n): 125
+0021: LDTBL2    [9], 10 10              (n): 125 (s): }
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 56 (n): 55
+0024: MOV       [3], stack[5]           (f): table.concat
+0025: MOV       [4], [2]                (table): ???
+0026: CALL      [3], 3, 4CTF{At_least_it_was_not_a_bytecode_base_sandbox_escape}
+
+003b: JNE       [0043], [8] [9]         (s):  (s): CTF{At_least_it_was_not_a_bytecode_base_sandbox_escape}
+0044: OBJ       [8], G['print']
+0045: MOV       [9], [7]                (f): unknown
+0046: MOV       [10], (s): d27f2507
+0047: MOV       [11], (s): 9e30764272
+0048: LDTBL1    [9], 10 11              (s): d27f2507 (s): 9e30764272
+0001: TABLE     [2]
+0002: MOV       [3], (n): 1
+0003: LDCNT     [4] #[0]                (n): 4
+0004: MOV       [5], (n): 1
+0005: JRE(W)    0023, [3]               (n): 1 (n): 1 (n): 4
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): d27f2507
+000d: MOV       [14], [6]               (n): 1
+000e: ADD       [15], [6] 1             (n): 1
+000f: LDTBL1    [12], 13 15             (s): d27f2507 (n): 1 (n): 2 (s): d27f
+0010: CALL      [11], 11                (n): 210
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9e30764272
+0014: SUB       [15], [6] 1             (n): 1
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 0 (n): 5
+0017: ADD       [15], 1                 (n): 0
+0018: SUB       [16], [6] 1             (n): 1
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 0 (n): 5
+001b: ADD       [16], 1                 (n): 0
+001c: ADD       [16], [16] 1            (n): 1
+001d: LDTBL1    [13], 14 16             (s): 9e30764272 (n): 1 (n): 2 (s): 9e0
+001e: LDTBL3    [12], 13 #tblcnt                (n): 158
+001f: CALL      [10], 10                (n): 76
+0020: MOD       [10], [10] 256          (n): 76
+0021: LDTBL2    [9], 10 10              (n): 76 (s): L
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 2 (n): 4
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): d27f2507
+000d: MOV       [14], [6]               (n): 2
+000e: ADD       [15], [6] 1             (n): 2
+000f: LDTBL1    [12], 13 15             (s): d27f2507 (n): 2 (n): 3 (s): 7f%
+0010: CALL      [11], 11                (n): 127
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9e30764272
+0014: SUB       [15], [6] 1             (n): 2
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 1 (n): 5
+0017: ADD       [15], 1                 (n): 1
+0018: SUB       [16], [6] 1             (n): 2
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 1 (n): 5
+001b: ADD       [16], 1                 (n): 1
+001c: ADD       [16], [16] 1            (n): 2
+001d: LDTBL1    [13], 14 16             (s): 9e30764272 (n): 2 (n): 3 (s): 0v
+001e: LDTBL3    [12], 13 #tblcnt                (n): 48
+001f: CALL      [10], 10                (n): 79
+0020: MOD       [10], [10] 256          (n): 79
+0021: LDTBL2    [9], 10 10              (n): 79 (s): O
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 3 (n): 4
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): d27f2507
+000d: MOV       [14], [6]               (n): 3
+000e: ADD       [15], [6] 1             (n): 3
+000f: LDTBL1    [12], 13 15             (s): d27f2507 (n): 3 (n): 4 (s): %07
+0010: CALL      [11], 11                (n): 37
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9e30764272
+0014: SUB       [15], [6] 1             (n): 3
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 2 (n): 5
+0017: ADD       [15], 1                 (n): 2
+0018: SUB       [16], [6] 1             (n): 3
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 2 (n): 5
+001b: ADD       [16], 1                 (n): 2
+001c: ADD       [16], [16] 1            (n): 3
+001d: LDTBL1    [13], 14 16             (s): 9e30764272 (n): 3 (n): 4 (s): vB
+001e: LDTBL3    [12], 13 #tblcnt                (n): 118
+001f: CALL      [10], 10                (n): 83
+0020: MOD       [10], [10] 256          (n): 83
+0021: LDTBL2    [9], 10 10              (n): 83 (s): S
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 4 (n): 4
+0006: MOV       [7], stack[0]           (f): table.insert
+0007: MOV       [8], [2]                (table): ???
+0008: MOV       [9], stack[1]           (f): string.char
+0009: MOV       [10], stack[2]          (f): bit32.bxor
+000a: MOV       [11], stack[3]          (f): string.byte
+000b: MOV       [12], stack[4]          (f): string.sub
+000c: MOV       [13], [0]               (s): d27f2507
+000d: MOV       [14], [6]               (n): 4
+000e: ADD       [15], [6] 1             (n): 4
+000f: LDTBL1    [12], 13 15             (s): d27f2507 (n): 4 (n): 5 (s): 07
+0010: CALL      [11], 11                (n): 7
+0011: MOV       [12], stack[3]          (f): string.byte
+0012: MOV       [13], stack[4]          (f): string.sub
+0013: MOV       [14], [1]               (s): 9e30764272
+0014: SUB       [15], [6] 1             (n): 4
+0015: LDCNT     [16] #[1]               (n): 5
+0016: MOD       [15], [15] [16]         (n): 3 (n): 5
+0017: ADD       [15], 1                 (n): 3
+0018: SUB       [16], [6] 1             (n): 4
+0019: LDCNT     [17] #[1]               (n): 5
+001a: MOD       [16], [16] [17]         (n): 3 (n): 5
+001b: ADD       [16], 1                 (n): 3
+001c: ADD       [16], [16] 1            (n): 4
+001d: LDTBL1    [13], 14 16             (s): 9e30764272 (n): 4 (n): 5 (s): Br
+001e: LDTBL3    [12], 13 #tblcnt                (n): 66
+001f: CALL      [10], 10                (n): 69
+0020: MOD       [10], [10] 256          (n): 69
+0021: LDTBL2    [9], 10 10              (n): 69 (s): E
+0022: CALL      [7], 7 #tblcnt          (n): 9
+0023: JRL(W)    0005, [3]               (n): 1 (n): 5 (n): 4
+0024: MOV       [3], stack[5]           (f): table.concat
+0025: MOV       [4], [2]                (table): ???
+0026: CALL      [3], 3, 4LOSE
+(s): LOSE
+0049: CALL      [8], 8 #tblcnt          (n): 9 LOSE
+
+004a: EXIT
