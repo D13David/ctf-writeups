@@ -1,6 +1,6 @@
 # Google CTF 2023
 
-![sdfsdf](flag.png)
+![sdfsdf](Flag.png)
 <br/>Credits [google](https://capturetheflag.withgoogle.com/)
 
 ## Misc
