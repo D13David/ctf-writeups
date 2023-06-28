@@ -5,7 +5,8 @@
 
 ## Misc
 
-[PAPAPAPA](misc/papapapa/README.md)
+[PAPAPAPA](misc/papapapa/README.md)\
+[SYMATRIX](misc/symatrix/README.md)
 
 ## Crypto
 
