@@ -18,11 +18,11 @@ This challenge uses a [`One-Time Pad`](https://en.wikipedia.org/wiki/One-time_pa
 
 Since we have the original message for `c2` we can easily recreate the key by just xoring  `c2` and `p2`. This works since xor operations are commutative (order doesnt matter), self-inverse (xor the same value is always 0) and 0 is the identity (0 xor any value is the value again).
 
-`p2` ⊕ `k` = `c2`\
-`p2` ⊕ `k` ⊕ `p2` = `c2` ⊕ `p2`\
-(`p2` ⊕ `p2`) ⊕ `k` = `c2` ⊕ `p2`\
-0 ⊕ `k` = `c2` ⊕ `p2`\
-`k` = `c2` ⊕ `p2`
+`p2 ⊕ k = c2`\
+`p2 ⊕ k ⊕ p2 = c2 ⊕ p2`\
+`(p2 ⊕ p2) ⊕ k = c2 ⊕ p2`\
+`0 ⊕ k = c2 ⊕ p2`\
+`k = c2 ⊕ p2`
 
 After the key is recreated the messages for `c1` and `c3` can be retrieved with the same idea by removing the `key` part by xoring `c1` and `c3` with the `key`.
 
