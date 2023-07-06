@@ -10,7 +10,8 @@
 ## rev
 
 [vmwhere1](rev/vmwhere1/README.md)\
-[vmwhere2](rev/vmwhere2/README.md)
+[vmwhere2](rev/vmwhere2/README.md)\
+[pwnykey](rev/pwnykey/README.md)
 
 ## osint
 
