@@ -48,55 +48,55 @@ Reading the header gives access to all the chunks (blocks) that are present in t
 ```c
 bool loadRegionFile(const char* name, region_t* region)
 {
-	FILE* fp;
-	if (fopen_s(&fp, name, "rb") != 0)
-		return false;
+    FILE* fp;
+    if (fopen_s(&fp, name, "rb") != 0)
+        return false;
 
-	uint32_t buffer[1024*2];
-	fread(buffer, sizeof(uint32_t), 1024*2, fp);
+    uint32_t buffer[1024*2];
+    fread(buffer, sizeof(uint32_t), 1024*2, fp);
 
-	region_header_t* header = &region->header;
-	for (int i = 0; i < 1024; ++i)
-	{
-		uint32_t offset = ((buffer[i] & 0xff) << 16) | ((buffer[i] >> 16) & 0xff) | (buffer[i] & 0xff00);
-		header->loca_entry_table[i].size = ((buffer[i] >> 24) & 0xff) * 4096;
-		header->loca_entry_table[i].offset = (offset & 0xffffff) * 4096;
-		header->timestamp[i] = buffer[i+1024];
-	}
+    region_header_t* header = &region->header;
+    for (int i = 0; i < 1024; ++i)
+    {
+        uint32_t offset = ((buffer[i] & 0xff) << 16) | ((buffer[i] >> 16) & 0xff) | (buffer[i] & 0xff00);
+        header->loca_entry_table[i].size = ((buffer[i] >> 24) & 0xff) * 4096;
+        header->loca_entry_table[i].offset = (offset & 0xffffff) * 4096;
+        header->timestamp[i] = buffer[i+1024];
+    }
 
 #define SIZE (1024 * 1024 * 10 * sizeof(Bytef))
-	Bytef* chunkData = (Bytef*)malloc(SIZE * 2);
-	Bytef* uncompressedChunkData = (Bytef*)chunkData + SIZE;
+    Bytef* chunkData = (Bytef*)malloc(SIZE * 2);
+    Bytef* uncompressedChunkData = (Bytef*)chunkData + SIZE;
 
-	for (int i = 0; i < 1024; ++i)
-	{
-		if (header->loca_entry_table[i].offset == 0) {
-			region->chunks[i].compression = 0;
-			region->chunks[i].length = 0;
-			continue;
-		}
+    for (int i = 0; i < 1024; ++i)
+    {
+        if (header->loca_entry_table[i].offset == 0) {
+            region->chunks[i].compression = 0;
+            region->chunks[i].length = 0;
+            continue;
+        }
 
-		fseek(fp, header->loca_entry_table[i].offset, SEEK_SET);
-		fread(&region->chunks[i], sizeof(chunk_header_t), 1, fp);
-		fread(chunkData, sizeof(Bytef), region->chunks[i].length, fp);
+        fseek(fp, header->loca_entry_table[i].offset, SEEK_SET);
+        fread(&region->chunks[i], sizeof(chunk_header_t), 1, fp);
+        fread(chunkData, sizeof(Bytef), region->chunks[i].length, fp);
 
-		uint32_t length = ((region->chunks[i].length & 0x0000ffff) << 16) | ((region->chunks[i].length & 0xffff0000) >> 16);
-		region->chunks[i].length = ((length & 0x00ff00ff) << 8) | ((length & 0xff00ff00) >> 8);
+        uint32_t length = ((region->chunks[i].length & 0x0000ffff) << 16) | ((region->chunks[i].length & 0xffff0000) >> 16);
+        region->chunks[i].length = ((length & 0x00ff00ff) << 8) | ((length & 0xff00ff00) >> 8);
 
-		printf("Chunk %d @ %04ld %04ld: ", i, header->loca_entry_table[i].offset, header->loca_entry_table[i].size);
-		printf("%04ld %d\n", region->chunks[i].length, region->chunks[i].compression);
+        printf("Chunk %d @ %04ld %04ld: ", i, header->loca_entry_table[i].offset, header->loca_entry_table[i].size);
+        printf("%04ld %d\n", region->chunks[i].length, region->chunks[i].compression);
 
-		uLongf size = SIZE;
-		int result = uncompress(uncompressedChunkData, &size, chunkData, region->chunks[i].length-1);
-		if (memsearch(uncompressedChunkData, "amateursCTF") != -1)
+        uLongf size = SIZE;
+        int result = uncompress(uncompressedChunkData, &size, chunkData, region->chunks[i].length-1);
+        if (memsearch(uncompressedChunkData, "amateursCTF") != -1)
         {
             printf("found...");
         }
-	}
+    }
 
-	fclose(fp);
+    fclose(fp);
 
-	return true;
+    return true;
 }
 ```
 
