@@ -8,6 +8,8 @@
 >
 
 Tags: _web_
+
+## Solution
 When opening the link, just a simple text is given `just wait an eternity`. Since we don't have any time at all we inspect the `HTTP headers`. 
 
 ```

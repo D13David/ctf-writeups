@@ -13,5 +13,28 @@
 Tags: _osint_
 
 ## Solution
+This is the continuation of [`Gitint 5e`](../gitint_5e/README.md). We inspect the [`github repository`](https://github.com/les-amateurs/more-CTFd-mods) further. There is one closed [`issue`](https://github.com/les-amateurs/more-CTFd-mods/issues/1).
+
+> Missing dependencies. Where them?
+>
+> Here: [`link`](https://pastebin.com/VeTDwT09)
+> I don't know the password though
+
+The link is going to a password secured `paste`. There also one closed [`pull request`](https://github.com/les-amateurs/more-CTFd-mods/pull/2).
+
+> What's the password, is it like password or something?
+>
+> Yeah that's the password.
+
+But wait... there is no password. After a while I noticed that the first comment was edited.
+
+> What's the password, is it like password123456 or something?
+
+So there is the password. Unlocking the `paste` in `pastebin` gives the flag:
+
+```python
+def flag():
+  return "amateursCTF{programs have issues, as do weak passwords}"
+```
 
 Flag `amateursCTF{programs have issues, as do weak passwords}`
