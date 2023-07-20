@@ -11,7 +11,8 @@
 ## forensics
 [Minecraft](forensics/minecraft/README.md)\
 [zipper](forensics/zipper/README.md)\
-[Painfully Deep Flag](forensics/painfully_deep_flag/README.md)
+[Painfully Deep Flag](forensics/painfully_deep_flag/README.md)\
+[rules-iceberg](forensics/rules_iceberg/README.md)
 
 ## misc
 [Censorship](misc/censorship/README.md)\
@@ -29,8 +30,7 @@
 [permissions](pwn/permissions/README.md)\
 [hex-converter](pwn/hex_converter/README.md)\
 [hex-converter-2](pwn/hex_converter_2/README.md)\
-[ELFcrafting-v1](pwn/elf-crafting-v1/README.md)\
-[perfect-sandbox](pwn/perfect-sandbox/README.md)
+[ELFcrafting-v1](pwn/elf-crafting-v1/README.md)
 
 ## rev
 [volcano](rev/volcano/README.md)\
