@@ -1,6 +1,6 @@
 # Tenable Capture the Flag 2023
 
-## PseudoRandom
+## The Javascript One
 
 Tags: _rev_
 
