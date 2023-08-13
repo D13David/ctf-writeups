@@ -16,7 +16,7 @@
 ## rev
 
 [The Javascript One](rev/the_javascript_one/README.md)\
-[Brick Breaker](rev/brick_breaker/README.md)\
+[Brick Breaker](rev/brick_breaker/README.md)
 
 ## web
 
