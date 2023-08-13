@@ -28,7 +28,7 @@ Appart from this only a list of numbers are given, and thats all.
 1710460813
 ```
 
-This is probably where most teams struggled, including me. Finding the connection what to actually do with all those non-existing hints. The trick was, use the numbers as index *into* `e` and analyse the sequence of numbers starting at these indice. To do this, webservices exists, for instance [`here`](http://www.subidiom.com/pi/pi.asp). Choosing mode `Display 25 digits from start position` and constant `E` we can find the 25 digits:
+This is probably where most teams struggled, including me. Finding the connection what to actually do with all those non-existing hints. The trick was, use the numbers as index *into* `e` and analyse the sequence of numbers starting at these indice. To do this, webservices exists, for instance [`here`](http://www.subidiom.com/pi/pi.asp). Choosing mode `Display 25 digits from start position` and constant `E` we can find the 25 digit sequences:
 
 ```
 268293811  => 1021089719722600266340076
