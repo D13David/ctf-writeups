@@ -10,11 +10,13 @@
 ## stego
 
 [Cyberpunk Cafe](stego/cyberpunk_cafe/README.md)\
-[Ancient Scrawls](stego/ancient_scrawls/README.md)
+[Ancient Scrawls](stego/ancient_scrawls/README.md)\
+[Ancient Scrawls](stego/pi_is_overrated/README.md)
 
 ## rev
 
-[The Javascript One](rev/the_javascript_one/README.md)
+[The Javascript One](rev/the_javascript_one/README.md)\
+[The Javascript One](rev/brick_breaker/README.md)\
 
 ## web
 
