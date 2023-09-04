@@ -27,6 +27,7 @@
 [SPACEGAME](rev/spacegame/README.md)
 
 ## misc
+
 [Welcome to DUCTF!](misc/welcome/README.md)\
 [blinkybill](misc/blinkybill/README.md)\
 [helpless](misc/helpless/README.md)\
@@ -36,3 +37,8 @@
 [baby ruby](misc/baby_ruby/README.md)\
 
 ## osint
+
+[Excellent Vista!](osint/excellent_vista/README.md)\
+[Bridget's Back!](osint/bridgets_back/README.md)\
+[Comeacroppa](osint/comecroppa/README.md)\
+[faraday](osint/faraday/README.md)
