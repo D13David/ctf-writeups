@@ -27,6 +27,12 @@
 [SPACEGAME](rev/spacegame/README.md)
 
 ## misc
-
+[Welcome to DUCTF!](misc/welcome/README.md)\
+[blinkybill](misc/blinkybill/README.md)\
+[helpless](misc/helpless/README.md)\
+[Needle In IAM](misc/needle_in_iam/README.md)\
+[My First C Program!](misc/my_first_c_program/README.md)\
+[SimpleFTPServer](misc/simple_ftp_server/README.md)\
+[baby ruby](misc/baby_ruby/README.md)\
 
 ## osint
