@@ -6,7 +6,7 @@
 >
 >  Author: Jordan Bertasso
 >
-> [`proxed.tar.gz`](proxed.tar.gz
+> [`proxed.tar.gz`](proxed.tar.gz)
 
 Tags: _web_
 
