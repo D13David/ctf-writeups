@@ -15,7 +15,7 @@
 
 [proxed](web/proxed/README.md)\
 [static file server](web/static_file_server/README.md)\
-[xxd-server](web/static_file_server/README.md)\
+[xxd-server](web/xxd-server/README.md)\
 [actually-proxed](web/actually_proxed/README.md)\
 [grades_grades_grades](web/grades_grades_grades/README.md)
 
