@@ -187,4 +187,4 @@ open("encrypted_data.png", "wb").write(data)
 
 ![](encrypted_data.png)
 
-Flag `chctf{t53$p@$$35_h@ck!ng_$0c!3ty}}`
+Flag `chctf{t53$p@$$35_h@ck!ng_$0c!3ty}`
