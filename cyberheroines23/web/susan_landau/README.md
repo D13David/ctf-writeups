@@ -3,8 +3,8 @@
 ## Susan Landau
 
 > [Susan Landau](https://en.wikipedia.org/wiki/Susan_Landau) (born 1954) is an American mathematician, engineer, cybersecurity policy expert, and Bridge Professor in Cybersecurity and Policy at the Fletcher School of Law and Diplomacy at Tufts University. She previously worked as a Senior Staff Privacy Analyst at Google. She was a Guggenheim Fellow and a visiting scholar at the Computer Science Department, Harvard University in 2012. - [Wikipedia Entry](https://en.wikipedia.org/wiki/Susan_Landau)
-
-Chal: Connect to our webserver and understand the concerns of this mathematician and privacy expert.
+> 
+> Chal: Connect to our webserver and understand the concerns of this mathematician and privacy expert.
 >
 >  Author: [Sneha](https://www.snehasudhakaran.com/)
 >

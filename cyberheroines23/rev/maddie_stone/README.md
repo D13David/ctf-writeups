@@ -3,8 +3,8 @@
 ## Maddie Stone
 
 > [Maddie Stone](https://www.wired.com/story/maddie-stone-project-zero-reverse-engineering/) is a prominent researcher on Google’s Project Zero bug-hunting team, which finds critical software flaws and vulnerabilities—mostly in other companies’ products. But her journey through the ranks of the security research community hasn’t always been easy, and has galvanized her to speak openly, often on Twitter, about the need to make the tech and engineering industries more inclusive. - [Wired Story](https://www.wired.com/story/maddie-stone-project-zero-reverse-engineering/)
-
-Chal: Our [Cyber Heroines CTF Director](https://www.fit.edu/faculty-profiles/s/sudhakaran-sneha/) created an APK for hiding flags in homage to her favorite [Reverse Engineer](https://www.youtube.com/watch?v=U6qTcpCfuFc). Reverse the application and return the flag .
+> 
+> Chal: Our [Cyber Heroines CTF Director](https://www.fit.edu/faculty-profiles/s/sudhakaran-sneha/) created an APK for hiding flags in homage to her favorite [Reverse Engineer](https://www.youtube.com/watch?v=U6qTcpCfuFc). Reverse the application and return the flag .
 >
 >  Author: [Sneha](https://www.snehasudhakaran.com/)
 >
