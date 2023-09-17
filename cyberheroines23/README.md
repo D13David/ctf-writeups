@@ -29,7 +29,9 @@ Credits [CyberHeroines23](https://cyberheroines.ctfd.io/)
 ## Pwn
 
 [Sally Ride](pwn/sally_ride/README.md)\
-[Erna Hoover](pwn/erna_hoover/README.md)
+[Erna Hoover](pwn/erna_hoover/README.md)\
+[Carol Shaw](pwn/carol_shaw/README.md)\
+[Ada Lovelace](pwn/ada_lovelace/README.md)
 
 ## Crypto
 
