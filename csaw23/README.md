@@ -3,9 +3,15 @@
 ![sdfsdf](logo.png)
 Credits [CSAW23](https://ctf.csaw.io/)
 
+## Incident Response
+
+[What is going on?](ir/whats_going_on/README.md)\
+[Initial Access](ir/initial_access/README.md)
+
 ## misc
 
-[AndroidDropper](misc/android_dropper/README.md)
+[AndroidDropper](misc/android_dropper/README.md)\
+[Linear Aggressor](misc/linear_aggressor/README.md)
 
 ## intro
 
