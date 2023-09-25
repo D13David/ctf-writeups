@@ -353,7 +353,6 @@ if R == 187 then
     print(n[e+1])
 end
 
-```lua
 if R == 166 then
     do
         print(n[e[2]])
