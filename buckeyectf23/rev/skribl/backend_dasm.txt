@@ -1,0 +1,192 @@
+backend.cpython-313.pyc (Python 3.13)
+[Code]
+    File Name: /home/rene/Documents/Java/OSUCyberSecurityClub/repos/rctf-terraform/buckeyectf-hosting/buckeyectf-challenges/chals/rev-pycache/dist/chal/backend.py
+    Object Name: <module>
+    Qualified Name: <module>
+    Arg Count: 0
+    Pos Only Arg Count: 0
+    KW Only Arg Count: 0
+    Stack Size: 2
+    Flags: 0x00000000
+    [Names]
+        'string'
+        'random'
+        'time'
+        'math'
+        'os'
+        'str'
+        'create_skribl'
+        'init_backend'
+    [Locals+Names]
+    [Constants]
+        0
+        None
+        'return'
+        [Code]
+            File Name: /home/rene/Documents/Java/OSUCyberSecurityClub/repos/rctf-terraform/buckeyectf-hosting/buckeyectf-challenges/chals/rev-pycache/dist/chal/backend.py
+            Object Name: create_skribl
+            Qualified Name: create_skribl
+            Arg Count: 3
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 6
+            Flags: 0x00000003 (CO_OPTIMIZED | CO_NEWLOCALS)
+            [Names]
+                'print'
+                'string'
+                'ascii_lowercase'
+                'ascii_uppercase'
+                'digits'
+                'range'
+                'random'
+                'choice'
+                'join'
+            [Locals+Names]
+                'skribls'
+                'message'
+                'author'
+                'alphabet'
+                'i'
+                'key_list'
+                'key'
+            [Constants]
+                None
+                'Creating skribl '
+                40
+                ''
+            [Disassembly]
+                0       RESUME
+                2       LOAD_GLOBAL                   1: NULL + print
+                12      LOAD_CONST                    1: 'Creating skribl '
+                14      LOAD_FAST                     1: message
+                16      FORMAT_SIMPLE                 0
+                18      BUILD_STRING                  2
+                20      CALL                          1
+                28      POP_TOP
+                30      LOAD_GLOBAL                   2: string
+                40      LOAD_ATTR                     4: ascii_lowercase
+                60      LOAD_GLOBAL                   2: string
+                70      LOAD_ATTR                     6: ascii_uppercase
+                90      BINARY_OP                     0 (+)
+                94      LOAD_GLOBAL                   2: string
+                104     LOAD_ATTR                     8: digits
+                124     BINARY_OP                     0 (+)
+                128     STORE_FAST                    3: alphabet
+                130     LOAD_GLOBAL                   11: NULL + range
+                140     LOAD_CONST                    2: 40
+                142     CALL                          1
+                150     GET_ITER
+                152     LOAD_FAST_AND_CLEAR
+                154     SWAP                          2
+                156     BUILD_LIST
+                158     SWAP                          2
+                160     FOR_ITER                      25 (to 212)
+                164     STORE_FAST                    4: i
+                166     LOAD_GLOBAL                   12: random
+                176     LOAD_ATTR                     14: choice
+                196     PUSH_NULL
+                198     LOAD_FAST                     3: alphabet
+                200     CALL                          1
+                208     LIST_APPEND                   2
+                210     JUMP_BACKWARD                 27
+                214     END_FOR
+                216     STORE_FAST                    5: key_list
+                218     STORE_FAST                    4: i
+                220     LOAD_CONST                    3: ''
+                222     LOAD_ATTR                     17: NULL + join
+                242     LOAD_FAST                     5: key_list
+                244     CALL                          1
+                252     STORE_FAST                    6: key
+                254     LOAD_FAST_LOAD_FAST
+                256     BUILD_TUPLE                   2
+                258     LOAD_FAST_LOAD_FAST
+                260     STORE_SUBSCR
+                264     LOAD_FAST                     6: key
+                266     RETURN_VALUE
+                268     SWAP                          2
+                270     POP_TOP
+                272     SWAP                          2
+                274     STORE_FAST                    4: i
+                276     RERAISE                       0
+        [Code]
+            File Name: /home/rene/Documents/Java/OSUCyberSecurityClub/repos/rctf-terraform/buckeyectf-hosting/buckeyectf-challenges/chals/rev-pycache/dist/chal/backend.py
+            Object Name: init_backend
+            Qualified Name: init_backend
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 6
+            Flags: 0x00000003 (CO_OPTIMIZED | CO_NEWLOCALS)
+            [Names]
+                'random'
+                'seed'
+                'math'
+                'floor'
+                'time'
+                'create_skribl'
+                'os'
+                'environ'
+            [Locals+Names]
+                'skribls'
+            [Constants]
+                None
+                'FLAG'
+                'rene'
+            [Disassembly]
+                0       RESUME
+                2       LOAD_GLOBAL                   0: random
+                12      LOAD_ATTR                     2: seed
+                32      PUSH_NULL
+                34      LOAD_GLOBAL                   4: math
+                44      LOAD_ATTR                     6: floor
+                64      PUSH_NULL
+                66      LOAD_GLOBAL                   8: time
+                76      LOAD_ATTR                     8: time
+                96      PUSH_NULL
+                98      CALL                          0
+                106     CALL                          1
+                114     CALL                          1
+                122     POP_TOP
+                124     LOAD_GLOBAL                   11: NULL + create_skribl
+                134     LOAD_FAST                     0: skribls
+                136     LOAD_GLOBAL                   12: os
+                146     LOAD_ATTR                     14: environ
+                166     LOAD_CONST                    1: 'FLAG'
+                168     BINARY_SUBSCR
+                172     LOAD_CONST                    2: 'rene'
+                174     CALL                          3
+                182     POP_TOP
+                184     RETURN_CONST                  0
+    [Disassembly]
+        0       RESUME
+        2       LOAD_CONST                    0: 0
+        4       LOAD_CONST                    1: None
+        6       IMPORT_NAME
+        8       STORE_NAME
+        10      LOAD_CONST                    0: 0
+        12      LOAD_CONST                    1: None
+        14      IMPORT_NAME
+        16      STORE_NAME
+        18      LOAD_CONST                    0: 0
+        20      LOAD_CONST                    1: None
+        22      IMPORT_NAME
+        24      STORE_NAME
+        26      LOAD_CONST                    0: 0
+        28      LOAD_CONST                    1: None
+        30      IMPORT_NAME
+        32      STORE_NAME
+        34      LOAD_CONST                    0: 0
+        36      LOAD_CONST                    1: None
+        38      IMPORT_NAME
+        40      STORE_NAME
+        42      LOAD_CONST                    2: 'return'
+        44      LOAD_NAME
+        46      BUILD_TUPLE                   2
+        48      LOAD_CONST                    3: <CODE> create_skribl
+        50      MAKE_FUNCTION
+        52      SET_FUNCTION_ATTRIBUTE
+        54      STORE_NAME
+        56      LOAD_CONST                    4: <CODE> init_backend
+        58      MAKE_FUNCTION
+        60      STORE_NAME
+        62      RETURN_CONST                  1
