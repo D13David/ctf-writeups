@@ -1,9 +1,14 @@
 # BuckeyeCTF 2023
 
-![sdfsdf](logo.svg)
+![sdfsdf](logo.png)
 <br/>Credits [buckeyectf](https://pwnoh.io/)
 
 ## crypto
+
+[My First Hash](crypto/my_first_hash/README.md)\
+[Rivest-Shamir-Adleman](crypto/rivest_shamir_adleman/README.md)\
+[Secret Code](crypto/secret_code/README.md)\
+[Electronical](crypto/electronical/README.md)
 
 ## misc
 
