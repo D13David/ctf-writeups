@@ -18,9 +18,9 @@
 
 ## pwn
 
-[Beginner Menu](pwn/needle_in_wifi/README.md)\
-[Starter Buffer](pwn/replace_me/README.md)\
-[Igpay Atinlay Natoriay 3000](pwn/pong/README.md)
+[Beginner Menu](pwn/beginner_menu/README.md)\
+[Starter Buffer](pwn/starter_buffer/README.md)\
+[Igpay Atinlay Natoriay 3000](pwn/ian_3000/README.md)
 
 ## rev
 
