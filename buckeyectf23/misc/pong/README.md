@@ -43,10 +43,10 @@ for line in lines:
 f.close()
 ```
 
-The file sadly doesn't open, and after opening it in an hex-editor we can also see why: The [`png header section`](http://www.libpng.org/pub/png/spec/1.2/PNG-Structure.html) was missing. To fix this I copied the header of some random png and then tried to adapt width and height until something interesting was visible getting us the flag.
+The file sadly doesn't open, and after opening it in an hex-editor we can also see why: The [`png header section`](http://www.libpng.org/pub/png/spec/1.2/PNG-Structure.html) was missing. To fix this I copied the header of some random png and then tried to adapt width, height and color type until something interesting was visible getting us the flag.
 
 ![](data.png)
 
-Addendum: Later it turned out that by using `ping` the first package was omitted and therefore the image seemed corrupted. Using `fping` would have given a fully working png image.
+Addendum: Later it turned out that by using `ping` the first package started with sequence number 1 and therefore the image seemed corrupted as the first package with png header where not received. Using `fping` would have given a fully working png image.
 
 Flag `bctf{pL3a$3_$t0p_p1nG1ng_M3}`
