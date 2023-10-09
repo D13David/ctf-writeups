@@ -1,0 +1,264 @@
+
+main <main.lua:0,0> (54 instructions at 0x5592de88ac90)
+0+ params, 8 slots, 1 upvalue, 1 local, 36 constants, 6 functions
+	1	[1]	VARARGPREP	0
+	2	[1]	GETTABUP 	0 0 0	; _ENV "import"
+	3	[1]	LOADK    	1 1	; "CoreLibs/graphics"
+	4	[1]	CALL     	0 2 1	; 1 in 0 out
+	5	[3]	GETTABUP 	0 0 2	; _ENV "print"
+	6	[3]	LOADK    	1 3	; "Figure out my code and I'll give you a flag!"
+	7	[3]	CALL     	0 2 1	; 1 in 0 out
+	8	[4]	GETTABUP 	0 0 2	; _ENV "print"
+	9	[4]	LOADK    	1 4	; "Turn the crank to reset the pin. "
+	10	[4]	CALL     	0 2 1	; 1 in 0 out
+	11	[6]	GETTABUP 	0 0 5	; _ENV "playdate"
+	12	[6]	GETFIELD 	0 0 6	; "graphics"
+	13	[7]	GETTABUP 	1 0 5	; _ENV "playdate"
+	14	[7]	GETFIELD 	1 1 7	; "display"
+	15	[7]	GETFIELD 	1 1 8	; "setRefreshRate"
+	16	[7]	LOADI    	2 50
+	17	[7]	CALL     	1 2 1	; 1 in 0 out
+	18	[9]	GETFIELD 	1 0 9	; "setBackgroundColor"
+	19	[9]	GETFIELD 	2 0 10	; "kColorWhite"
+	20	[9]	CALL     	1 2 1	; 1 in 0 out
+	21	[17]	CLOSURE  	1 0	; 0x5592de88b780
+	22	[11]	SETTABUP 	0 11 1	; _ENV "generateFlag"
+	23	[32]	CLOSURE  	1 1	; 0x5592de88ba30
+	24	[19]	SETTABUP 	0 12 1	; _ENV "makeTextDisplayable"
+	25	[34]	SETTABUP 	0 13 14k	; _ENV "noiseSeed" 1234567
+	26	[35]	GETTABUP 	1 0 15	; _ENV "math"
+	27	[35]	GETFIELD 	1 1 16	; "randomseed"
+	28	[35]	GETTABUP 	2 0 13	; _ENV "noiseSeed"
+	29	[35]	CALL     	1 2 1	; 1 in 0 out
+	30	[37]	SETTABUP 	0 17 18k	; _ENV "pressedButtons" ""
+	31	[38]	SETTABUP 	0 19 20k	; _ENV "counter" 0
+	32	[39]	NEWTABLE 	1 0 6	; 6
+	33	[39]	EXTRAARG 	0
+	34	[39]	LOADK    	2 22	; "left"
+	35	[39]	LOADK    	3 23	; "right"
+	36	[39]	LOADK    	4 24	; "up"
+	37	[39]	LOADK    	5 25	; "down"
+	38	[39]	LOADK    	6 26	; "A"
+	39	[39]	LOADK    	7 27	; "B"
+	40	[39]	SETLIST  	1 6 0
+	41	[39]	SETTABUP 	0 21 1	; _ENV "buttons"
+	42	[47]	CLOSURE  	1 2	; 0x5592de88bdb0
+	43	[41]	SETTABUP 	0 28 1	; _ENV "generateOrder"
+	44	[49]	GETTABUP 	1 0 5	; _ENV "playdate"
+	45	[53]	CLOSURE  	2 3	; 0x5592de88bf50
+	46	[49]	SETFIELD 	1 29 2	; "cranked"
+	47	[65]	CLOSURE  	1 4	; 0x5592de88c1d0
+	48	[55]	SETTABUP 	0 30 1	; _ENV "clean"
+	49	[67]	SETTABUP 	0 31 32k	; _ENV "index" ""
+	50	[68]	SETTABUP 	0 33 34k	; _ENV "lastPressed" "Press a button!"
+	51	[70]	GETTABUP 	1 0 5	; _ENV "playdate"
+	52	[93]	CLOSURE  	2 5	; 0x5592de88c520
+	53	[70]	SETFIELD 	1 35 2	; "update"
+	54	[93]	RETURN   	1 1 1	; 0 out
+
+function <main.lua:11,17> (19 instructions at 0x5592de88b780)
+0 params, 10 slots, 1 upvalue, 5 locals, 5 constants, 0 functions
+	1	[12]	LOADK    	0 0	; ""
+	2	[13]	LOADI    	1 1
+	3	[13]	LOADI    	2 64
+	4	[13]	LOADI    	3 1
+	5	[13]	FORPREP  	1 11	; to 17
+	6	[14]	MOVE     	5 0
+	7	[14]	GETTABUP 	6 0 1	; _ENV "string"
+	8	[14]	GETFIELD 	6 6 2	; "char"
+	9	[14]	GETTABUP 	7 0 3	; _ENV "math"
+	10	[14]	GETFIELD 	7 7 4	; "random"
+	11	[14]	LOADI    	8 32
+	12	[14]	LOADI    	9 126
+	13	[14]	CALL     	7 3 0	; 2 in all out
+	14	[14]	CALL     	6 0 2	; all in 1 out
+	15	[14]	CONCAT   	5 2
+	16	[14]	MOVE     	0 5
+	17	[13]	FORLOOP  	1 12	; to 6
+	18	[16]	RETURN1  	0
+	19	[17]	RETURN0  	
+
+function <main.lua:19,32> (30 instructions at 0x5592de88ba30)
+1 param, 10 slots, 0 upvalues, 7 locals, 6 constants, 0 functions
+	1	[20]	LOADK    	1 0	; ""
+	2	[21]	LOADI    	2 1
+	3	[21]	LEN      	3 0
+	4	[21]	LOADI    	4 1
+	5	[21]	FORPREP  	2 22	; to 28
+	6	[22]	SELF     	6 0 1k	; "sub"
+	7	[22]	MOVE     	8 5
+	8	[22]	MOVE     	9 5
+	9	[22]	CALL     	6 4 2	; 3 in 1 out
+	10	[23]	EQK      	6 2 0	; "_"
+	11	[23]	JMP      	5	; to 17
+	12	[24]	MOVE     	7 1
+	13	[24]	LOADK    	8 3	; "__"
+	14	[24]	CONCAT   	7 2
+	15	[24]	MOVE     	1 7
+	16	[24]	JMP      	11	; to 28
+	17	[25]	EQK      	6 4 0	; "*"
+	18	[25]	JMP      	5	; to 24
+	19	[26]	MOVE     	7 1
+	20	[26]	LOADK    	8 5	; "**"
+	21	[26]	CONCAT   	7 2
+	22	[26]	MOVE     	1 7
+	23	[26]	JMP      	4	; to 28
+	24	[28]	MOVE     	7 1
+	25	[28]	MOVE     	8 6
+	26	[28]	CONCAT   	7 2
+	27	[28]	MOVE     	1 7
+	28	[21]	FORLOOP  	2 23	; to 6
+	29	[31]	RETURN1  	1
+	30	[32]	RETURN0  	
+
+function <main.lua:41,47> (12 instructions at 0x5592de88bdb0)
+0 params, 7 slots, 0 upvalues, 5 locals, 1 constant, 0 functions
+	1	[42]	LOADK    	0 0	; ""
+	2	[43]	LOADI    	1 1
+	3	[43]	LOADI    	2 20
+	4	[43]	LOADI    	3 1
+	5	[43]	FORPREP  	1 4	; to 10
+	6	[44]	MOVE     	5 0
+	7	[44]	MOVE     	6 4
+	8	[44]	CONCAT   	5 2
+	9	[44]	MOVE     	0 5
+	10	[43]	FORLOOP  	1 5	; to 6
+	11	[46]	RETURN1  	0
+	12	[47]	RETURN0  	
+
+function <main.lua:49,53> (10 instructions at 0x5592de88bf50)
+2 params, 7 slots, 1 upvalue, 2 locals, 7 constants, 0 functions
+	1	[50]	GETTABUP 	2 0 0	; _ENV "print"
+	2	[50]	LOADK    	3 1	; "Cranked! "
+	3	[50]	MOVE     	4 0
+	4	[50]	LOADK    	5 2	; " "
+	5	[50]	MOVE     	6 1
+	6	[50]	CONCAT   	3 4
+	7	[50]	CALL     	2 2 1	; 1 in 0 out
+	8	[51]	SETTABUP 	0 3 4k	; _ENV "pressedButtons" ""
+	9	[52]	SETTABUP 	0 5 6k	; _ENV "counter" 0
+	10	[53]	RETURN0  	
+
+function <main.lua:55,65> (27 instructions at 0x5592de88c1d0)
+1 param, 11 slots, 1 upvalue, 8 locals, 6 constants, 0 functions
+	1	[57]	LOADK    	1 0	; ""
+	2	[58]	LOADI    	2 1
+	3	[58]	LEN      	3 0
+	4	[58]	LOADI    	4 2
+	5	[58]	FORPREP  	2 19	; to 25
+	6	[59]	SELF     	6 0 1k	; "sub"
+	7	[59]	MOVE     	8 5
+	8	[59]	ADDI     	9 5 1
+	9	[59]	MMBINI   	5 1 6 0	; __add
+	10	[59]	CALL     	6 4 2	; 3 in 1 out
+	11	[60]	GETTABUP 	7 0 2	; _ENV "tonumber"
+	12	[60]	MOVE     	8 6
+	13	[60]	CALL     	7 2 2	; 1 in 1 out
+	14	[61]	MODK     	8 7 3	; 26
+	15	[61]	MMBINK   	7 3 9 0	; __mod 26
+	16	[61]	ADDI     	7 8 65
+	17	[61]	MMBINI   	8 65 6 0	; __add
+	18	[62]	MOVE     	8 1
+	19	[62]	GETTABUP 	9 0 4	; _ENV "string"
+	20	[62]	GETFIELD 	9 9 5	; "char"
+	21	[62]	MOVE     	10 7
+	22	[62]	CALL     	9 2 2	; 1 in 1 out
+	23	[62]	CONCAT   	8 2
+	24	[62]	MOVE     	1 8
+	25	[58]	FORLOOP  	2 20	; to 6
+	26	[64]	RETURN1  	1
+	27	[65]	RETURN0  	
+
+function <main.lua:70,93> (91 instructions at 0x5592de88c520)
+0 params, 6 slots, 2 upvalues, 4 locals, 25 constants, 0 functions
+	1	[72]	GETTABUP 	0 0 0	; gfx "clear"
+	2	[72]	GETTABUP 	1 0 1	; gfx "kColorWhite"
+	3	[72]	CALL     	0 2 1	; 1 in 0 out
+	4	[73]	GETTABUP 	0 1 2	; _ENV "counter"
+	5	[73]	ADDI     	0 0 1
+	6	[73]	MMBINI   	0 1 6 0	; __add
+	7	[73]	SETTABUP 	1 2 0	; _ENV "counter"
+	8	[74]	GETTABUP 	0 0 3	; gfx "drawTextAligned"
+	9	[74]	GETTABUP 	1 1 4	; _ENV "generateFlag"
+	10	[74]	CALL     	1 1 2	; 0 in 1 out
+	11	[74]	LOADF    	2 200
+	12	[74]	LOADF    	3 120
+	13	[74]	GETTABUP 	4 1 5	; _ENV "kTextAlignment"
+	14	[74]	GETFIELD 	4 4 6	; "center"
+	15	[74]	CALL     	0 5 1	; 4 in 0 out
+	16	[76]	LOADI    	0 1
+	17	[76]	GETTABUP 	1 1 7	; _ENV "buttons"
+	18	[76]	LEN      	1 1
+	19	[76]	LOADI    	2 1
+	20	[76]	FORPREP  	0 14	; to 35
+	21	[77]	GETTABUP 	4 1 8	; _ENV "playdate"
+	22	[77]	GETFIELD 	4 4 9	; "buttonJustPressed"
+	23	[77]	GETTABUP 	5 1 7	; _ENV "buttons"
+	24	[77]	GETTABLE 	5 5 3
+	25	[77]	CALL     	4 2 2	; 1 in 1 out
+	26	[77]	TEST     	4 0
+	27	[77]	JMP      	7	; to 35
+	28	[78]	GETTABUP 	4 1 10	; _ENV "pressedButtons"
+	29	[78]	MOVE     	5 3
+	30	[78]	CONCAT   	4 2
+	31	[78]	SETTABUP 	1 10 4	; _ENV "pressedButtons"
+	32	[79]	GETTABUP 	4 1 7	; _ENV "buttons"
+	33	[79]	GETTABLE 	4 4 3
+	34	[79]	SETTABUP 	1 11 4	; _ENV "lastPressed"
+	35	[76]	FORLOOP  	0 15	; to 21
+	36	[83]	GETTABUP 	0 0 3	; gfx "drawTextAligned"
+	37	[83]	GETTABUP 	1 1 11	; _ENV "lastPressed"
+	38	[83]	LOADF    	2 200
+	39	[83]	LOADF    	3 160
+	40	[83]	GETTABUP 	4 1 5	; _ENV "kTextAlignment"
+	41	[83]	GETFIELD 	4 4 6	; "center"
+	42	[83]	CALL     	0 5 1	; 4 in 0 out
+	43	[84]	GETTABUP 	0 0 3	; gfx "drawTextAligned"
+	44	[84]	GETTABUP 	1 1 12	; _ENV "makeTextDisplayable"
+	45	[84]	GETTABUP 	2 1 10	; _ENV "pressedButtons"
+	46	[84]	CALL     	1 2 2	; 1 in 1 out
+	47	[84]	LOADF    	2 200
+	48	[84]	LOADF    	3 180
+	49	[84]	GETTABUP 	4 1 5	; _ENV "kTextAlignment"
+	50	[84]	GETFIELD 	4 4 6	; "center"
+	51	[84]	CALL     	0 5 1	; 4 in 0 out
+	52	[85]	GETTABUP 	0 0 3	; gfx "drawTextAligned"
+	53	[85]	LOADK    	1 13	; "Rotate the crank to reset the challenge."
+	54	[85]	LOADF    	2 200
+	55	[85]	LOADF    	3 200
+	56	[85]	GETTABUP 	4 1 5	; _ENV "kTextAlignment"
+	57	[85]	GETFIELD 	4 4 6	; "center"
+	58	[85]	CALL     	0 5 1	; 4 in 0 out
+	59	[86]	GETTABUP 	0 1 10	; _ENV "pressedButtons"
+	60	[86]	GETTABUP 	1 1 14	; _ENV "generateOrder"
+	61	[86]	CALL     	1 1 2	; 0 in 1 out
+	62	[86]	EQ       	0 1 0
+	63	[86]	JMP      	27	; to 91
+	64	[87]	GETTABUP 	0 1 15	; _ENV "print"
+	65	[87]	LOADK    	1 16	; "Pin entered correctly!"
+	66	[87]	CALL     	0 2 1	; 1 in 0 out
+	67	[88]	GETTABUP 	0 0 17	; gfx "setFont"
+	68	[88]	GETTABUP 	1 0 18	; gfx "font"
+	69	[88]	GETFIELD 	1 1 19	; "kVariantBold"
+	70	[88]	CALL     	0 2 1	; 1 in 0 out
+	71	[89]	GETTABUP 	0 1 21	; _ENV "clean"
+	72	[89]	GETTABUP 	1 1 10	; _ENV "pressedButtons"
+	73	[89]	CALL     	0 2 2	; 1 in 1 out
+	74	[89]	SETTABUP 	1 20 0	; _ENV "cleaned"
+	75	[90]	GETTABUP 	0 1 15	; _ENV "print"
+	76	[90]	LOADK    	1 22	; "Flag: sun{"
+	77	[90]	GETTABUP 	2 1 20	; _ENV "cleaned"
+	78	[90]	LOADK    	3 23	; "}"
+	79	[90]	CONCAT   	1 3
+	80	[90]	CALL     	0 2 1	; 1 in 0 out
+	81	[91]	GETTABUP 	0 0 3	; gfx "drawTextAligned"
+	82	[91]	LOADK    	1 24	; "Flag: \nsun{"
+	83	[91]	GETTABUP 	2 1 20	; _ENV "cleaned"
+	84	[91]	LOADK    	3 23	; "}"
+	85	[91]	CONCAT   	1 3
+	86	[91]	LOADF    	2 200
+	87	[91]	LOADF    	3 80
+	88	[91]	GETTABUP 	4 1 5	; _ENV "kTextAlignment"
+	89	[91]	GETFIELD 	4 4 6	; "center"
+	90	[91]	CALL     	0 5 1	; 4 in 0 out
+	91	[93]	RETURN0  	
