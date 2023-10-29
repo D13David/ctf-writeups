@@ -49,6 +49,7 @@
 Tags: _rev_
 
 ## Solution
+The description basically tells us all, we have to write a small interpreter for a homebrew language called `Blue Hens`. Just implementing what the descriptions tells us we can run the given script and get the flag.
 
 ```python
 mnem = {
