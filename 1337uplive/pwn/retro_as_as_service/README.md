@@ -69,7 +69,7 @@ void FUN_00401266(void)
 If we diff the binary we can see that it is different.
 We can check all modified functions here:
 
-![image](https://github.com/D13David/small-vm/assets/80924519/5ade05f9-192b-47ca-94c4-472cf718a8e2)
+![](image.png)
 
 
 The one with 67.22% is interesting. The others aren't really important. The one with 84% is a false positive I guess.(It compares different functions). Lets check the function in Ghidra:
