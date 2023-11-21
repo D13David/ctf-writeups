@@ -2,8 +2,13 @@
 
 ## Seahorse Hide'n'Seek
 
+> I had to remove my new debugging functionality due to recent events. The good news is, our kernal is back! 🌊🐎
 > 
-> [`chall.zip`](chall.zip)
+> Hint: the flag is in flag.txt
+>
+> Author: DavidP, 0xM4hm0ud
+> 
+> [`seahorse.zip`](seahorse.zip)
 
 Tags: _pwn_
 

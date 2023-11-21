@@ -2,8 +2,11 @@
 
 ## RetroAsAService
 
+> Oh, kernal broke but I added a cool new debugging functionality
 > 
-> [`chall.zip`](chall.zip)
+> Author: DavidP, 0xM4hm0ud
+> 
+> [`retro.zip`](retro.zip)
 
 Tags: _pwn_
 

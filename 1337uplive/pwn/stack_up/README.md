@@ -2,8 +2,11 @@
 
 ## Stack Up
 
+> Digging Deep: Unearthing Forgotten Artifacts from the Binary Age
 > 
-> [`chall.zip`](chall.zip)
+> Author: DavidP, 0xM4hm0ud
+> 
+> [`stackup.zip`](cstackup.zip)
 
 Tags: _pwn_
 
