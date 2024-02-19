@@ -93,6 +93,8 @@ private static void transitionState(int var0) {
 
 There are two interesting bits. First there is a `hasGlove` variable, that is influencing the transitioning in some cases. Also in state `4` the user builds an `exploit`, this is, a string of 8 charachters containing a certain permutation of `d` (DOM clobbering) and `p` (prototype pollution). The state only transitions to either state `6` or `7` when the exploit is fully entered. We can simply bruteforce the correct exploit and see that `dpddpdpp` fulfills the `sha256` validation.
 
+![](state_machine.svg)
+
 The final piece is `updateGame` that updates the story text depending on the state we are in. The interesting state is state `5` that calls to `chall.lac.tf:31151` that should give back the flag. Sadly only calling the endpoint is not enough as the server expects us to send the correct click history.
 
 ```bash
