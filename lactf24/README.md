@@ -20,3 +20,11 @@
 [valentines-day](crypto/valentines_day/README.md)\
 [very-hot](crypto/very_hot/README.md)\
 [hOlyT](crypto/very_hot/README.md)
+
+## misc
+[infinite loop](misc/README.md)\
+[mixed signals](misc/README.md)\
+[gacha](misc/README.md)
+
+## pwn
+[aplet123](pwn/README.md)
