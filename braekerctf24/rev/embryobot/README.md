@@ -113,7 +113,9 @@ int     0x80
 jmp     ecx           ; jump back to base address (nop slide down) and read again
 ```
 
-Right, if we send this (as shellcode) to the program, the program reads again, but now without a strict limitation. Now we can inject any shellcode we like (for comfort just using `shellcraft`). Also we don't write to the base again, but directly starting with the offset the next instruction is executed (10h). Here's the full script.
+Right, if we send this (as shellcode) to the program, the program reads again, but now without a strict limitation. Now we can inject any shellcode we like (for comfort just using `shellcraft`). Also we don't write to the base again, but directly starting with the offset the next instruction is executed (10h). The process basically looks like this:
+
+![](process.png)
 
 ```python
 from pwn import *
