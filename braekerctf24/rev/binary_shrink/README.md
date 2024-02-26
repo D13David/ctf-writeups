@@ -10,7 +10,7 @@
 >
 >Can you run the program for her? Are you able to figure out what's in her memory right before execution stops?
 >
->  Author: n/a
+>  Author: spipm
 >
 > [`binary_shrink.zip`](binary_shrink.zip)
 
