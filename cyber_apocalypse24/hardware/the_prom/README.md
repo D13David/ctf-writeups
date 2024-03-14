@@ -111,7 +111,7 @@ Sad, but reading a bit further research shows, we can do other things. For insta
 [`source`](
 https://leap.tardate.com/playground/eeprom/at28c16/peprogrammer/)
 
-Lets try this, update `A9` to 12V adn rerun the script:
+Lets try this, update `A9` to 12V and re-run the script:
 
 ```python
 ...

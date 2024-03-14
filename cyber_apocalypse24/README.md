@@ -4,6 +4,14 @@
 Credits [HTB](http://ctf.hackthebox.com)
 
 ## Misc
+
+[Character](misc/character/README.md)\
+[MultiDilingual](misc/multi_dilingual/README.md)\
+[Colord Squares](misc/colored_squares/README.md)\
+[Cubicle Riddle](misc/cubicle_riddle/README.md)\
+[Path of Survival](misc/path_of_survival/README.md)\
+[Stop Drop and Roll](misc/stop_drop_and_roll/README.md)
+
 ## Reversing
 ## Forensics
 
