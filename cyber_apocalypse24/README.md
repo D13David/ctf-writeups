@@ -13,6 +13,15 @@ Credits [HTB](http://ctf.hackthebox.com)
 [Stop Drop and Roll](misc/stop_drop_and_roll/README.md)
 
 ## Reversing
+
+[PackedAway](rev/packaged_away/README.md)\
+[BoxCutter](rev/box_cutter/README.md)\
+[Crushing](rev/crushing/README.md)\
+[Metagaming](rev/metagaming/README.md)\
+[QuickScan](rev/quick_scan/README.md)\
+[LootStash](rev/loot_stash/README.md)\
+[FollowThePath](rev/follow_the_path/README.md)
+
 ## Forensics
 
 [Fake Boost](forensics/fake_boost/README.md)\

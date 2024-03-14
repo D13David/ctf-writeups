@@ -11,7 +11,7 @@
 > The traitor unveiled, with nowhere to hide,
 > Betrayal confirmed, they'd no longer abide.
 > 
-> Author: n/a
+> Author: sebh24
 > 
 > [`forensics_phreaky.zip`](forensics_phreaky.zip)
 
