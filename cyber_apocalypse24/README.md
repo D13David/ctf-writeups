@@ -35,9 +35,22 @@ Credits [HTB](http://ctf.hackthebox.com)
 [It Has Begin](forensics/it_has_begun/README.md)
 
 ## Web
+[LockTalk](web/lock_talk/README.md)\
+[Labyrinth Linguist](web/labyrinth_linguist/README.md)\
+[TimeKORP](web/time_korp/README.md)\
+[KORPTerminal](web/korp_terminal/README.md)\
+[Flag Command](web/flag_command/README.md)
+
 ## Crypto
+[Dynastic](crypto/README.md#dynastic)\
+[Makeshift](crypto/README.md#makeshift)\
+[Primary Knowledge](crypto/README.md#primary-knowledge)\
+[Iced TEA](crypto/README.md#iced-tea)\
+[Blunt](crypto/README.md#blunt)
+
 ## Pwn
 ## Blockchain
+
 ## Hardware
 
 [Flash-ing Logs](hardware/flash_ing_logs/README.md)\
