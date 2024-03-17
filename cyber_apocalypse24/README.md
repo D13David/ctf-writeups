@@ -4,7 +4,6 @@
 Credits [HTB](http://ctf.hackthebox.com)
 
 ## Misc
-
 [Character](misc/character/README.md)\
 [MultiDilingual](misc/multi_dilingual/README.md)\
 [Colord Squares](misc/colored_squares/README.md)\
@@ -13,7 +12,6 @@ Credits [HTB](http://ctf.hackthebox.com)
 [Stop Drop and Roll](misc/stop_drop_and_roll/README.md)
 
 ## Reversing
-
 [PackedAway](rev/packaged_away/README.md)\
 [BoxCutter](rev/box_cutter/README.md)\
 [Crushing](rev/crushing/README.md)\
@@ -23,7 +21,6 @@ Credits [HTB](http://ctf.hackthebox.com)
 [FollowThePath](rev/follow_the_path/README.md)
 
 ## Forensics
-
 [Fake Boost](forensics/fake_boost/README.md)\
 [Phreaky](forensics/phreaky/README.md)\
 [Confinement](forensics/confinement/README.md)\
@@ -49,10 +46,18 @@ Credits [HTB](http://ctf.hackthebox.com)
 [Blunt](crypto/README.md#blunt)
 
 ## Pwn
+[Sound of Silence](pwn/sound_of_silence/README.md)\
+[Rocket Blaster XXX](pwn/rocket_blaster_xxx/README.md)\
+[Pet Companion](pwn/pet_companion/README.md)\
+[Writing on the Wall](pwn/writing_on_the_wall/README.md)\
+[Delulu](pwn/delulu/README.md)\
+[Tutorial](pwn/tutorial/README.md)
+
 ## Blockchain
+[Russian Roulette](blockchain/README.md#russian-roulette)\
+[Lucky Faucet](blockchain/README.md#lucky-faucet)
 
 ## Hardware
-
 [Flash-ing Logs](hardware/flash_ing_logs/README.md)\
 [The PROM](hardware/the_prom/README.md)\
 [Rids](hardware/rids/README.md)\
