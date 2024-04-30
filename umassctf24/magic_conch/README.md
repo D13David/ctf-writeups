@@ -1,4 +1,4 @@
-# UDCTF 2023
+# UMass CTF 2024
 
 ## Magic Conch
 
