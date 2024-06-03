@@ -8,7 +8,7 @@
 > 
 > [`capture.pcapng`](capture.pcapng)
 
-Tags: _rev_
+Tags: _forensics_
 
 ## Solution
 The challenge comes with a network traffic capture. Opening it reveals that the communication of USB devices was captures. Looking at the challenge description we assume that we are looking for data coming from an USB keyboard. Browsing the capture, sadly we don't find keyboard packets but we find a lot of `URB_INTERRUPT` with, what appears to be [`HID data coming from a mouse`](https://www.usb.org/sites/default/files/documents/hut1_12v2.pdf).
