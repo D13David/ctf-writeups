@@ -5,6 +5,7 @@
 
 ## forensics
 [`Static`](forensics/static/README.md)\
+[`Wiretapped`](forensics/wiretapped/README.md)\
 [`sheep`](forensics/sheep/README.md)\
 [`flagserver`](forensics/flagserver/README.md)\
 [`magic`](forensics/magic/README.md)
