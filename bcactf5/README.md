@@ -23,3 +23,9 @@
 [`MathJail`](misc/mathjail/README.md)\
 [`JailBreak 2`](misc/jailbreak/README.md)\
 [`JailBreak 1`](misc/jailbreak/README.md)
+
+## crypto
+[`rad-be-damned`](crypto/rad_be_damned/README.md)\
+[`Cha-Cha Slide`](crypto/cha_cha_slide/README.md)\
+[`Encryptor Shop`](crypto/encryptor_shop/README.md)\
+[`RSAEncrypter`](crypto/rsa_encrypter/README.md)
