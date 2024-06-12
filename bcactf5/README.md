@@ -15,3 +15,11 @@
 [`Duck Finder`](web/duckfinder/README.md)\
 [`MOC, Inc.`](web/moc_inc/README.md)\
 [`JSLearning.com`](web/jslearning/README.md)
+
+## misc
+[`JailBreak Revenge`](misc/jailbreak/README.md)\
+[`reload-decode`](misc/reload_code/README.md)\
+[`Physics Test`](misc/physics_test/README.md)\
+[`MathJail`](misc/mathjail/README.md)\
+[`JailBreak 2`](misc/jailbreak/README.md)\
+[`JailBreak 1`](misc/jailbreak/README.md)
