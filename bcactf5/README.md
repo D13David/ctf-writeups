@@ -29,3 +29,7 @@
 [`Cha-Cha Slide`](crypto/cha_cha_slide/README.md)\
 [`Encryptor Shop`](crypto/encryptor_shop/README.md)\
 [`RSAEncrypter`](crypto/rsa_encrypter/README.md)
+
+## rev
+[`xnorzzz`](rev/xnorzzz/README.md)\
+[`FPS Frenzy`](rev/fps_frenzy/README.md)
