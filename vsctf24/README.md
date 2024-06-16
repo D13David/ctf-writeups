@@ -1,10 +1,11 @@
-# vsCTF 2023
+# vsCTF 2024
 
-![sdfsdf](logo.webp)
+![sdfsdf](logo.png)
 <br/>Credits [vsctf](https://ctf.viewsource.me/)
 
 ## rev
 
-[x0rr3al?!!](rev/x0rr3al/README.md)\
-[teenage-wasm](rev/teenage_wasm/README.md)\
-[LVMProtect](rev/lvmprotect/README.md)
+[awa-jelly](rev/README.md)
+
+## web
+[spinner](web/README.md)
