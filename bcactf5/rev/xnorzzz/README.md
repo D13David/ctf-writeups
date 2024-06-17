@@ -37,6 +37,8 @@ To see how this can help us retrieve the flag, we open the binary file with [`Bi
 
 As per default it shows some `High Level IL` representation of the decompiled code. We also can switch to other representations, for instance showing the `Disassembly` or some sort of pseudo `C`. Whatever helps best...
 
+![](binja001.png)
+
 Naturally most of the symbols and naming is lost, Binary Ninja tries to recover some names (like `fp` for a file pointer). For all other cases, manual renaming can be done by double clicking a name (or selecting a name and pressing `N`), and changing then the name's value.
 
 Lets go top to bottom. First the libc random number generator is initialized with the current time. Then `secret.txt` is opened and 40 bytes are read from the file into a buffer.
@@ -90,7 +92,13 @@ Good, we got rid of the cast and the array indexing looks a bit more readable.
 00401257          }
 ```
 
-There is still the weird calculation though. The calculation is rather weird, lets check out the disassembly.
+There is still the weird calculation though. The calculation is rather weird, lets check out the disassembly. Binary Ninja supports split-view for the linear view:
+
+![](binja002.png)
+
+Also, dont forget to `synchronize` both views so we can navigate in one view and see the associated code in the other. This way we can have a nice side-by-side representation of our pseudocode and disassembly.
+
+![](binja003.png)
 
 ```c#
 0040121d  e88efeffff         call    rand
