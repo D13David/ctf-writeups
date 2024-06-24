@@ -5,6 +5,7 @@
 
 ## forensics
 
+[`Surveillance_of_sus`](forensics/surveillance_of_sus/README.md)\
 [`I_wanna_be_a_streamer`](forensics/i_wanna_be_a_streamer/README.md)\
 [`tiny_10px`](forensics/tiny_10px/README.md)\
 [`mem_search`](forensics/mem_search/README.md)
