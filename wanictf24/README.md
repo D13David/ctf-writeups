@@ -9,3 +9,9 @@
 [`I_wanna_be_a_streamer`](forensics/i_wanna_be_a_streamer/README.md)\
 [`tiny_10px`](forensics/tiny_10px/README.md)\
 [`mem_search`](forensics/mem_search/README.md)
+
+## rev
+
+[`lambda`](rev/lambda/README.md)\
+[`home`](rev/home/README.md)\
+[`Thread`](rev/thread/README.md)
