@@ -14,4 +14,5 @@
 
 [`lambda`](rev/lambda/README.md)\
 [`home`](rev/home/README.md)\
-[`Thread`](rev/thread/README.md)
+[`Thread`](rev/thread/README.md)\
+[`gates`](rev/gates/README.md)
