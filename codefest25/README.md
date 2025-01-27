@@ -1,8 +1,5 @@
 # Codefest CTF 2025
 
-![sdfsdf](logo.png)
-Credits [Codefest CTF 2025](https://codefest-ctf.iitbhu.tech/)
-
 ## forensics
 
 [Password Recovery](forensics/password_recovery/README.md)
