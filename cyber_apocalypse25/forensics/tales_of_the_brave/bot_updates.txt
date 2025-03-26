@@ -1,0 +1,1225 @@
+{
+  "ok": true,
+  "result": [
+    {
+      "update_id": 385356192,
+      "my_chat_member": {
+        "chat": {
+          "id": -1002595047642,
+          "title": "test",
+          "username": "testctfhtb",
+          "type": "channel"
+        },
+        "from": {
+          "id": 186754505,
+          "is_bot": false,
+          "first_name": "Ruslan",
+          "last_name": "S",
+          "username": "cryptopeg"
+        },
+        "date": 1742629425,
+        "old_chat_member": {
+          "user": {
+            "id": 7767830636,
+            "is_bot": true,
+            "first_name": "OperationEldoriaBot",
+            "username": "OperationEldoriaBot"
+          },
+          "status": "left"
+        },
+        "new_chat_member": {
+          "user": {
+            "id": 7767830636,
+            "is_bot": true,
+            "first_name": "OperationEldoriaBot",
+            "username": "OperationEldoriaBot"
+          },
+          "status": "administrator",
+          "can_be_edited": false,
+          "can_manage_chat": true,
+          "can_change_info": true,
+          "can_post_messages": true,
+          "can_edit_messages": true,
+          "can_delete_messages": true,
+          "can_invite_users": false,
+          "can_restrict_members": true,
+          "can_promote_members": false,
+          "can_manage_video_chats": false,
+          "can_post_stories": true,
+          "can_edit_stories": true,
+          "can_delete_stories": true,
+          "is_anonymous": false,
+          "can_manage_voice_chats": false
+        }
+      }
+    },
+    {
+      "update_id": 385356193,
+      "my_chat_member": {
+        "chat": {
+          "id": -1002595047642,
+          "title": "test",
+          "username": "testctfhtb",
+          "type": "channel"
+        },
+        "from": {
+          "id": 186754505,
+          "is_bot": false,
+          "first_name": "Ruslan",
+          "last_name": "S",
+          "username": "cryptopeg"
+        },
+        "date": 1742629535,
+        "old_chat_member": {
+          "user": {
+            "id": 7767830636,
+            "is_bot": true,
+            "first_name": "OperationEldoriaBot",
+            "username": "OperationEldoriaBot"
+          },
+          "status": "administrator",
+          "can_be_edited": false,
+          "can_manage_chat": true,
+          "can_change_info": true,
+          "can_post_messages": true,
+          "can_edit_messages": true,
+          "can_delete_messages": true,
+          "can_invite_users": false,
+          "can_restrict_members": true,
+          "can_promote_members": false,
+          "can_manage_video_chats": false,
+          "can_post_stories": true,
+          "can_edit_stories": true,
+          "can_delete_stories": true,
+          "is_anonymous": false,
+          "can_manage_voice_chats": false
+        },
+        "new_chat_member": {
+          "user": {
+            "id": 7767830636,
+            "is_bot": true,
+            "first_name": "OperationEldoriaBot",
+            "username": "OperationEldoriaBot"
+          },
+          "status": "left"
+        }
+      }
+    },
+    {
+      "update_id": 385356194,
+      "my_chat_member": {
+        "chat": {
+          "id": 186754505,
+          "first_name": "Ruslan",
+          "last_name": "S",
+          "username": "cryptopeg",
+          "type": "private"
+        },
+        "from": {
+          "id": 186754505,
+          "is_bot": false,
+          "first_name": "Ruslan",
+          "last_name": "S",
+          "username": "cryptopeg"
+        },
+        "date": 1742629547,
+        "old_chat_member": {
+          "user": {
+            "id": 7767830636,
+            "is_bot": true,
+            "first_name": "OperationEldoriaBot",
+            "username": "OperationEldoriaBot"
+          },
+          "status": "member"
+        },
+        "new_chat_member": {
+          "user": {
+            "id": 7767830636,
+            "is_bot": true,
+            "first_name": "OperationEldoriaBot",
+            "username": "OperationEldoriaBot"
+          },
+          "status": "kicked",
+          "until_date": 0
+        }
+      }
+    },
+    {
+      "update_id": 385356195,
+      "message": {
+        "message_id": 2144,
+        "from": {
+          "id": 1051235839,
+          "is_bot": false,
+          "first_name": "Avi",
+          "username": "kiyotaakaa",
+          "language_code": "en"
+        },
+        "chat": {
+          "id": 1051235839,
+          "first_name": "Avi",
+          "username": "kiyotaakaa",
+          "type": "private"
+        },
+        "date": 1742629933,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356196,
+      "my_chat_member": {
+        "chat": {
+          "id": -1002359624295,
+          "title": "HTB",
+          "username": "QUOICOUBEHAAAAAAAAAAAAA",
+          "type": "channel"
+        },
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz"
+        },
+        "date": 1742630170,
+        "old_chat_member": {
+          "user": {
+            "id": 7767830636,
+            "is_bot": true,
+            "first_name": "OperationEldoriaBot",
+            "username": "OperationEldoriaBot"
+          },
+          "status": "left"
+        },
+        "new_chat_member": {
+          "user": {
+            "id": 7767830636,
+            "is_bot": true,
+            "first_name": "OperationEldoriaBot",
+            "username": "OperationEldoriaBot"
+          },
+          "status": "administrator",
+          "can_be_edited": false,
+          "can_manage_chat": true,
+          "can_change_info": true,
+          "can_post_messages": true,
+          "can_edit_messages": true,
+          "can_delete_messages": true,
+          "can_invite_users": true,
+          "can_restrict_members": true,
+          "can_promote_members": false,
+          "can_manage_video_chats": true,
+          "can_post_stories": true,
+          "can_edit_stories": true,
+          "can_delete_stories": true,
+          "is_anonymous": false,
+          "can_manage_voice_chats": true
+        }
+      }
+    },
+    {
+      "update_id": 385356197,
+      "channel_post": {
+        "message_id": 2,
+        "sender_chat": {
+          "id": -1002359624295,
+          "title": "HTB",
+          "username": "QUOICOUBEHAAAAAAAAAAAAA",
+          "type": "channel"
+        },
+        "chat": {
+          "id": -1002359624295,
+          "title": "HTB",
+          "username": "QUOICOUBEHAAAAAAAAAAAAA",
+          "type": "channel"
+        },
+        "date": 1742630177,
+        "text": "/flag",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 5,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356198,
+      "channel_post": {
+        "message_id": 4,
+        "sender_chat": {
+          "id": -1002359624295,
+          "title": "HTB",
+          "username": "QUOICOUBEHAAAAAAAAAAAAA",
+          "type": "channel"
+        },
+        "chat": {
+          "id": -1002359624295,
+          "title": "HTB",
+          "username": "QUOICOUBEHAAAAAAAAAAAAA",
+          "type": "channel"
+        },
+        "date": 1742630335,
+        "text": "gz"
+      }
+    },
+    {
+      "update_id": 385356199,
+      "message": {
+        "message_id": 2158,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742630983,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356200,
+      "message": {
+        "message_id": 2159,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742630986,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356201,
+      "message": {
+        "message_id": 2160,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742630989,
+        "text": "/flag",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 5,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356202,
+      "message": {
+        "message_id": 2161,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742630993,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356203,
+      "message": {
+        "message_id": 2162,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742630994,
+        "text": "/flag",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 5,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356204,
+      "message": {
+        "message_id": 2163,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631002,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356205,
+      "message": {
+        "message_id": 2164,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631003,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356206,
+      "message": {
+        "message_id": 2165,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631006,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356207,
+      "message": {
+        "message_id": 2166,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631006,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356208,
+      "message": {
+        "message_id": 2167,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631006,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356209,
+      "message": {
+        "message_id": 2168,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631007,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356210,
+      "message": {
+        "message_id": 2169,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631007,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356211,
+      "message": {
+        "message_id": 2170,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631044,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356212,
+      "message": {
+        "message_id": 2171,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631044,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356213,
+      "message": {
+        "message_id": 2172,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631044,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356214,
+      "message": {
+        "message_id": 2173,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631044,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356215,
+      "message": {
+        "message_id": 2174,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631044,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356216,
+      "message": {
+        "message_id": 2175,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631044,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356217,
+      "message": {
+        "message_id": 2176,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631045,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356218,
+      "message": {
+        "message_id": 2177,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631068,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356219,
+      "message": {
+        "message_id": 2178,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631090,
+        "text": "test"
+      }
+    },
+    {
+      "update_id": 385356220,
+      "message": {
+        "message_id": 2179,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631132,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356221,
+      "message": {
+        "message_id": 2180,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631136,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356222,
+      "message": {
+        "message_id": 2181,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631148,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356223,
+      "message": {
+        "message_id": 2182,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631180,
+        "text": "/getFlag",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 8,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356224,
+      "message": {
+        "message_id": 2183,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631251,
+        "text": "/help",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 5,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356225,
+      "message": {
+        "message_id": 2184,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631313,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356226,
+      "message": {
+        "message_id": 2185,
+        "from": {
+          "id": 7863238336,
+          "is_bot": false,
+          "first_name": "BoBNzwz",
+          "language_code": "fr"
+        },
+        "chat": {
+          "id": 7863238336,
+          "first_name": "BoBNzwz",
+          "type": "private"
+        },
+        "date": 1742631315,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356227,
+      "channel_post": {
+        "message_id": 13,
+        "sender_chat": {
+          "id": -1002359624295,
+          "title": "HTB",
+          "username": "QUOICOUBEHAAAAAAAAAAAAA",
+          "type": "channel"
+        },
+        "chat": {
+          "id": -1002359624295,
+          "title": "HTB",
+          "username": "QUOICOUBEHAAAAAAAAAAAAA",
+          "type": "channel"
+        },
+        "date": 1742631603,
+        "text": "/hey_how_is_it_going_?",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 21,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356228,
+      "channel_post": {
+        "message_id": 15,
+        "sender_chat": {
+          "id": -1002359624295,
+          "title": "HTB",
+          "username": "QUOICOUBEHAAAAAAAAAAAAA",
+          "type": "channel"
+        },
+        "chat": {
+          "id": -1002359624295,
+          "title": "HTB",
+          "username": "QUOICOUBEHAAAAAAAAAAAAA",
+          "type": "channel"
+        },
+        "date": 1742631663,
+        "text": "/I_don't_know_:(",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356229,
+      "channel_post": {
+        "message_id": 17,
+        "sender_chat": {
+          "id": -1002359624295,
+          "title": "HTB",
+          "username": "QUOICOUBEHAAAAAAAAAAAAA",
+          "type": "channel"
+        },
+        "chat": {
+          "id": -1002359624295,
+          "title": "HTB",
+          "username": "QUOICOUBEHAAAAAAAAAAAAA",
+          "type": "channel"
+        },
+        "date": 1742631840,
+        "text": "/I_don't_know_why_but_the_bot_has_no_commands_avalaible",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356230,
+      "message": {
+        "message_id": 2188,
+        "from": {
+          "id": 43390784,
+          "is_bot": false,
+          "first_name": "Safa",
+          "last_name": "Safari",
+          "username": "SafaSafari",
+          "language_code": "fa",
+          "is_premium": true
+        },
+        "chat": {
+          "id": 43390784,
+          "first_name": "Safa",
+          "last_name": "Safari",
+          "username": "SafaSafari",
+          "type": "private"
+        },
+        "date": 1742633213,
+        "text": "/start",
+        "entities": [
+          {
+            "offset": 0,
+            "length": 6,
+            "type": "bot_command"
+          }
+        ]
+      }
+    },
+    {
+      "update_id": 385356231,
+      "my_chat_member": {
+        "chat": {
+          "id": -1002635947470,
+          "title": "teszt",
+          "type": "channel"
+        },
+        "from": {
+          "id": 744915619,
+          "is_bot": false,
+          "first_name": "Steve",
+          "username": "MaryJohanna420",
+          "language_code": "en"
+        },
+        "date": 1742634267,
+        "old_chat_member": {
+          "user": {
+            "id": 7767830636,
+            "is_bot": true,
+            "first_name": "OperationEldoriaBot",
+            "username": "OperationEldoriaBot"
+          },
+          "status": "left"
+        },
+        "new_chat_member": {
+          "user": {
+            "id": 7767830636,
+            "is_bot": true,
+            "first_name": "OperationEldoriaBot",
+            "username": "OperationEldoriaBot"
+          },
+          "status": "administrator",
+          "can_be_edited": false,
+          "can_manage_chat": true,
+          "can_change_info": true,
+          "can_post_messages": true,
+          "can_edit_messages": true,
+          "can_delete_messages": true,
+          "can_invite_users": false,
+          "can_restrict_members": true,
+          "can_promote_members": false,
+          "can_manage_video_chats": true,
+          "can_post_stories": true,
+          "can_edit_stories": true,
+          "can_delete_stories": true,
+          "is_anonymous": false,
+          "can_manage_voice_chats": true
+        }
+      }
+    },
+    {
+      "update_id": 385356232,
+      "channel_post": {
+        "message_id": 2,
+        "sender_chat": {
+          "id": -1002635947470,
+          "title": "teszt",
+          "type": "channel"
+        },
+        "chat": {
+          "id": -1002635947470,
+          "title": "teszt",
+          "type": "channel"
+        },
+        "date": 1742634397,
+        "text": "aaa"
+      }
+    },
+    {
+      "update_id": 385356233,
+      "my_chat_member": {
+        "chat": {
+          "id": -1002635947470,
+          "title": "teszt",
+          "type": "channel"
+        },
+        "from": {
+          "id": 136817688,
+          "is_bot": true,
+          "first_name": "Channel",
+          "username": "Channel_Bot"
+        },
+        "date": 1742634583,
+        "old_chat_member": {
+          "user": {
+            "id": 7767830636,
+            "is_bot": true,
+            "first_name": "OperationEldoriaBot",
+            "username": "OperationEldoriaBot"
+          },
+          "status": "administrator",
+          "can_be_edited": false,
+          "can_manage_chat": true,
+          "can_change_info": true,
+          "can_post_messages": true,
+          "can_edit_messages": true,
+          "can_delete_messages": true,
+          "can_invite_users": false,
+          "can_restrict_members": true,
+          "can_promote_members": false,
+          "can_manage_video_chats": true,
+          "can_post_stories": true,
+          "can_edit_stories": true,
+          "can_delete_stories": true,
+          "is_anonymous": false,
+          "can_manage_voice_chats": true
+        },
+        "new_chat_member": {
+          "user": {
+            "id": 7767830636,
+            "is_bot": true,
+            "first_name": "OperationEldoriaBot",
+            "username": "OperationEldoriaBot"
+          },
+          "status": "left"
+        }
+      }
+    }
+  ]
+}
