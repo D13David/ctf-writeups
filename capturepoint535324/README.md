@@ -2,4 +2,4 @@
 
 ## rev
 
-[Ransomware Unchained](rev/ransonware_unchained/README.md)
+[Ransomware Unchained](rev/ramsonware_unchained/README.md)
