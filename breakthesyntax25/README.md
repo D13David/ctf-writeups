@@ -1,4 +1,4 @@
-# CyberHeroines 2023
+# Break the Syntax CTF 2025
 
 ![sdfsdf](logo.png)
 Credits [BreakTheSyntax](https://bts.wh.edu.pl/)
