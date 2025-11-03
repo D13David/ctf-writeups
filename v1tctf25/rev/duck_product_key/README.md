@@ -10,6 +10,9 @@
 
 Tags: _rev_
 
+## Note
+The challenge source code can be found [`here`](https://github.com/D13David/obfuscation-peb-walk/blob/main/src/main.cpp). The source code was published only **AFTER** the event finished.
+
 ## Solution
 The challenge comes with an windows PE executable. When running the application we can see it is some kind of product key checker. 
 
